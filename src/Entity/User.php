@@ -2,13 +2,14 @@
 
 namespace App\Entity;
 
-use App\Repository\UsersRepository;
+use App\Repository\UserRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * @ORM\Entity(repositoryClass=UsersRepository::class)
+ * @ORM\Entity(repositoryClass=UserRepository::class)
  */
-class Users
+class User
 {
     /**
      * @ORM\Id()
@@ -19,16 +20,19 @@ class Users
 
     /**
      * @ORM\Column(type="string", length=25)
+     * @Assert\NotBlank(message="Le pseudo est obligatoire")
      */
     private $pseudo;
 
     /**
      * @ORM\Column(type="string", length=100)
+     * @Assert\NotBlank(message="L'email est obligatoire")
      */
     private $email;
 
     /**
      * @ORM\Column(type="string", length=155)
+     * @Assert\NotBlank(message="Le mot de passe est obligatoire")
      */
     private $mdp;
 
@@ -38,14 +42,16 @@ class Users
     private $role = 'ROLE_USER';
 
     /**
-     * @ORM\ManyToOne(targetEntity=villes::class, inversedBy="users")
+     * @ORM\ManyToOne(targetEntity=Ville::class, inversedBy="users")
      * @ORM\JoinColumn(nullable=false)
+     * @Assert\NotBlank(message="La ville est obligatoire")
      */
     private $ville;
 
     /**
-     * @ORM\ManyToOne(targetEntity=genres::class, inversedBy="users")
+     * @ORM\ManyToOne(targetEntity=Genre::class, inversedBy="users")
      * @ORM\JoinColumn(nullable=false)
+     * @Assert\NotBlank(message="Le choix de genre est obligatoire")
      */
     private $genre;
 
@@ -102,24 +108,24 @@ class Users
         return $this;
     }
 
-    public function getVille(): ?villes
+    public function getVille(): ?Ville
     {
         return $this->ville;
     }
 
-    public function setVille(?villes $ville): self
+    public function setVille(?Ville $ville): self
     {
         $this->ville = $ville;
 
         return $this;
     }
 
-    public function getGenre(): ?genres
+    public function getGenre(): ?Genre
     {
         return $this->genre;
     }
 
-    public function setGenre(?genres $genre): self
+    public function setGenre(?Genre $genre): self
     {
         $this->genre = $genre;
 

@@ -2,15 +2,15 @@
 
 namespace App\Entity;
 
-use App\Repository\GenresRepository;
+use App\Repository\VilleRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=GenresRepository::class)
+ * @ORM\Entity(repositoryClass=VilleRepository::class)
  */
-class Genres
+class Ville
 {
     /**
      * @ORM\Id()
@@ -22,10 +22,10 @@ class Genres
     /**
      * @ORM\Column(type="string", length=100)
      */
-    private $type;
+    private $nom;
 
     /**
-     * @ORM\OneToMany(targetEntity=Users::class, mappedBy="genre")
+     * @ORM\OneToMany(targetEntity=User::class, mappedBy="ville")
      */
     private $users;
 
@@ -39,43 +39,43 @@ class Genres
         return $this->id;
     }
 
-    public function getType(): ?string
+    public function getNom(): ?string
     {
-        return $this->type;
+        return $this->nom;
     }
 
-    public function setType(string $type): self
+    public function setNom(string $nom): self
     {
-        $this->type = $type;
+        $this->nom = $nom;
 
         return $this;
     }
 
     /**
-     * @return Collection|Users[]
+     * @return Collection|User[]
      */
     public function getUsers(): Collection
     {
         return $this->users;
     }
 
-    public function addUser(Users $user): self
+    public function addUser(User $user): self
     {
         if (!$this->users->contains($user)) {
             $this->users[] = $user;
-            $user->setGenre($this);
+            $user->setVille($this);
         }
 
         return $this;
     }
 
-    public function removeUser(Users $user): self
+    public function removeUser(User $user): self
     {
         if ($this->users->contains($user)) {
             $this->users->removeElement($user);
             // set the owning side to null (unless already changed)
-            if ($user->getGenre() === $this) {
-                $user->setGenre(null);
+            if ($user->getVille() === $this) {
+                $user->setVille(null);
             }
         }
 
