@@ -32,7 +32,7 @@ class InscriptionType extends AbstractType
                     'label' => 'E-mail'
                 ]
             )
-            ->add('mdp',
+            ->add('mdpClair',
                 RepeatedType::class,
                 [
                     'type'=>PasswordType::class,

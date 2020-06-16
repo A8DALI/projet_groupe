@@ -4,12 +4,13 @@ namespace App\Entity;
 
 use App\Repository\UserRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
  */
-class User
+class User implements UserInterface
 {
     /**
      * @ORM\Id()
@@ -32,9 +33,15 @@ class User
 
     /**
      * @ORM\Column(type="string", length=155)
-     * @Assert\NotBlank(message="Le mot de passe est obligatoire")
      */
     private $mdp;
+
+    /**
+     * @var string|null
+     * @Assert\NotBlank(message="Le mot de passe est obligatoire")
+     * @Assert\Regex("/^[a-zA-Z0-9_]{6,20}$/", message="Mot de passe non conforme")
+     */
+    private $mdpClair;
 
     /**
      * @ORM\Column(type="string", length=20)
@@ -130,5 +137,49 @@ class User
         $this->genre = $genre;
 
         return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getMdpClair(): ?string
+    {
+        return $this->mdpClair;
+    }
+
+    /**
+     * @param string|null $mdpClair
+     * @return User
+     */
+    public function setMdpClair(?string $mdpClair): User
+    {
+        $this->mdpClair = $mdpClair;
+        return $this;
+    }
+
+
+    public function getRoles()
+    {
+        return [$this->getRole()];
+    }
+
+    public function getPassword()
+    {
+        return $this->getMdp();
+    }
+
+    public function getSalt()
+    {
+        // TODO: Implement getSalt() method.
+    }
+
+    public function getUsername()
+    {
+        return $this->getPseudo();
+    }
+
+    public function eraseCredentials()
+    {
+        // TODO: Implement eraseCredentials() method.
     }
 }

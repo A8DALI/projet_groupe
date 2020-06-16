@@ -18,28 +18,28 @@ class IndexController extends AbstractController
     public function index(Request $request, UserPasswordEncoderInterface $passwordEncoder,
                     EntityManagerInterface $manager)
     {
-        $form = $this-> createForm(InscriptionType::class);
-
         $user = new User();
+
+        $form = $this-> createForm(InscriptionType::class, $user);
 
         $form->handleRequest($request);
 
         if($form->isSubmitted()){
 
             if($form->isValid()){
-//                $encodePassword = $passwordEncoder->encodePassword(
-//                    $user,
-//                    $user->getMdp()
-                //);
+                $encodePassword = $passwordEncoder->encodePassword(
+                    $user,
+                    $user->getMdpClair()
+                    );
 
-               // $user->setMdp($encodePassword);
+               $user->setMdp($encodePassword);
 
                 $manager->persist($user);
                 $manager->flush();
 
-                $this->addFlash('sucess', 'Vous êtes bien enregistré');
+                //$this->addFlash('sucess', 'Vous êtes bien enregistré');
 
-                return $this->redirectToRoute('/');
+                return $this->redirectToRoute('app_index_index');
 
             }
         }
