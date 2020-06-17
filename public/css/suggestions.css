@@ -1,3 +1,11 @@
+
+.navbar {
+    margin-bottom: 40px;
+}
+.card {
+    margin-bottom: 30px;
+}
+
 footer {
     display: flex;
     flex-direction: column;
@@ -6,4 +14,8 @@ footer {
     color: white;
     padding: 40px 0 40px 0;
     margin-top: 60px;
+}
+.liste {
+    display: flex;
+    justify-content: space-evenly;
 }
