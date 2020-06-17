@@ -29,6 +29,7 @@ class IndexController extends AbstractController
         if($form->isSubmitted()){
 
             if($form->isValid()){
+
                 $encodePassword = $passwordEncoder->encodePassword(
                     $user,
                     $user->getMdpClair()
@@ -69,10 +70,6 @@ class IndexController extends AbstractController
 
             $this->addFlash('success', 'Vous êtes connecté');
 
-            return $this->redirectToRoute('app_suggestion_index',
-                [
-                    'last_username' => $lastUsername
-                ]);
 
     }
 
