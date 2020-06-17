@@ -15,12 +15,27 @@
 		 */
 		public function index(UserRepository $repository)
 		{
-			$users = $repository->findAll();
+
+
+//			$users = $repository->findAll();
+
+			$Loggeduser = $this->getUser();
+
+			$suggestions = $repository->findBy(
+				[
+					'ville' => $Loggeduser->getVille(),
+					'genre' => $Loggeduser->getGenre()
+				],
+				[
+					//pour passer le limit à 3
+				],
+				3
+			);
 
 			return $this->render(
 				'suggestion/index.html.twig',
 				[
-					'users' => $users
+					'suggestions' => $suggestions
 				]
 			);
 		}
@@ -32,7 +47,6 @@
 //			$this->denyAccessUnlessGranted('ROLE_USER');
 //			$user = $this->getUser();
 //
-//			print_r($this->getu)
 //		}
 //
 //		public function LoggedUserDetails()
