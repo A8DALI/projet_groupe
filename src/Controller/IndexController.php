@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\User;
+use App\Form\ConnexionType;
 use App\Form\InscriptionType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -22,6 +23,8 @@ class IndexController extends AbstractController
 
         $form = $this-> createForm(InscriptionType::class, $user);
 
+        $connexionForm = $this->createForm(ConnexionType::class, $user);
+
         $form->handleRequest($request);
 
         if($form->isSubmitted()){
@@ -37,7 +40,7 @@ class IndexController extends AbstractController
                 $manager->persist($user);
                 $manager->flush();
 
-                //$this->addFlash('sucess', 'Vous êtes bien enregistré');
+                $this->addFlash('sucess', 'Vous êtes bien enregistré, connectez vous pour profiter du site !');
 
                 return $this->redirectToRoute('app_index_index');
 
@@ -47,6 +50,7 @@ class IndexController extends AbstractController
 
         return $this->render('index/index.html.twig', [
             'form' => $form->createView(),
+            'connexionform' => $connexionForm->createView()
         ]);
     }
 }

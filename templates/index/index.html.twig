@@ -4,6 +4,7 @@
 
 {% block body %}
 
+    {# FORMULAIRE D'INSCRIPTION #}
     <h1>Formulaire d'inscription</h1>
 
     {{ form_start(form) }}
@@ -17,5 +18,20 @@
     <button type="submit">Enregistrer</button>
 
     {{ form_end(form) }}
+
+    {#  FIN FORMULAIRE D'INSCRIPTION #}
+
+    {# FORMULAIRE DE CONNEXION #}
+    {{ form_start(connexionform) }}
+
+    {{ form_row(connexionform.pseudo) }}
+    {{ form_row(connexionform.mdpClair) }}
+
+    <button type="submit">Envoyer</button>
+
+    {{ form_end(connexionform) }}
+    {#  FIN FORMULAIRE DE CONNEXION #}
+
+
 
 {% endblock %}

@@ -32,7 +32,7 @@ class User implements UserInterface
     private $email;
 
     /**
-     * @ORM\Column(type="string", length=155)
+     * @ORM\Column(type="string", length=255)
      */
     private $mdp;
 
