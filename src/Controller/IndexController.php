@@ -57,10 +57,6 @@ class IndexController extends AbstractController
      */
     public function connexion(AuthenticationUtils $authenticationUtils)
     {
-        //$username = $request->request->get('_username');
-        //$lastUsername=null;
-
-        //if(!is_null($username)) {
 
             $error = $authenticationUtils->getLastAuthenticationError();
             $lastUsername = $authenticationUtils->getLastUsername();
@@ -69,18 +65,14 @@ class IndexController extends AbstractController
 
                 $this->addFlash('error', 'Identifiants incorrects');
 
-            } else {
-
-                $this->addFlash('success', 'Vous êtes connecté');
-
-                return $this->redirectToRoute('app_suggestion_index');
             }
-        //}
 
-        return $this->render('index/index.html.twig',
-            [
-                'last_username' => $lastUsername
-            ]);
+            $this->addFlash('success', 'Vous êtes connecté');
+
+            return $this->redirectToRoute('app_suggestion_index',
+                [
+                    'last_username' => $lastUsername
+                ]);
 
     }
 
