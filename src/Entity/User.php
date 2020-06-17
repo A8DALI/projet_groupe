@@ -32,7 +32,7 @@ class User implements UserInterface
     private $email;
 
     /**
-     * @ORM\Column(type="string", length=155)
+     * @ORM\Column(type="string", length=255)
      */
     private $mdp;
 
@@ -61,6 +61,17 @@ class User implements UserInterface
      * @Assert\NotBlank(message="Le choix de genre est obligatoire")
      */
     private $genre;
+
+    /**
+     * Permet de pouvoir faire un echo sur un objet user:
+     * affichera prénom et nom
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->pseudo;
+    }
 
     public function getId(): ?int
     {
@@ -175,7 +186,7 @@ class User implements UserInterface
 
     public function getUsername()
     {
-        return $this->getPseudo();
+        return $this->getEmail();
     }
 
     public function eraseCredentials()
