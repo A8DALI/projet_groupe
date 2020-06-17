@@ -10,6 +10,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class IndexController extends AbstractController
 {
@@ -22,8 +23,6 @@ class IndexController extends AbstractController
         $user = new User();
 
         $form = $this-> createForm(InscriptionType::class, $user);
-
-        $connexionForm = $this->createForm(ConnexionType::class, $user);
 
         $form->handleRequest($request);
 
@@ -46,11 +45,52 @@ class IndexController extends AbstractController
 
             }
         }
-
-
         return $this->render('index/index.html.twig', [
             'form' => $form->createView(),
-            'connexionform' => $connexionForm->createView()
         ]);
+
+
+    }
+
+    /**
+     * @Route("/connexion")
+     */
+    public function connexion(AuthenticationUtils $authenticationUtils)
+    {
+        //$username = $request->request->get('_username');
+        //$lastUsername=null;
+
+        //if(!is_null($username)) {
+
+            $error = $authenticationUtils->getLastAuthenticationError();
+            $lastUsername = $authenticationUtils->getLastUsername();
+
+            if (!empty($error)) {
+
+                $this->addFlash('error', 'Identifiants incorrects');
+
+            } else {
+
+                $this->addFlash('success', 'Vous êtes connecté');
+
+                return $this->redirectToRoute('app_suggestion_index');
+            }
+        //}
+
+        return $this->render('index/index.html.twig',
+            [
+                'last_username' => $lastUsername
+            ]);
+
+    }
+
+    /**
+     * @Route("/deconnexion")
+     */
+    public function logout()
+    {
+        //cette méthode peut rester vide, il faut juste que sa route
+        //existe et soit configurée dans la partie logout dans
+        //config/packages/security.yaml
     }
 }

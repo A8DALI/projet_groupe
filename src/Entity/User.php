@@ -62,6 +62,17 @@ class User implements UserInterface
      */
     private $genre;
 
+    /**
+     * Permet de pouvoir faire un echo sur un objet user:
+     * affichera prénom et nom
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->pseudo;
+    }
+
     public function getId(): ?int
     {
         return $this->id;
@@ -175,7 +186,7 @@ class User implements UserInterface
 
     public function getUsername()
     {
-        return $this->getPseudo();
+        return $this->getEmail();
     }
 
     public function eraseCredentials()
