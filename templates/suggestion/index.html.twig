@@ -56,7 +56,6 @@
 {#Front, les cartes s'affichent les unes au dessous des autres,
 pouvez vous mettre chaque 3 à la ligne ?     #}
             <div class="row liste container">
-                <div>
                     {% for user in users %}
                         <div class="card" style="width: 18rem;">
                             <img src="../img/placeholder.jpg" class="card-img-top" alt="...">
@@ -83,58 +82,7 @@ pouvez vous mettre chaque 3 à la ligne ?     #}
                                 </tr>
                             </div>
                         </div>
-                        <div class="card" style="width: 18rem;">
-                            <img src="../img/placeholder.jpg" class="card-img-top" alt="...">
-                            {#<img src="{{ asset('../img/placeholder.jpg') }}" alt="">#}
-                            <div class="card-body">
-                                <tr>
-                                    <h5 class="card-title">{{ user.pseudo }}</h5>
-                                </tr>
-                                <tr>
-                                    <h5 class="card-title">{{ user.ville.nom }}</h5>
-                                </tr>
-                                <tr>
-                                    <h5 class="card-title">{{ user.genre.type }}</h5>
-                                </tr>
-                                <tr>
-                                    <p class="card-text">Ici la zone de cours texte du champ "A propos"</p>
-                                </tr>
-                                <tr>
-                                    <a href="#" class="btn btn-dark">Voir le profil</a>
-                                </tr>
-                                <hr>
-                                <tr>
-                                    <a href="#" class="btn btn-dark">Envoyer un mail: {{ user.email }}</a>
-                                </tr>
-                            </div>
-                        </div>
-                        <div class="card" style="width: 18rem;">
-                            <img src="../img/placeholder.jpg" class="card-img-top" alt="...">
-                            {#<img src="{{ asset('../img/placeholder.jpg') }}" alt="">#}
-                            <div class="card-body">
-                                <tr>
-                                    <h5 class="card-title">{{ user.pseudo }}</h5>
-                                </tr>
-                                <tr>
-                                    <h5 class="card-title">{{ user.ville.nom }}</h5>
-                                </tr>
-                                <tr>
-                                    <h5 class="card-title">{{ user.genre.type }}</h5>
-                                </tr>
-                                <tr>
-                                    <p class="card-text">Ici la zone de cours texte du champ "A propos"</p>
-                                </tr>
-                                <tr>
-                                    <a href="#" class="btn btn-dark">Voir le profil</a>
-                                </tr>
-                                <hr>
-                                <tr>
-                                    <a href="#" class="btn btn-dark">Envoyer un mail: {{ user.email }}</a>
-                                </tr>
-                            </div>
-                        </div>
                     {% endfor %}
-                </div>
             </div>
         </div>
     </div>
