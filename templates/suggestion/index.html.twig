@@ -62,10 +62,13 @@
                 <div class="row liste container">
                     <div>
                         <div class="card" style="width: 18rem;">
-                            <img src="img/old1.jpg" class="card-img-top" alt="...">
+                            <img src="../img/placeholder.jpg" class="card-img-top" alt="...">
+                            {#<img src="{{ asset('../img/placeholder.jpg') }}" alt="">#}
                             <div class="card-body">
-                                <h5 class="card-title">Elisabeth</h5>
+                                {% for user in users %}
+                                <h5 class="card-title">{{ user.pseudo }}</h5>
                                 <h5 class="card-title">Paris</h5>
+                                <h5 class="card-title">{{ user.email }}</h5>
                                 <h5 class="card-title">Drame</h5>
                                 <p class="card-text">Ici la zone de cours texte du champ "A propos"</p>
                                 <a href="#" class="btn btn-dark">Voir le profil</a>
@@ -75,32 +78,10 @@
                         </div>
                     </div>
                     <div>
-                        <div class="card" style="width: 18rem;">
-                            <img src="img/old2.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Marguerite</h5>
-                                <h5 class="card-title">Paris</h5>
-                                <h5 class="card-title">Drame</h5>
-                                <p class="card-text">Ici la zone de cours texte du champ "A propos"</p>
-                                <a href="#" class="btn btn-dark">Voir le profil</a>
-                                <hr>
-                                <a href="#" class="btn btn-dark">Envoyer un mail</a>
-                            </div>
-                        </div>
+
                     </div>
                     <div>
-                        <div class="card" style="width: 18rem;">
-                            <img src="img/old3.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Ginette</h5>
-                                <h5 class="card-title">Paris</h5>
-                                <h5 class="card-title">Drame</h5>
-                                <p class="card-text">Ici la zone de cours texte du champ "A propos"</p>
-                                <a href="#" class="btn btn-dark">Voir le profil</a>
-                                <hr>
-                                <a href="#" class="btn btn-dark">Envoyer un mail</a>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
                 <!--          Fin du container des 3 cartes pour traitement Ajax          -->
@@ -108,6 +89,7 @@
             </div>
         </div>
     </div>
+    {% endfor %}
     </body>
 
 {% endblock %}
