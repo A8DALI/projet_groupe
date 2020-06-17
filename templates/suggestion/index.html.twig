@@ -3,86 +3,111 @@
 {% block title %} Utilisateurs {% endblock %}
 
 {% block body %}
+    {#        {% for user in users %}#}
+    {#        <tr>#}
+    {#            <td>{{ user.pseudo }}</td>#}
+    {#            <td>{{ user.email }}</td>#}
+    {#            <td>{{ user.ville }}</td>#}
+    {#        </tr>#}
+    {#        {% endfor %}#}
 
-<div class="container">
+    {#    <a class="nav-link" href="{{ path('app_category_index', {'id': category.id}) }}">#}
+    {#        {{ category.name }}#}
+    {#    </a>#}
 
-{#Front, ça c'est le navbar globale#}
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">FilmAmi</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="{{ path('app_index_index') }}">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ path('app_suggestion_index') }}">Suggestions</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ path('app_profil_index') }}">Mon profil</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link nav-link2" href="#">Bonjour Davy !</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+    <body>
+    <div class="container">
 
-    <div class="row">
-        <div class="col-1"></div>
-        <div class="col-1">
-            <img class="logo" src="img/logo12.jpg" alt="">
-        </div>
-        <div class="col-10">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">FilmAmi</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                    aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Suggestions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Mon profil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link2" href="#">Bonjour {{ app.user }} !</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
 
-            <h1>Voici les personnes près de chez vous </h1>
-            <h1>qui partagent vos goûts cinématographiques!</h1>
-            <hr>
-            <h2>Vous pouvez :</h2>
-            <h3>Visiter leur profil, et peut-être ensuite leur proposer d'être votre ami sur ce site.</h3>
-            <h3>Ou directement leur envoyer un mail pour leur proposer une séance!</h3>
-            <h1>Bon film !</h1>
-            <hr>
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-1">
+                <img class="logo" src="img/logo12.jpg" alt="">
+            </div>
+            <div class="col-10">
 
-            <!--          Container des 3 cartes pour traitement Ajax          -->
+                <h1>Voici les personnes près de chez vous </h1>
+                <h1>qui partagent vos goûts cinématographiques!</h1>
+                <hr>
+                <h2>Vous pouvez :</h2>
+                <h3>Visiter leur profil, et peut-être ensuite leur proposer d'être votre ami sur ce site.</h3>
+                <h3>Ou directement leur envoyer un mail pour leur proposer une séance!</h3>
+                <h1>Bon film !</h1>
+                <hr>
 
-{#Front, les cartes s'affichent les unes au dessous des autres,
-pouvez vous mettre chaque 3 à la ligne ?     #}
-            <div class="row liste container">
-                <div>
-                    {% for user in users %}
+                <!--          Container des 3 cartes pour traitement Ajax          -->
+                <div class="row liste container">
+                    <div>
                         <div class="card" style="width: 18rem;">
-                            <img src="../img/placeholder.jpg" class="card-img-top" alt="...">
-                            {#<img src="{{ asset('../img/placeholder.jpg') }}" alt="">#}
+                            <img src="img/old1.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
-                                <tr>
-                                    <h5 class="card-title">{{ user.pseudo }}</h5>
-                                </tr>
-                                <tr>
-                                    <h5 class="card-title">{{ user.ville.nom }}</h5>
-                                </tr>
-                                <tr>
-                                    <h5 class="card-title">{{ user.genre.type }}</h5>
-                                </tr>
-                                <tr>
-                                    <p class="card-text">Ici la zone de cours texte du champ "A propos"</p>
-                                </tr>
-                                <tr>
-                                    <a href="#" class="btn btn-dark">Voir le profil</a>
-                                </tr>
-{#Front, j'ai mis une espèce en br entre les boutons, il vaut mieux faire qq chose plus jolie ? #}
-                                <br><br>
-                                <tr>
-                                    <a href="#" class="btn btn-dark">Envoyer un mail: {{ user.email }}</a>
-                                </tr>
+                                <h5 class="card-title">Elisabeth</h5>
+                                <h5 class="card-title">Paris</h5>
+                                <h5 class="card-title">Drame</h5>
+                                <p class="card-text">Ici la zone de cours texte du champ "A propos"</p>
+                                <a href="#" class="btn btn-dark">Voir le profil</a>
+                                <hr>
+                                <a href="#" class="btn btn-dark">Envoyer un mail</a>
                             </div>
                         </div>
-                    {% endfor %}
+                    </div>
+                    <div>
+                        <div class="card" style="width: 18rem;">
+                            <img src="img/old2.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Marguerite</h5>
+                                <h5 class="card-title">Paris</h5>
+                                <h5 class="card-title">Drame</h5>
+                                <p class="card-text">Ici la zone de cours texte du champ "A propos"</p>
+                                <a href="#" class="btn btn-dark">Voir le profil</a>
+                                <hr>
+                                <a href="#" class="btn btn-dark">Envoyer un mail</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="card" style="width: 18rem;">
+                            <img src="img/old3.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Ginette</h5>
+                                <h5 class="card-title">Paris</h5>
+                                <h5 class="card-title">Drame</h5>
+                                <p class="card-text">Ici la zone de cours texte du champ "A propos"</p>
+                                <a href="#" class="btn btn-dark">Voir le profil</a>
+                                <hr>
+                                <a href="#" class="btn btn-dark">Envoyer un mail</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <!--          Fin du container des 3 cartes pour traitement Ajax          -->
+
             </div>
         </div>
     </div>
-    {% endblock %}
+    </body>
+
+{% endblock %}
