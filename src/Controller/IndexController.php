@@ -37,9 +37,11 @@ class IndexController extends AbstractController
                 $manager->persist($user);
                 $manager->flush();
 
+                // On peut mettre le auto-login ici
+
                 //$this->addFlash('sucess', 'Vous êtes bien enregistré');
 
-                return $this->redirectToRoute('app_index_index');
+                return $this->redirectToRoute('app_suggestion_index');
 
             }
         }
