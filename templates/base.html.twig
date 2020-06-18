@@ -10,6 +10,7 @@
     <title>Filmami</title>
 </head>
 {#         ///////         NAVBAR    ADMIN            ///////               #}
+{% if is_granted('ROLE_ADMIN') %}
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <a class="navbar-brand" href="{{ path('app_index_index') }}">FilmAmi</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
@@ -44,6 +45,7 @@
         </div>
     </div>
 </nav>
+{% endif %}
 {#         ///////        FIN    NAVBAR   ADMIN             ///////               #}
 {#         ///////         NAVBAR   PUBLIC             ///////               #}
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
