@@ -8,6 +8,14 @@ body {
     margin-bottom: 20px;
     margin-top: 20px;
 }
+/*  NAVBAR   */
+.navbar-collapse {
+    display: flex;
+    justify-content: space-between;
+}
+.bonjour {
+    display: flex;
+}
 
 /*           BANNIERE   */
 .banniere {

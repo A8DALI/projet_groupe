@@ -2,12 +2,12 @@ controllers:
     resource: ../../src/Controller/
     type: annotation
 
-admin_controllers:
-    resource: ../../src/Controller/Admin/
-    type: annotation
+#admin_controllers:
+    #resource: ../../src/Controller/Admin/
+    #type: annotation
     #toutes les url des routes définies dans src/Controller/Admin
     #commencent par /admin
-    prefix: /admin
+    #prefix: /admin
 
 kernel:
     resource: ../../src/Kernel.php
