@@ -16,7 +16,12 @@ body {
 .bonjour {
     display: flex;
 }
-
+.nav-item {
+    color: white;
+}
+a {
+    color: white;
+}
 /*           BANNIERE   */
 .banniere {
     text-align: center;
