@@ -41,7 +41,7 @@ class User implements UserInterface
     /**
      * @var string|null
      * @Assert\NotBlank(message="Le mot de passe est obligatoire")
-     * @Assert\Regex("/^[a-zA-Z0-9_]{6,20}$/", message="Mot de passe non conforme")
+     * @Assert\Regex("/[a-zA-Z0-9]/", message="Mot de passe non conforme")
      */
     private $mdpClair;
 
