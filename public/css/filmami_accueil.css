@@ -33,6 +33,13 @@ body {
     padding-left: 30px;
 }
 
+.colgauche{
+    margin-left: 40px;
+}
+.card-body{
+    border: dimgrey solid 1px;
+}
+
 /* Inscription*/
 .inscription{
     font-size: 1.5rem;
@@ -51,10 +58,26 @@ footer {
     margin-top: 80px;
 }
 
-@media (max-width: 1300px)  {
-.col-4{
-    background-color: blue;
-}}
+@media (max-width: 1330px) {
+.apropos{
+    width: 70%;
+}
+    .card-body, .inscription, .inscription2{
+        margin-left: -100px;
+    }
+}
+@media (max-width: 950px) {
+    .apropos{
+        width: 70%;
+    }
+    .card-body{
+        margin-left: -100px;
+    }
+    .formconnex{
+        width: 300%;
+    }
+}
+
 
 
 

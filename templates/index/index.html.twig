@@ -78,10 +78,12 @@
         </div>
         <!--            Fin Carousel -->
 
+{#        <section class="main">#}
         <!--            Main A propos + Formulaire inscription -->
         <div class="row">
             <!--            A propos -->
             <div class="col-8">
+                <div class="apropos">
                 <h2 class="bienvenue">Le concept</h2>
                 <p>Filmami est une plateforme qui permet de vous mettre en relation avec des personnes près de chez
                     vous, ayant les mêmes goûts que vous en matière de film.</p>
@@ -100,19 +102,21 @@
                 <br>
                 <p>Notre objectif ? Que tous les fans de cinema puissent se retrouver sur une plateforme pour partager
                     leur passion commune.</p>
-                <br>
+                <br></div>
             </div>
             <!--            Formulaire inscription -->
+
             <div class="col-4">
+                <div class="inscrit">
             <span class="inscription">Pas encore membre? <br>
-                Inscrivez-vous, c'est gratuit !
+                <span class="inscription2">Inscrivez-vous, c'est gratuit !</span>
             <br>
             </span>
                 <br>
-                <div class="row">
+                    <div class="row">
                     <div class="col-7">
                         <!--          Formulaire d'inscription -->
-                        <div class="card-body border border-dark">
+                        <div class="card-body">
                             {{ form_start(form) }}
                             <div class="col-md-8 p-1">{{ form_row(form.pseudo) }}</div>
                             <div class="col-md-8 p-1">{{ form_row(form.ville) }}</div>
@@ -126,9 +130,11 @@
                     </div>
                 </div>
             </div>
+            </div>
             <br>
         </div>
-    </div>
+{#        </section>#}
+
     <!--            Fin main -->
 
     <!--          Fin container -->
