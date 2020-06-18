@@ -1,11 +1,18 @@
 
 .navbar {
-    margin-bottom: 40px;
+
 }
 .card {
     margin-bottom: 30px;
 }
-
+.liste {
+    display: flex;
+    justify-content: space-evenly;
+}
+.dl_bonjour {
+    margin-left: 400px;
+    margin-right: 50px;
+}
 footer {
     display: flex;
     flex-direction: column;
@@ -13,8 +20,4 @@ footer {
     background-color: black;
     color: white;
     margin-top: 80px;
-}
-.liste {
-    display: flex;
-    justify-content: space-evenly;
 }
