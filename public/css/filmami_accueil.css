@@ -36,9 +36,12 @@ body {
 .colgauche{
     margin-left: 40px;
 }
+
 .card-body{
+    margin-left: 10%;
     border: dimgrey solid 1px;
 }
+
 
 /* Inscription*/
 .inscription{
@@ -62,21 +65,126 @@ footer {
 .apropos{
     width: 70%;
 }
+
     .card-body, .inscription, .inscription2{
         margin-left: -100px;
     }
 }
-@media (max-width: 950px) {
-    .apropos{
-        width: 70%;
+
+#smallscreen{
+    display: none;
+}
+
+/*Media 810px*/
+@media (max-width: 864px) {
+
+    /*Header*/
+    .logo {
+        display: none;
     }
-    .card-body{
-        margin-left: -100px;
+
+    #emailco {
+        width: 85%;
     }
-    .formconnex{
-        width: 300%;
+
+    #mdpco {
+        width: 85%;
+    }
+
+    .form-control {
+        margin-right: 200px;
+        height: 80%;
+    }
+
+    .form-group {
+        font-size: medium;
+    }
+
+    /* bannière*/
+    .bienvenue {
+        margin-top: 5%;
+        font-size: x-large;
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 10px;
+        margin-left: 10px;
+    }
+
+    .banniere {
+        text-align: center;
+    }
+
+    .nomdusite {
+        font-size: xx-large;
+        margin-left: 0;
+    }
+
+    .argument {
+        font-size: medium;
+    }
+
+    .apropos {
+        width: 130%;
+    }
+
+    .row {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .inscription .inscription2 {
+        margin-left: 120px;
+        font-size: small;
+    }
+
+    p {
+        margin-left: 30px;
+        margin-right: 0;
+    }
+
+    .card-body {
+        width: 80%;
+    }
+
+    .card-body {
+        border: none;
+        margin-left: 15px;
+    }
+
+    .formco{
+        margin-left: 70%;
+        border: dimgrey solid 1px;
+    }
+
+    #bigscreen {
+        display: none;
+    }
+    #smallscreen {
+        display: inline;
+        margin-bottom: 20px;
+        margin-left: 52px;
+        width: 80%;
     }
 }
+/*Media 768 px*/
+@media (max-width: 766px) {
+    #smallscreen {
+        width: 185px;
+    }
+}
+
+/*Media 530 px*/
+@media (max-width: 530px) {
+    .formco{
+        /*align-items: center;*/
+        /*margin: auto;*/
+    }
+
+}
+
+
 
 
 
