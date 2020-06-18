@@ -7,7 +7,7 @@
 {% block title %} Utilisateurs {% endblock %}
 
 {% block body %}
-    <br><br>
+    <br><br><br>
 <div class="container">
 
 {#Front, ça c'est le navbar globale#}
@@ -53,22 +53,20 @@
 
             <!--          Container des 3 cartes pour traitement Ajax          -->
 
-{#Front, les cartes s'affichent les unes au dessous des autres,
-pouvez vous mettre chaque 3 à la ligne ?     #}
             <div class="row liste container">
-                    {% for user in users %}
+                    {% for suggestion in suggestions %}
                         <div class="card" style="width: 18rem;">
                             <img src="../img/placeholder.jpg" class="card-img-top" alt="...">
                             {#<img src="{{ asset('../img/placeholder.jpg') }}" alt="">#}
                             <div class="card-body">
                                 <tr>
-                                    <h5 class="card-title">{{ user.pseudo }}</h5>
+                                    <h5 class="card-title">{{ suggestion.pseudo }}</h5>
                                 </tr>
                                 <tr>
-                                    <h5 class="card-title">{{ user.ville.nom }}</h5>
+                                    <h5 class="card-title">{{ suggestion.ville.nom }}</h5>
                                 </tr>
                                 <tr>
-                                    <h5 class="card-title">{{ user.genre.type }}</h5>
+                                    <h5 class="card-title">{{ suggestion.genre.type }}</h5>
                                 </tr>
                                 <tr>
                                     <p class="card-text">Ici la zone de cours texte du champ "A propos"</p>
@@ -78,7 +76,7 @@ pouvez vous mettre chaque 3 à la ligne ?     #}
                                 </tr>
                                 <hr>
                                 <tr>
-                                    <a href="#" class="btn btn-dark">Envoyer un mail: {{ user.email }}</a>
+                                    <a href="#" class="btn btn-dark">Envoyer un mail: {{ suggestion.email }}</a>
                                 </tr>
                             </div>
                         </div>
