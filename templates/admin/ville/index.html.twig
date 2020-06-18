@@ -1,1 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
 <h1>Gestion des Villes</h1>
+
+{{ form_start(form) }}
+
+{{ form_row(form.nom) }}
+<button type="submit">Validez</button>
+
+{{ form_end(form) }}
+
+<table class="table table-striped">
+    <tr class="table-dark">
+        <th>Villes</th>
+        <th width="300px">Action</th>
+    </tr>
+    {% for ville in villes %}
+    <tr>
+        <td>{{ ville.nom }}</td>
+        <td>
+            <a href="{{ path('app_admin_ville_index', {'id': ville.id}) }}">Modifier</a>
+            <a href="{{ path('app_admin_ville_efface', {'id': ville.id}) }}"
+            class="btn-delete">Supprimer</a>
+        </td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+<!-- Modal -->
+<div class="modal fade" id="modal_delete" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5>Etes-vous sûr de vouloir supprimer cette ville?</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-confirm-delete" data-dismiss="modal">Oui</button>
+                <button type="button" class="btn btn-primary btn-no-delete">Non</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('js/admin_ville.js') }}"></script>
+
+{% endblock %}
