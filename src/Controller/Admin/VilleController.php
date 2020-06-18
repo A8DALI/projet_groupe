@@ -28,7 +28,7 @@ class VilleController extends AbstractController
         } else {
             $ville = $repository->find($id);
 
-            $this->addFlash('info', 'Modifiez dans le champs de saisie et validez');
+            $this->addFlash('info', 'Modifiez dans le champ de saisie et validez');
 
         }
 
