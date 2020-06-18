@@ -3,12 +3,13 @@
 {% block javascripts %}
     {{ parent() }}
     <link rel="stylesheet" href="{{ asset('css/suggestions.css') }}" type="text/css">
+    <script src="{{ asset('js/plus_suggestions.js') }}"></script>
 {% endblock %}
 
 {% block title %} Utilisateurs {% endblock %}
 
 {% block body %}
-    <br><br><br>
+
 <div class="container">
 
     <div class="row">
@@ -28,8 +29,8 @@
             <hr>
 
             <!--          Container des 3 cartes pour traitement Ajax          -->
-
-            <div class="row liste container">
+            <div id="cartes_row">
+                <div class="row liste container">
                     {% for suggestion in suggestions %}
                         <div class="card" style="width: 18rem;">
                             <img src="../img/placeholder.jpg" class="card-img-top" alt="...">
@@ -57,10 +58,14 @@
                             </div>
                         </div>
                     {% endfor %}
+                </div>
             </div>
         </div>
-        <form method="post">
-            <button type="submit" class="btn btn-primary mb-2">Voir plus de résultats</button>
+        <form id="plus" method="get">
+            <a type="button" id="load" class="btn btn-primary mb-2
+            href="{{ path('app_suggestion_plusdesuggestions') }}" >
+            Voir plus de résultats
+            </a>
         </form>
     </div>
     {% endblock %}

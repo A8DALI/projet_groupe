@@ -2,9 +2,8 @@
 
 	namespace App\Controller;
 
-//	use App\Entity\User;
 	use App\Repository\UserRepository;
-//	use Doctrine\ORM\EntityManagerInterface;
+	use Symfony\Component\HttpFoundation\Response;
 	use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 	use Symfony\Component\Routing\Annotation\Route;
 
@@ -45,5 +44,27 @@
 //					'suggestions' => $suggestions
 //				]
 //			);
+		}
+
+		/**
+		 * @Route("/suggestions/plus")
+		 */
+		public function plusDeSuggestions(UserRepository $repository)
+		{
+
+			$offset = $_GET['getresult'];
+
+			$Loggeduser = $this->getUser();
+
+			$suggestions = $this->getDoctrine()->getRepository("App:User")->findByVilleEtGenre($Loggeduser, $offset);
+
+			if (empty($suggestions)) {
+				return new Response('erreur');
+			}
+
+			return $this->render('plusdesuggestions/index.html.twig',
+				[
+					'suggestions' => $suggestions
+				]);
 		}
 	}

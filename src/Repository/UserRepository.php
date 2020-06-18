@@ -48,7 +48,7 @@
 		}
 		*/
 
-		public function findByVilleEtGenre($user)
+		public function findByVilleEtGenre($user, $offset=0)
 		{
 
 			$query = $this->createQueryBuilder('u')
@@ -60,7 +60,8 @@
 				->setParameter('ville', $user->getVille())
 				->setParameter('genre', $user->getGenre())
 				->orderBy('u.id', 'DESC')
-				->setMaxResults(3);
+				->setMaxResults(3)
+				->setFirstResult($offset);
 
 			return $query->getQuery()->getResult();
 

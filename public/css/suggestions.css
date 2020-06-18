@@ -1,6 +1,17 @@
 
-.navbar {
-
+/*  NAVBAR   */
+.navbar-collapse {
+    display: flex;
+    justify-content: space-between;
+}
+.nav-item {
+    color: white;
+}
+a {
+    color: white;
+}
+.bonjour {
+    display: flex;
 }
 .card {
     margin-bottom: 30px;
@@ -8,10 +19,6 @@
 .liste {
     display: flex;
     justify-content: space-evenly;
-}
-.dl_bonjour {
-    margin-left: 400px;
-    margin-right: 50px;
 }
 footer {
     display: flex;
