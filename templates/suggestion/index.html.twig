@@ -19,10 +19,9 @@
             <h1>qui partagent vos goûts cinématographiques!</h1>
             <hr>
             <h2>Vous pouvez :</h2>
-            <h3>Visiter leur profil, et peut-être ensuite leur proposer d'être votre ami sur ce site.</h3>
-            <h3>Ou directement leur envoyer un mail pour leur proposer une séance!</h3>
-            <h1>Bon film !</h1>
-            <hr>
+            <h4>Visiter leur profil, et peut-être ensuite leur proposer d'être votre ami sur ce site.</h4>
+            <h4>Ou directement leur envoyer un mail pour leur proposer une séance!</h4>
+            <h2>Bon film !</h2>
         </div>
 
 
@@ -32,7 +31,7 @@
                 <div class="row liste container">
                     {% for suggestion in suggestions %}
                         <div class="card" style="width: 18rem;">
-                            <img src="../img/placeholder.jpg" class="card-img-top" alt="...">
+                            <img src="../img/placeholder2_25.jpg" class="card-img-top" alt="...">
                             {#<img src="{{ asset('../img/placeholder.jpg') }}" alt="">#}
                             <div class="card-body">
                                 <tr>
@@ -61,13 +60,16 @@
                 </div>
             </div>
         </div>
-
-        <form id="plus" method="get">
-            <a type="button" id="load" class="btn btn-dark mb-2
+        <hr>
+        <div>
+            <h2>Voulez-vous voir d'autres personnes ?</h2>
+            <form id="plus" method="get">
+                <a type="button" id="load" class="btn btn-dark mb-2
             href="{{ path('app_suggestion_plusdesuggestions') }}" >
-            Voir plus de résultats
-            </a>
-        </form>
+                Voir plus de résultats !
+                </a>
+            </form>
+        </div>
 
     </div>
 {% endblock %}
