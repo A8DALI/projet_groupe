@@ -11,15 +11,10 @@
 
 {% block body %}
 
-<div class="container">
+    <div class="container-fluid">
 
-    <div class="row">
-        <div class="col-1"></div>
-        <div class="col-1">
-            <img class="logo" src="img/logo12.jpg" alt="">
-        </div>
-        <div class="col-10">
 
+        <div>
             <h1>Voici les personnes près de chez vous </h1>
             <h1>qui partagent vos goûts cinématographiques!</h1>
             <hr>
@@ -28,7 +23,10 @@
             <h3>Ou directement leur envoyer un mail pour leur proposer une séance!</h3>
             <h1>Bon film !</h1>
             <hr>
+        </div>
 
+
+        <div>
             <!--          Container des 3 cartes pour traitement Ajax          -->
             <div id="cartes_row">
                 <div class="row liste container">
@@ -50,7 +48,8 @@
                                     <p class="card-text">Ici la zone de cours texte du champ "A propos"</p>
                                 </tr>
                                 <tr>
-                                    <a href="{{ path('app_suggestion_profilsuggestion', {'id': suggestion.id}) }}}" class="btn btn-dark">Voir le profil</a>
+                                    <a href="{{ path('app_suggestion_profilsuggestion', {'id': suggestion.id}) }}}"
+                                       class="btn btn-dark">Voir le profil</a>
                                 </tr>
                                 <hr>
                                 <tr>
@@ -62,11 +61,13 @@
                 </div>
             </div>
         </div>
+
         <form id="plus" method="get">
-            <a type="button" id="load" class="btn btn-primary mb-2
+            <a type="button" id="load" class="btn btn-dark mb-2
             href="{{ path('app_suggestion_plusdesuggestions') }}" >
             Voir plus de résultats
             </a>
         </form>
+
     </div>
-    {% endblock %}
+{% endblock %}
