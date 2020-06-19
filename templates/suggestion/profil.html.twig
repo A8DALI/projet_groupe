@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/filmami_commun.css') }}">
+
+{% endblock %}
+
+{% block title %} Profil suggestion {% endblock %}
+
+
+
+{% block body %}
+
+   Nom : {{ profilsuggestion.pseudo }} <br>
+    Email: {{ profilsuggestion.pseudo }} <br>
+    Ville : {{ profilsuggestion.ville.nom }} <br>
+    Genre : {{ profilsuggestion.genre.type }}
+
+{% endblock %}
