@@ -1,7 +1,12 @@
-body {
+/* ----------------------------- HEADER ---------------------- */
+
+/* ----- Formulaire de connexion ---- */
+
+.logo {
+    width: 5%;
+    height: 5%;
 }
 
-/* FOMULAIRE DE CONNEXION */
 .formconnex {
     display: flex;
     justify-content: space-between;
@@ -9,32 +14,33 @@ body {
     margin-top: 20px;
 
 }
-/*  NAVBAR   */
+
+/* ----- Navbar ---- */
 .navbar-collapse {
     display: flex;
     justify-content: space-between;
 }
+
 .bonjour {
     display: flex;
 }
+
 .nav-item {
     color: white;
 }
+
 a {
     color: white;
 }
-/*           BANNIERE   */
+
+
+/* ----- Bannière ---- */
 .banniere {
     text-align: center;
 }
 
-.bienvenue {
-    margin-left: 30px;
-}
-
 .nomdusite {
     font-size: 2em;
-    margin-left: 30px;
 }
 
 .argument {
@@ -42,29 +48,32 @@ a {
     margin-left: 30px;
 }
 
-.forminscript {
-    padding-left: 30px;
-}
-
-.colgauche{
+/* ---------------------------  MAIN --------------------------------- */
+/* ----- Partie gauche ---- */
+.colgauche {
     margin-left: 40px;
 }
 
-.card-body{
+/* ----- Partie droite ---- */
+
+/* ----- Texte au dessus du formulaire d'inscription ---- */
+.inscription, .inscription2 {
+    font-size: 1.5rem;
+    margin-left: 3%;
+}
+
+/* ----- Formulaire inscription ---- */
+.card-body {
     margin-left: 10%;
+    margin-top: 5%;
     border: dimgrey solid 1px;
 }
 
-
-/* Inscription*/
-.inscription{
-    font-size: 1.5rem;
-    /*text-align: center;*/
-}
-
-h4{
+/* ----------------------- FOOTER ----------------------- */
+h4 {
     margin-top: 20px;
 }
+
 footer {
     display: flex;
     flex-direction: column;
@@ -74,46 +83,52 @@ footer {
     margin-top: 80px;
 }
 
-@media (max-width: 1330px) {
-.apropos{
-    width: 70%;
-}
+/* -------------------------------------- MEDIA QUERIES ------------------------------------------------ */
 
-    .card-body, .inscription, .inscription2{
+/* ----- Très grand écrans ---- */
+@media (max-width: 1458px) {
+
+    .apropos {
+        width: 70%;
+    }
+
+    .card-body, .inscription, .inscription2 {
         margin-left: -100px;
     }
 }
 
-#smallscreen{
-    display: none;
+/* Bouton inscription :*/
+
+#boutoninscription {
+    margin-left: 5%;
 }
 
-/*Media 810px*/
-@media (max-width: 864px) {
+/* ------------------------------------------- Media 865px -------------------------------- */
+@media (max-width: 865px) {
 
-    /*Header*/
-    .logo {
-        display: none;
+    /* ----------------------- HEADER ---------------------- */
+    /* ----- Zone de connexion ---- */
+    .form-inline {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
     }
 
-    #emailco {
-        width: 85%;
+    #dejamembre {
+        margin-right: 13%;
     }
 
-    #mdpco {
-        width: 85%;
-    }
-
-    .form-control {
-        margin-right: 200px;
-        height: 80%;
+    #btnco {
+        margin-right: 10%;
     }
 
     .form-group {
         font-size: medium;
     }
 
-    /* bannière*/
+    /* ----- Bannière ---- */
     .bienvenue {
         margin-top: 5%;
         font-size: x-large;
@@ -138,18 +153,16 @@ footer {
         font-size: medium;
     }
 
-    .apropos {
-        width: 130%;
-    }
-
+    /* ---------------------- MAIN ------------------------------ */
+    /*----- Général ----*/
     .row {
         display: flex;
         flex-direction: column;
     }
 
-    .inscription .inscription2 {
-        margin-left: 120px;
-        font-size: small;
+    /* ----- Main gauche ---- */
+    .apropos {
+        width: 150%;
     }
 
     p {
@@ -157,48 +170,75 @@ footer {
         margin-right: 0;
     }
 
-    .card-body {
-        width: 80%;
+    /* ----- Main Droit ---- */
+    .col-4 {
+        margin-left: 50%;
+    }
+
+    .inscription, .inscription2 {
+        margin-left: -180px;
     }
 
     .card-body {
-        border: none;
-        margin-left: 15px;
+        margin-left: -200px;
     }
 
-    .formco{
-        margin-left: 70%;
-        border: dimgrey solid 1px;
-    }
 
-    #bigscreen {
-        display: none;
-    }
-    #smallscreen {
+    /* ----- Boutons ---- */
+    #boutoninscription {
         display: inline;
         margin-bottom: 20px;
-        margin-left: 52px;
+        margin-left: -1%;
         width: 80%;
     }
 }
-/*Media 768 px*/
-@media (max-width: 766px) {
-    #smallscreen {
-        width: 185px;
+
+/*Media 472px*/
+@media (max-width: 550px) {
+    #emailco {
+        width: 100%;
+    }
+
+    #mdpco {
+        width: 100%;
     }
 }
 
-/*Media 530 px*/
-@media (max-width: 530px) {
-    .formco{
-        /*align-items: center;*/
-        /*margin: auto;*/
+/*Media 472px*/
+@media (max-width: 472px) {
+    .col-4 {
+        margin-left: 60%;
     }
-
 }
 
+/*Media 385px*/
+@media (max-width: 395px) {
+    .col-4 {
+        margin-left: 70%;
+    }
 
+    .inscription, .inscription2 {
+        font-size: large;
+    }
 
+    .col-7 {
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 291px) {
+    .col-4 {
+        margin-left: 90%;
+    }
+
+    .inscription, .inscription2 {
+        font-size: large;
+    }
+
+    .inscription, .inscription2 {
+        font-size: medium;
+    }
+}
 
 
 
