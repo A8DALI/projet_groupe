@@ -2,6 +2,9 @@
 h1{
     text-align: center;
 }
+h2{
+    font-size: x-large;
+}
 .img-thumbnail{
     width: 70%;
 }
@@ -12,9 +15,6 @@ h1{
 #profil{
     border: 1px solid dimgrey;
     margin: 3% 31% 5% 31%;
-}
-.texteprofil{
-
 }
 #apropos{
     text-align: center;
