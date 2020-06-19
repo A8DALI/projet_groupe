@@ -3,8 +3,11 @@
 	namespace App\Controller;
 
 	use App\Entity\User;
+	use App\Form\ModificationType;
 	use App\Repository\UserRepository;
+	use Doctrine\ORM\EntityManagerInterface;
 	use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+	use Symfony\Component\HttpFoundation\Request;
 	use Symfony\Component\Routing\Annotation\Route;
 
 	/**
@@ -35,11 +38,85 @@
 		}
 
 		/**
-		 * @Route("/edition")
+		 * @Route("/edition/{id}", defaults={"id": null})
 		 */
-		public function edit()
+		public function edit(Request $request,
+							 EntityManagerInterface $manager,
+							 UserRepository $repository,
+							 $id)
 		{
-			return $this->render('profil/edit.html.twig');
+			$originalImage = null;
+			$user = $repository->find($id);
+
+			$details = $manager->find(User::class, $user);
+
+			if (!is_null($details->getImage())) {
+				// nom du fichier venant de la bdd
+				$originalImage = $details->getImage();
+
+				// le champ de formulaire attend un objet File
+				// utilisant le chemin vers le fichier
+				$details->setImage(
+					new File($this->getParameter('upload_dir') . $details->getImage())
+				);
+			}
+
+			$form = $this->createForm(ModificationType::class, $details);
+
+			$form->handleRequest($request);
+
+			if ($form->isSubmitted()) {
+				if ($form->isValid()) {
+					/** @var UploadedFile|null $image */
+					$image = $details->getImage();
+
+					// si une image a été uploadée
+					if (!is_null($image)) {
+						// nom sous lequel on va enregistrer l'image
+						$filename = uniqid() . '.' . $image->guessExtension();
+
+						// déplacement de l'image uploadée
+						$image->move(
+						// dans quel répertoire
+						// cf config/services.yaml
+							$this->getParameter('upload_dir'),
+							// nom du fichier
+							$filename
+						);
+
+						// pour enregistrer le nom du fichier en bdd
+						$details->setImage($filename);
+
+						// en modification, suppression de l'ancienne image si l'article en avait une
+						if (!is_null($originalImage)) {
+							unlink($this->getParameter('upload_dir') . $originalImage);
+						}
+					} else {
+						// en modification, sans upload,
+						// on remets le nom de l'image venant de la bdd
+						$details->setImage($originalImage);
+					}
+
+					$manager->persist($details);
+					$manager->flush();
+
+					$this->addFlash('success', "Le profile est mis à jour");
+
+					return $this->redirectToRoute('app_profil_index');
+				} else {
+					$this->addFlash('error', 'Le formulaire contient des erreurs');
+				}
+			}
+
+			return $this->render('profil/edit.html.twig',
+				[
+//					'user' => $user,
+					'details' => $details,
+					'form' => $form->createView(),
+					'original_image' => $originalImage
+				]
+			);
+
 		}
 	}
 

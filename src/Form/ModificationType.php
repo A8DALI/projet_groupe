@@ -9,6 +9,7 @@
 	use Symfony\Component\Form\AbstractType;
 	use Symfony\Component\Form\Extension\Core\Type\EmailType;
 	use Symfony\Component\Form\Extension\Core\Type\FileType;
+	use Symfony\Component\Form\Extension\Core\Type\NumberType;
 	use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 	use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 	use Symfony\Component\Form\Extension\Core\Type\TextareaType;
@@ -22,9 +23,9 @@
 		{
 			$builder
 				->add('pseudo',
-					TextareaType::class,
+					TextType::class,
 					[
-						'label' => 'Pseudo'
+						'label' => 'Votre pseudo'
 					]
 				)
 				->add('email',
@@ -33,19 +34,19 @@
 						'label' => 'E-mail'
 					]
 				)
-				->add('mdpClair',
+/*				->add('mdpClair',
 					RepeatedType::class,
 					[
 						'type' => PasswordType::class,
 						'first_options' => [
-							'Nouveau mot de passe',
+							'label' => 'Nouveau mot de passe',
 						],
 						'second_options' => [
 							'label' => 'Confirmation du nouveau mot de passe'
 						],
 						'invalid_message' => 'La confirmation ne correspond pas au mot de passe'
 					]
-				)
+				)*/
 //				->add('role')
 				->add('ville',
 					EntityType::class,
@@ -79,6 +80,12 @@
 						'label' => 'Votre sexe',
 						'required' => false
 
+					]
+				)->add('age',
+					NumberType::class,
+					[
+						'label' => 'Votre age',
+						'required' => false
 					]
 				)
 				->add('image',

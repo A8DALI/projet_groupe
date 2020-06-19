@@ -1,10 +1,37 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-<h1>Salut</h1>
-{% endblock %}
+    <h1>Edition Profil</h1>
 
-{% block title %}
+    {{ form_start(form) }}
+
+    <div class="card-body">
+        <div class="col-md-8 p-1">{{ form_row(form.pseudo) }}</div>
+        <div class="col-md-8 p-1">{{ form_row(form.ville) }}</div>
+        <div class="col-md-8 p-1">{{ form_row(form.genre) }}</div>
+        <div class="col-md-8 p-1">{{ form_row(form.email) }}</div>
+{#        <div class="col-md-8 p-1">{{ form_row(form.mdpClair) }}</div>#}
+        <div class="col-md-8 p-1">{{ form_row(form.sexe) }}</div>
+        <div class="col-md-8 p-1">{{ form_row(form.age) }}</div>
+        <div class="col-md-8 p-1">{{ form_row(form.info) }}</div>
+        {{ form_row(form.image) }}
+        {% if original_image is not null %}
+            <p>Actuellement : </p>
+            <img src="{{ asset('images/' ~ original_image) }}" height="150px">
+        {% endif %}
+    </div>
+
+    <div class="text-right">
+        <button type="submit" class="btn btn-primary">
+            Enregistrer
+        </button>
+{#        <a class="btn btn-outline-secondary"
+           href="{{ path('app_profil_index') }}">
+            Retour
+        </a>#}
+    </div>
+
+    {{ form_end(form) }}
 
 {% endblock %}
 
