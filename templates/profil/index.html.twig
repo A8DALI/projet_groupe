@@ -9,7 +9,7 @@
 {% block title %}{% endblock %}
 
 {% block body %}
-
+    <br><br>
 
     <div class="row">
         <div class="col-1"></div>
@@ -20,13 +20,18 @@
             <img class="img-thumbnail" src="{{ asset('img/placeholder.jpg') }}" alt="">
         </div>
         <div class="col-3 fiche">
-            Pseudo : Elsa <br>
-            Ville: Paris <br>
-            Age : 26 ans <br>
-            Profession : infirmière <br>
+            ID : {{ profil.id }} <br>
+            Pseudo : {{ profil.pseudo }} <br>
+            Email : {{ profil.email }} <br>
+            Ville: {{ profil.ville.nom }} <br>
+            Genre de films préféré : {{ profil.genre.type }}
+
             <hr>
-            Genre de films préféré : Drame
+            Age : 26 ans <--en dure <br>
+            Profession : infirmière <--en dure <br>
+            A propos de moi : ABC <--en dure <br>
         </div>
+{#
         <div class="col-3">
             <h1>Mes amis :</h1>
             <hr>
@@ -44,6 +49,7 @@
             </div>
 
         </div>
+#}
     </div>
 
 
