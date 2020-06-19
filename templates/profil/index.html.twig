@@ -9,30 +9,34 @@
 
 {% block body %}
     <div class="container-fluid">
-    <div class="row">
-
-{#        <!-------- Image logo -------->#}
-{#        <div class="col-1">#}
-{#            <img class="logo" src="{{ asset('img/logo12.jpg') }}" alt="">#}
-{#        </div>#}
-
-        <!-------- Image profil -------->
-
-
+        <div class="row">
+            <div class="col" id="titreprofil">
+                <h1>Mon profil</h1>
+            </div>
+        </div>
         <!-------- Fiche profil -------->
+<div class="row">
         <div class="col" id="profil">
-            <div class="float-left"><img class="img-thumbnail" src="{{ asset('img/placeholder2.png') }}" alt=""></div>
+            <div class="float-left"><img class="img-thumbnail" src="{{ asset('img/placeholder_3.png') }}" alt=""></div>
+            <div class="col-11 p-1"> <h2>Pseudo : {{ profil.pseudo }}</h2></div>
 <div class="texteprofil">
 {#    <div class="col-11 p-1">ID : {{ profil.id }}</div>#}
-    <div class="col-11 p-1">Pseudo : {{ profil.pseudo }}</div>
-    <div class="col-11 p-1"> Email : {{ profil.email }}</div>
+
     <div class="col-11 p-1">Ville: {{ profil.ville.nom }}</div>
+    <div class="col-11 p-1">Age : 26 ans </div>
+    <div class="col-11 p-1">Profession : infirmière</div>
+    <div class="col-11 p-1"> Email : {{ profil.email }}</div>
+    <br>
     <div class="col-11 p-1">Genre de films préféré : {{ profil.genre.type }}</div>
-    <hr>
-    <div class="col-11 p-1">Age : 26 ans <--en dure </div>
-    <div class="col-11 p-1">Profession : infirmière <--en dure</div>
-    <div class="col-11 p-1">A propos de moi : ABC <--en dure</div>
+</div>
+            <hr>
+
+<div class="row">
+    <div class="col" id="apropos">A propos de moi :</div>
+</div>
         </div>
+    </div>
+
 {#
         <div class="col-3">
             <h1>Mes amis :</h1>
@@ -54,6 +58,10 @@
 #}
     </div>
 
+    <a type="button" href="{{ path('app_profil_edit') }}"
+       class="btn btn-info">
+        Modifier votre profile
+    </a>
         <!-------- Fin container fluid -------->
-    </div>
+
 {% endblock %}

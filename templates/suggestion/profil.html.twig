@@ -12,9 +12,19 @@
 
 {% block body %}
 
-   Nom : {{ profilsuggestion.pseudo }} <br>
-    Email: {{ profilsuggestion.pseudo }} <br>
-    Ville : {{ profilsuggestion.ville.nom }} <br>
-    Genre : {{ profilsuggestion.genre.type }}
+    <img class="img-thumbnail" src="{{ asset('img/placeholder2_25.jpg') }}" alt="">
+
+
+
+        <h5>Pseudo : {{ profilsuggestion.pseudo }} </h5>
+        <h5>Email: {{ profilsuggestion.pseudo }}</h5>
+        <h5>Ville : {{ profilsuggestion.ville.nom }}</h5>
+        <h5>Genre : {{ profilsuggestion.genre.type }}</h5>
+
+
+
+
+
+
 
 {% endblock %}
