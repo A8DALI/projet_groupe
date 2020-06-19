@@ -7,10 +7,13 @@
 	use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 	use Symfony\Component\Routing\Annotation\Route;
 
+	/**
+	 * @Route("/profil")
+	 */
 	class ProfilController extends AbstractController
 	{
 		/**
-		 * @Route("/profil")
+		 * @Route("/")
 		 */
 		public function index(UserRepository $repository)
 		{
@@ -30,4 +33,13 @@
 				]
 			);
 		}
+
+		/**
+		 * @Route("/edition")
+		 */
+		public function edit()
+		{
+			return $this->render('profil/edit.html.twig');
+		}
 	}
+
