@@ -2,34 +2,36 @@
 
 {% block javascripts %}
     {{ parent() }}
-    <link rel="stylesheet" href="{{ asset('css/filmami_commun.css') }}">
     <link rel="stylesheet" href="{{ asset('css/profil.css') }}" type="text/css">
 {% endblock %}
 
 {% block title %}{% endblock %}
 
 {% block body %}
-    <br><br>
-
+    <div class="container-fluid">
     <div class="row">
-        <div class="col-1"></div>
-        <div class="col-1">
-            <img class="logo" src="{{ asset('img/logo12.jpg') }}" alt="">
-        </div>
-        <div class="col-3">
-            <img class="img-thumbnail" src="{{ asset('img/placeholder.jpg') }}" alt="">
-        </div>
-        <div class="col-3 fiche">
-            ID : {{ profil.id }} <br>
-            Pseudo : {{ profil.pseudo }} <br>
-            Email : {{ profil.email }} <br>
-            Ville: {{ profil.ville.nom }} <br>
-            Genre de films préféré : {{ profil.genre.type }}
 
-            <hr>
-            Age : 26 ans <--en dure <br>
-            Profession : infirmière <--en dure <br>
-            A propos de moi : ABC <--en dure <br>
+{#        <!-------- Image logo -------->#}
+{#        <div class="col-1">#}
+{#            <img class="logo" src="{{ asset('img/logo12.jpg') }}" alt="">#}
+{#        </div>#}
+
+        <!-------- Image profil -------->
+
+
+        <!-------- Fiche profil -------->
+        <div class="col" id="profil">
+            <div class="float-left"><img class="img-thumbnail" src="{{ asset('img/placeholder2.png') }}" alt=""></div>
+<div class="texteprofil">
+{#    <div class="col-11 p-1">ID : {{ profil.id }}</div>#}
+    <div class="col-11 p-1">Pseudo : {{ profil.pseudo }}</div>
+    <div class="col-11 p-1"> Email : {{ profil.email }}</div>
+    <div class="col-11 p-1">Ville: {{ profil.ville.nom }}</div>
+    <div class="col-11 p-1">Genre de films préféré : {{ profil.genre.type }}</div>
+    <hr>
+    <div class="col-11 p-1">Age : 26 ans <--en dure </div>
+    <div class="col-11 p-1">Profession : infirmière <--en dure</div>
+    <div class="col-11 p-1">A propos de moi : ABC <--en dure</div>
         </div>
 {#
         <div class="col-3">
@@ -52,7 +54,6 @@
 #}
     </div>
 
-
-{#    Fin container fluid#}
-</div>
+        <!-------- Fin container fluid -------->
+    </div>
 {% endblock %}
