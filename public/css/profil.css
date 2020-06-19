@@ -1,14 +1,22 @@
 /* --------------------  MAIN ------------------------  */
-
+h1{
+    text-align: center;
+}
 .img-thumbnail{
-margin-right: 25px;
+    width: 70%;
 }
 
+#pseudo{
+    font-size: large;
+}
 #profil{
     border: 1px solid dimgrey;
-    margin: 10% 10% 10% 10%;
+    margin: 3% 31% 5% 31%;
 }
 .texteprofil{
-    margin-top: 20px;
+
+}
+#apropos{
+    text-align: center;
 }
 
