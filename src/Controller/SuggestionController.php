@@ -67,4 +67,19 @@
 					'suggestions' => $suggestions
 				]);
 		}
+
+        /**
+         * @Route("/suggestion/profil/{id}")
+         */
+        public function profilSuggestion(UserRepository $repository, $id)
+        {
+            $profilSuggestion = $repository->find($id);
+
+
+            return $this->render('suggestion/profil.html.twig',
+            [
+                'profilsuggestion' => $profilSuggestion
+            ]);
+
+		}
 	}
