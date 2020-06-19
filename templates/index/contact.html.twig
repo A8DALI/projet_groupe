@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <h1>Contactez-nous ! </h1>
+    <h3>Nous vous répondrons rapidement</h3><br>
+
+
+
+        {{ form_start(form) }}
+
+        {{ form_row(form.nom) }}
+        {{ form_row(form.email) }}
+        {{ form_row(form.body) }}
+        <br>
+        <button type="submit" class="btn btn-outline-dark">
+            Envoyer
+        </button><br><br>
+        {{ form_end(form) }}
+
+
+    <button  type="submit" class="btn btn-outline-dark"><a href="{{ path('app_index_index') }}">
+        Retour
+    </a></button>
+
+
+
+
+
+{% endblock %}
