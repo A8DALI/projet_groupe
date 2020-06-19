@@ -65,6 +65,21 @@ class User implements UserInterface
     private $genre;
 
     /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $info;
+
+    /**
+     * @ORM\Column(type="string", length=50, nullable=true)
+     */
+    private $sexe;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $image;
+
+    /**
      * Permet de pouvoir faire un echo sur un objet user:
      * affichera prénom et nom
      *
@@ -194,5 +209,41 @@ class User implements UserInterface
     public function eraseCredentials()
     {
         // TODO: Implement eraseCredentials() method.
+    }
+
+    public function getInfo(): ?string
+    {
+        return $this->info;
+    }
+
+    public function setInfo(?string $info): self
+    {
+        $this->info = $info;
+
+        return $this;
+    }
+
+    public function getSexe(): ?string
+    {
+        return $this->sexe;
+    }
+
+    public function setSexe(?string $sexe): self
+    {
+        $this->sexe = $sexe;
+
+        return $this;
+    }
+
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    public function setImage(?string $image): self
+    {
+        $this->image = $image;
+
+        return $this;
     }
 }
