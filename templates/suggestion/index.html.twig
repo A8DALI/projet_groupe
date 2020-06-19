@@ -1,15 +1,14 @@
 {% extends 'base.html.twig' %}
 
-{% block javascripts %}
-    {{ parent() }}
+{% block stylesheets %}
+   {{ parent() }}
     <link rel="stylesheet" href="{{ asset('css/filmami_commun.css') }}">
     <link rel="stylesheet" href="{{ asset('css/suggestions.css') }}" type="text/css">
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
     <script src="{{ asset('js/plus_suggestions.js') }}"></script>
-    <link rel="shortcut icon" type="image/x-icon" href="../../public/img/clap_onglet.jpg"/>
-
-
-    {#   A mettre dans base   #}
-    <link rel="shortcut" type="image" href="../public/img/clap_onglet.jpg"/>
 {% endblock %}
 
 {% block title %} Utilisateurs {% endblock %}
