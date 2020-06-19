@@ -1,32 +1,41 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Gestion des Genres de Film</h1>
 
-    {{ form_start(form) }}
+    <div class="main">
+        <div class="col-8">
+            <h1>Gestion des Genres de Film</h1>
 
-    {{ form_row(form.type) }}
-    <button type="submit">Validez</button>
+            {{ form_start(form) }}
 
-    {{ form_end(form) }}
+            {{ form_row(form.type) }}
+            <button type="submit">Validez</button>
 
-    <table class="table table-striped">
-        <tr class="table-dark">
-            <th>Genres</th>
-            <th width="300px">Action</th>
-        </tr>
-        {% for genre in genres %}
-            <tr>
-                <td>{{ genre.type }}</td>
-                <td>
-                    <a href="{{ path('app_admin_genre_index', {'id': genre.id}) }}">Modifier</a>
-                    <a href="{{ path('app_admin_genre_efface', {'id': genre.id}) }}"
-                       class="btn-delete">Supprimer</a>
-                </td>
-            </tr>
-        {% endfor %}
+            {{ form_end(form) }}
 
-    </table>
+            <table class="table table-striped">
+                <tr class="table-dark">
+                    <th>Genres</th>
+                    <th width="300px">Action</th>
+                </tr>
+                {% for genre in genres %}
+                    <tr>
+                        <td>{{ genre.type }}</td>
+                        <td>
+                            <a href="{{ path('app_admin_genre_index', {'id': genre.id}) }}">Modifier</a>
+                            <a href="{{ path('app_admin_genre_efface', {'id': genre.id}) }}"
+                               class="btn-delete">Supprimer</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <div class="col-4">
+            <img src="{{ asset('img/presidente40.jpg') }}" alt="">
+        </div>
+    </div>
+
+
 
     <!-- Modal -->
     <div class="modal fade" id="modal_delete" tabindex="-1" role="dialog" aria-hidden="true">

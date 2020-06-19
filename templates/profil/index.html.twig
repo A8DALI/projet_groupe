@@ -11,19 +11,38 @@
 {% block body %}
 
 
-<div class="container-fluid">
     <div class="row">
-        <div class="col border border-dark">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum impedit nisi possimus quia. Aspernatur cum debitis dolor, id molestias quas! A incidunt mollitia recusandae veniam voluptatibus. Accusantium illo rerum unde.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusamus aliquid aperiam blanditiis consequuntur doloremque et fuga magnam minus, mollitia nam neque numquam porro quidem rem similique ullam ut? Pariatur.</p>
+        <div class="col-1"></div>
+        <div class="col-1">
+            <img class="logo" src="{{ asset('img/logo12.jpg') }}" alt="">
         </div>
-    </div>
-        <div class="col border border-dark">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum impedit nisi possimus quia. Aspernatur cum debitis dolor, id molestias quas! A incidunt mollitia recusandae veniam voluptatibus. Accusantium illo rerum unde.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusamus aliquid aperiam blanditiis consequuntur doloremque et fuga magnam minus, mollitia nam neque numquam porro quidem rem similique ullam ut? Pariatur.</p>
-    </div>
-    <div class="row">
-        <div class="col border border-dark">
+        <div class="col-3">
+            <img class="img-thumbnail" src="{{ asset('img/placeholder.jpg') }}" alt="">
+        </div>
+        <div class="col-3 fiche">
+            Pseudo : Elsa <br>
+            Ville: Paris <br>
+            Age : 26 ans <br>
+            Profession : infirmière <br>
+            <hr>
+            Genre de films préféré : Drame
+        </div>
+        <div class="col-3">
+            <h1>Mes amis :</h1>
+            <hr>
+            <div class="card" style="width: 18rem;">
+                <img src="{{ asset('img/placeholder.jpg') }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Elsa</h5>
+                    <h5 class="card-title">Paris</h5>
+                    <h5 class="card-title">Drame</h5>
+                    <p class="card-text">Ici la zone de cours texte du champ "A propos"</p>
+                    <a href="#" class="btn btn-dark">Voir le profil</a>
+                    <hr>
+                    <a href="#" class="btn btn-dark">Envoyer un mail</a>
+                </div>
+            </div>
+
         </div>
     </div>
 
