@@ -1,0 +1,23 @@
+/*  NAVBAR   */
+.navbar-collapse {
+    display: flex;
+    justify-content: space-between;
+}
+.nav-item {
+    color: white;
+}
+a {
+    color: white;
+}
+.bonjour {
+    display: flex;
+}
+/*  FOOTER  */
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+    color: white;
+    margin-top: 80px;
+}

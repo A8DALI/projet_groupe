@@ -2,6 +2,7 @@
 
 {% block javascripts %}
     {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/filmami_commun.css') }}">
     <link rel="stylesheet" href="{{ asset('css/suggestions.css') }}" type="text/css">
     <script src="{{ asset('js/plus_suggestions.js') }}"></script>
 {% endblock %}

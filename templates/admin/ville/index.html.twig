@@ -1,5 +1,6 @@
 {% extends 'base.html.twig' %}
 
+
 {% block body %}
 <h1>Gestion des Villes</h1>
 
@@ -50,6 +51,7 @@
 
 {% block javascripts %}
     {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/filmami_commun.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/ville.css') }}" type="text/css">
     <script src="{{ asset('js/admin_ville.js') }}"></script>
-
 {% endblock %}

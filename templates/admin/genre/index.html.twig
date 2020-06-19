@@ -50,6 +50,7 @@
 
 {% block javascripts %}
     {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/filmami_commun.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/genre.css') }}" type="text/css">
     <script src="{{ asset('js/admin_genre.js') }}"></script>
-
 {% endblock %}

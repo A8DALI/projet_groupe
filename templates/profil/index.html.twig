@@ -1,5 +1,11 @@
 {% extends 'base.html.twig' %}
 
+{% block javascripts %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/filmami_commun.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/profil.css') }}" type="text/css">
+{% endblock %}
+
 {% block title %}{% endblock %}
 
 {% block body %}
