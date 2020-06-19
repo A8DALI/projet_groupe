@@ -12,6 +12,11 @@
 .bonjour {
     display: flex;
 }
+
+.container-fluid{
+    margin-top: 2%;
+}
+
 /*  FOOTER  */
 footer {
     display: flex;
