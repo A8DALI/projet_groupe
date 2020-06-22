@@ -13,23 +13,22 @@
 
         <!-------- Titre profil -------->
       <div class="row">
-          <div class="col text-center mb-5 mt-5">
+          <div class="col" id="titreprofil">
               <h1>Mon profil</h1>
           </div>
       </div>
 
         <!-------- Carte profil -------->
-{#        <div class="carte"id="profil">#}
+        <div class="carte"id="profil">
         <!-------- Haut de la carte -------->
-            <div class="col d-flex justify-content-center">
-        <div class="row border border-dark rounded mt-1 ml-5 mr-5" id="profil">
+        <div class="row" >
 
             <!-------- Profil -------->
             <!-------- Col gauche -------->
-            <div class="col-xs mt-4 ml-4 mr-4 mb-4 " >
+            <div class="col" >
 
                 <!-------- Image -------->
-{#                <div class="img">#}
+                <div class="img">
 {#                    <div class="float-left">#}
                     {% if profil.image is not null %}
                         <img class="img-thumbnail" src="{{ asset('images/' ~ profil.image) }}">
@@ -39,16 +38,16 @@
                         <img class="img-thumbnail" src="{{ asset('img/placeholder_3.png') }}" alt="">
 
                     {% endif %}
-{#                </div>#}
+                </div>
             </div>
 
             <!-------- Col Droite -------->
-    <div class="col-xs ml-5 mt-5 mr-5">
-                <div class="col-sm text-center"> <h2>{{ profil.pseudo }}</h2></div>
+    <div class="col" id="droite">
+                <div class="col-11 p-1"> <h2>{{ profil.pseudo }}</h2></div>
                 <br>
-{#                <div class="texteprofil">#}
-                    <div class="col p-1">Ville : &nbsp {{ profil.ville.nom }}</div>
-                    <div class="col p-1">
+                <div class="texteprofil">
+                    <div class="col-11 p-1">Ville : &nbsp {{ profil.ville.nom }}</div>
+                    <div class="col-11 p-1">
                         <!-------- Ici j'ai rajouté le fait que l'âge soit renseigné ou non -------->
                         {% if profil.info is not null %}
                             Age &nbsp: &nbsp {{ profil.age }}
@@ -56,46 +55,53 @@
                             Age &nbsp: &nbsp Non renseigné
                         {% endif %}
                         </div>
-                    <div class="col p-1">
+                    <div class="col-11 p-1">
                         <!-------- Ici j'ai rajouté le fait que l'âge soit renseigné ou non -------->
                         {% if profil.info is not null %}
                             Sexe &nbsp: &nbsp {{ profil.sexe }}
                         {% else %}
                             Sexe &nbsp: &nbsp Non renseigné
                         {% endif %}</div>
-                    <div class="col p-1"> Email &nbsp: &nbsp {{ profil.email }}</div>
+                    <div class="col-11 p-1"> Email &nbsp: &nbsp {{ profil.email }}</div>
                     <br>
                     <div class="col p-1" id="genre">Genre de films préféré : {{ profil.genre.type }}</div>
 
                     <!-------- Bouton apparait que si apropos n'existe pas sinon il sera affiché sous a propos -------->
+                        {% if profil.info is null %}
                             <a type="button" href="{{ path('app_profil_edit') }}"
-                               class="btn btn-dark mt-5 mb-5 col d-flex justify-content-center" id="modifier1">
+                               class="btn" id="modifier1">
                                 Modifier votre profil
                             </a>
+                        {% else %}
+                        {% endif %}
                 <br>
-{#    </div>#}
     </div>
-
     </div>
+    </div>
+        <div class="row">
+            <div class="col" id="apropos">
+                <!-------- Ici j'ai rajouté le fait que la partie à propos soit visible que si elle est remplie -------->
+                {% if profil.info is not null %}
+                    <hr>
+                    <h3> A propos :</h3>
+                    <p>{{ profil.info }}</p>
+                {% else %}
+                {% endif %}
 
-
-
-
-            </div>
-            <div class="row">
-                <div class="col" id="apropos">
-                    <!-------- Ici j'ai rajouté le fait que la partie à propos soit visible que si elle est remplie -------->
+                <!-------- Bouton apparait que si apropos est affiché sinon il sera affiché sous le genre de film -------->
+                <div class="row">
                     {% if profil.info is not null %}
-                        <hr>
-                        <h3> A propos :</h3>
-                        <p>{{ profil.info }}</p>
+                        <a type="button" href="{{ path('app_profil_edit') }}"
+                           class="btn" id="modifier2">
+                            Modifier votre profil
+                        </a>
                     {% else %}
                     {% endif %}
-                    </div>
-                    </div>
-
-    {#    </div>#}
-        <!-------- Fin container fluid -------->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-------- Fin container fluid -------->
 
             {#
                     <div class="col-3">
@@ -116,6 +122,7 @@
 
                     </div>
             #}
+    </div>
     </div>
 
 {% endblock %}

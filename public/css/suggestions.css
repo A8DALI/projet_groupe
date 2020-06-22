@@ -4,6 +4,9 @@
     font-size: 5em;
     text-align: center;
 }
+.main {
+    display: flex;
+}
 .card {
     margin-bottom: 30px;
 }
@@ -13,4 +16,19 @@
 }
 #plus {
     color: white;
+}
+.centrez {
+    text-align: center;
+}
+.voici {
+    font-size: 2em;
+}
+.pouvez {
+    font-size: 1em;
+}
+.visiter {
+    font-size: 1em;
+}
+.bonfilm {
+    font-size: 2em;
 }
