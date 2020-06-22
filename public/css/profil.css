@@ -16,20 +16,14 @@ h1 {
 
 /* ------ Image à gauche --------- */
 .img-thumbnail {
-    width: 70%;
-    margin-left: 12%;
-    margin-top: 10%;
-}
-
-.float-left {
-    margin-right: -40px;
+    margin: 10% 0 10% 12%;
+    max-width: 365px;
 }
 
 /* ------ Nom profil ----- */
 h2 {
     font-size: x-large;
-    text-align: center;
-    margin-top: 6%;
+    margin-top: 15%;
 }
 
 /* ----- Texte à droite de l'image ---- */
@@ -37,8 +31,14 @@ h2 {
     font-size: large;
 }
 
+.col-11, #genre, #modifier1 {
+    margin-bottom: 1%;
+    margin-left: 15%;
+}
+
 p {
     margin: 0 3% 3% 3%;
+    text-align: center;
 
 }
 
@@ -56,14 +56,178 @@ h3 {
 
 
 /* -------- Bouton de modification -------- */
-#modifier {
+
+/* -------- Si a propos n'est pas affiché car il n'a pas été modifié -------- */
+#modifier1 {
+    background-color: dimgrey;
+    color: white;
+    display: block;
+    margin-top: 5%;
+    width: 180px;
+}
+
+/* -------- Si a propos a été modifié -------- */
+#modifier2 {
     background-color: dimgrey;
     color: white;
     text-align: center;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 3%;
+    margin: 0 auto 3% auto;
 
 }
+
+/* ---------------------------------------------------- Responsive ------------------------------------------------- */
+/* ------------------------------------------- Media 1500px -------------------------------- */
+@media (max-width: 1500px) {
+
+    /* --------------  Carte profil -------------- */
+    #profil {
+        margin: 3% 15% 5% 15%;
+    }
+}
+
+/* ------------------------------------------- Media 1300px -------------------------------- */
+@media (max-width: 1300px) {
+
+    /* --------------  Carte profil -------------- */
+    #profil {
+        margin: 3% 10% 5% 10%;
+    }
+}
+
+/* ------------------------------------------- Media 1100 px Ipad Pro -------------------------------- */
+@media (max-width: 1100px) {
+
+    /* --------------  Carte profil -------------- */
+    #profil {
+        margin: 3% 5% 5% 5%;
+    }
+}
+
+/* ------------------------------------------- Media 850px -------------------------------- */
+@media (max-width: 850px) {
+
+    /* --------------  Aligner carte verticalement -------------- */
+    .row {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* --------------  Centrer image -------------- */
+    .img-thumbnail {
+        display: block;
+        margin: 10% auto 5% auto;
+    }
+
+    /* --------------  Margin Texte -------------- */
+    .col-11, #genre {
+        margin-left: 35%;
+    }
+
+    h2 {
+        margin-left: 55px;
+        margin-top: 3%;
+    }
+
+    /* --------------  Margin bouton -------------- */
+    #modifier1 {
+        margin-left: 37%;
+    }
+}
+
+/* ------------------------------------------- Media 796px Ipad -------------------------------- */
+
+@media (max-width: 796px) {
+    .col-11, #genre {
+        margin-left: 33%;
+    }
+}
+
+/* ------------------------------------------- Media 660px -------------------------------- */
+@media (max-width: 660px) {
+    .col-11, #genre {
+        margin-left: 30%;
+    }
+}
+
+/* ------------------------------------------- Media 560px -------------------------------- */
+@media (max-width: 560px) {
+    .col-11, #genre {
+        margin-left: 27%;
+    }
+}
+
+/* ------------------------------------------- Media 500px -------------------------------- */
+@media (max-width: 500px) {
+    .col-11, #genre {
+        margin-left: 24%;
+    }
+}
+
+/* ------------------------------------------- Media 414 px Iphone 6/7 +  -------------------------------- */
+@media (max-width: 414px) {
+
+    .img-thumbnail {
+        width: 80%;
+    }
+
+    .col-11, #genre {
+        margin-left: 15%;
+        font-size: medium;
+    }
+
+    /*Suppresion de l'espace entre email et genre de film*/
+    br {
+        display: none;
+    }
+
+    /* Placement bouton*/
+    #modifier1 {
+        margin: 8% 0 8% 26%;
+        width: 50%;
+    }
+}
+
+
+/* ------------------------------------------- Media 375 px Iphone 6/7/8 -------------------------------- */
+@media (max-width: 411px) {
+
+    .col-11, #genre {
+        margin-left: 13%;
+    }
+}
+
+/* ------------------------------------------- Media 360px Moto G4 / GalaxyS5 -------------------------------- */
+@media (max-width: 360px) {
+    .img-thumbnail {
+        width: 60%;
+    }
+
+    h2 {
+        margin-bottom: 5%;
+    }
+
+    .col-11, #genre {
+        margin-left: 11%;
+    }
+
+    #modifier1 {
+        width: 60%;
+        margin-left: 20%;
+        font-size: small;
+    }
+}
+
+/* ------------------------------------------- Media 320px Iphone5 -------------------------------- */
+@media (max-width: 320px) {
+    .col-11, #genre {
+        margin-left: 5%;
+    }
+}
+
+
+
+
+
+
 

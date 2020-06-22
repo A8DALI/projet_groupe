@@ -2,29 +2,88 @@
 
 {% block javascripts %}
     {{ parent() }}
-    <link rel="stylesheet" href="{{ asset('css/filmami_commun.css') }}">
-
+    <link rel="stylesheet" href="{{ asset('css/profil.css') }}" type="text/css">
 {% endblock %}
 
-{% block title %} Profil suggestion {% endblock %}
-
-
+{% block title %}Suggestion profil{% endblock %}
 
 {% block body %}
 
-    <img class="img-thumbnail" src="{{ asset('img/placeholder2_25.jpg') }}" alt="">
+    <div class="container-fluid">
 
+        <!-------- Titre profil -------->
+        <div class="row">
+            <div class="col" id="titreprofil">
+                <h1>Profil de {{ profilsuggestion.pseudo }}</h1>
+            </div>
+        </div>
 
+        <!-------- Carte profil -------->
+        <div class="carte"id="profil">
+            <!-------- Haut de la carte -------->
+            <div class="row" >
 
-        <h5>Pseudo : {{ profilsuggestion.pseudo }} </h5>
-        <h5>Email: {{ profilsuggestion.pseudo }}</h5>
-        <h5>Ville : {{ profilsuggestion.ville.nom }}</h5>
-        <h5>Genre : {{ profilsuggestion.genre.type }}</h5>
+                <!-------- Profil -------->
+                <!-------- Col gauche -------->
+                <div class="col" >
 
+                    <!-------- Image -------->
+                    <div class="img">
+                        {#                    <div class="float-left">#}
+                        {% if profilsuggestion.image is not null %}
+                            <img class="img-thumbnail" src="{{ asset('images/' ~ profilsuggestion.image) }}">
 
+                            <!-------- J'ai rajouté cette ligne pour intégrer le placeholder -------->
+                        {% else %}
+                            <img class="img-thumbnail" src="{{ asset('img/placeholder_3.png') }}" alt="">
 
+                        {% endif %}
+                    </div>
+                </div>
 
+                <!-------- Col Droite -------->
+                <div class="col" id="droite">
+                    <div class="col-11 p-1"> <h2>{{ profilsuggestion.pseudo }}</h2></div>
+                    <br>
+                    <div class="texteprofil">
+                        <div class="col-11 p-1">Ville : &nbsp {{ profilsuggestion.ville.nom }}</div>
+                        <div class="col-11 p-1">
+                            <!-------- Ici j'ai rajouté le fait que l'âge soit renseigné ou non -------->
+                            {% if profilsuggestion.info is not null %}
+                                Age &nbsp: &nbsp {{ profilsuggestion.age }}
+                            {% else %}
+                                Age &nbsp: &nbsp Non renseigné
+                            {% endif %}
+                        </div>
+                        <div class="col-11 p-1">
+                            <!-------- Ici j'ai rajouté le fait que l'âge soit renseigné ou non -------->
+                            {% if profilsuggestion.info is not null %}
+                                Sexe &nbsp: &nbsp {{ profilsuggestion.sexe }}
+                            {% else %}
+                                Sexe &nbsp: &nbsp Non renseigné
+                            {% endif %}</div>
+                        <div class="col-11 p-1"> Email &nbsp: &nbsp {{ profilsuggestion.email }}</div>
+                        <br>
+                        <div class="col p-1" id="genre">Genre de films préféré : {{ profilsuggestion.genre.type }}</div>
+                        <br>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col" id="apropos">
 
+                        <!-------- Ici j'ai rajouté le fait que la partie à propos soit visible que si elle est remplie -------->
+                        {% if profilsuggestion.info is not null %}
+                            <hr>
+                            <h3> A propos :</h3>
+                            <p>{{ profilsuggestion.info }}</p>
+                        {% else %}
+                        {% endif %}
 
+                    </div>
+                </div>
+            </div>
+            <!-------- Fin container fluid -------->
+        </div>
+    </div>
 
 {% endblock %}
