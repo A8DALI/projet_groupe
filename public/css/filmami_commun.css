@@ -33,5 +33,12 @@ footer {
     align-items: center;
     background-color: black;
     color: white;
-    margin-top: 80px;
+    margin-top: 20px;
+    padding: 20px 0 20px 0;
+}
+footer a {
+    color: white;
+}
+.double {
+    font-size: 2em;
 }
