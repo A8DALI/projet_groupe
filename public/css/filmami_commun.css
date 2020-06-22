@@ -6,14 +6,24 @@
 .nav-item {
     color: white;
 }
+.navbar-expand-lg {
+    padding: 8px 24px;
+}
 .navbar a {
     color: white;
+}
+.form-control {
+    border: 3px solid rgba(92, 114, 116, 0.55) !important;
 }
 .bonjour {
     display: flex;
 }
+.davy {
+    display: flex;
+    align-items: center;
+}
 body {
-    margin-top: 120px !important;
+    margin-top: 75px !important;
 }
 
 /*  FOOTER  */

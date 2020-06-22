@@ -16,8 +16,6 @@
 {% block body %}
 
     <div class="container-fluid">
-
-        <h1 class="police">FILMAMI</h1>
         <div class="centrez">
             <span class="voici">Voici les personnes près de chez vous qui partagent vos goûts cinématographiques!</span> <br>
 
@@ -76,13 +74,8 @@
             </form>
         </div>
         <div>
-            <span class="voici">Voulez-vous voir d'autres personnes ?</span>
-            <form id="plus" method="get">
-                <a type="button" id="load" class="btn btn-dark mb-2
-            href="{{ path('app_profil_index') }}" >
-                Voir mon profil !
-                </a>
-            </form>
+            <span class="voici">Voulez-vous voir votre profil?</span>
+                <a type="button"  class="btn btn-dark mb-2" href="{{ path('app_profil_index') }}" > Voir mon profil !</a>
         </div>
         </div>
 
