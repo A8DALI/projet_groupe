@@ -2,14 +2,18 @@
 
 {% block body %}
     <div class="container-fluid">
+        <h1 class="police">FILMAMI</h1>
     <div class="main">
-        <div class="col-8">
+
+        <div class="tableau col-md-12">
             <h1>Gestion des Genres de Film</h1>
 
             {{ form_start(form) }}
 
             {{ form_row(form.type) }}
-            <button type="submit">Validez</button>
+            <hr>
+            <button class="btn btn-dark" type="submit">Validez</button>
+            <hr>
 
             {{ form_end(form) }}
 
@@ -22,15 +26,15 @@
                     <tr>
                         <td>{{ genre.type }}</td>
                         <td>
-                            <a href="{{ path('app_admin_genre_index', {'id': genre.id}) }}">Modifier</a>
+                            <a class="btn btn-dark" href="{{ path('app_admin_genre_index', {'id': genre.id}) }}">Modifier</a>
                             <a href="{{ path('app_admin_genre_efface', {'id': genre.id}) }}"
-                               class="btn-delete">Supprimer</a>
+                               class="btn btn-dark btn-delete">Supprimer</a>
                         </td>
                     </tr>
                 {% endfor %}
             </table>
         </div>
-        <div class="col-4">
+        <div class="presidente">
             <img src="{{ asset('img/presidente40.jpg') }}" alt="">
         </div>
     </div>
