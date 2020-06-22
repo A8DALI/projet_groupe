@@ -7,6 +7,8 @@
 	use App\Repository\UserRepository;
 	use Doctrine\ORM\EntityManagerInterface;
 	use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+	use Symfony\Component\HttpFoundation\File\File;
+	use Symfony\Component\HttpFoundation\File\UploadedFile;
 	use Symfony\Component\HttpFoundation\Request;
 	use Symfony\Component\Routing\Annotation\Route;
 
@@ -38,15 +40,16 @@
 		}
 
 		/**
-		 * @Route("/edition/{id}", defaults={"id": null})
+		 * @Route("/edition")
 		 */
 		public function edit(Request $request,
 							 EntityManagerInterface $manager,
-							 UserRepository $repository,
-							 $id)
+							 UserRepository $repository)
 		{
 			$originalImage = null;
-			$user = $repository->find($id);
+
+			$user = $this->getUser();
+//			$user = $repository->find($id);
 
 			$details = $manager->find(User::class, $user);
 

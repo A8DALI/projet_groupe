@@ -4,6 +4,7 @@
 
 	use App\Repository\UserRepository;
 	use Doctrine\ORM\Mapping as ORM;
+	use PhpParser\Node\Expr\List_;
 	use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 	use Symfony\Component\Security\Core\User\UserInterface;
 	use Symfony\Component\Validator\Constraints as Assert;
@@ -12,7 +13,7 @@
 	 * @ORM\Entity(repositoryClass=UserRepository::class)
 	 * @UniqueEntity(fields={"email"}, message="Cet email existe déjà")
 	 */
-	class User implements UserInterface
+	class User implements UserInterface, \Serializable
 	{
 		/**
 		 * @ORM\Id()
@@ -262,5 +263,39 @@
 			$this->age = $age;
 
 			return $this;
+		}
+
+		public function serialize()
+		{
+			return serialize(
+				[
+					$this->pseudo,
+					$this->age,
+					$this->info,
+					$this->ville,
+					$this->genre,
+					$this->sexe,
+					$this->id,
+					$this->mdp,
+					$this->role,
+					$this->email
+				]
+			);
+		}
+
+		public function unserialize($serialized)
+		{
+			list(
+					$this->pseudo,
+					$this->age,
+					$this->info,
+					$this->ville,
+					$this->genre,
+					$this->sexe,
+					$this->id,
+					$this->mdp,
+					$this->role,
+					$this->email
+				) = unserialize($serialized);
 		}
 	}

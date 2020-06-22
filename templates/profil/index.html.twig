@@ -11,25 +11,25 @@
 
     <div class="container-fluid">
 
-        <!-------- Titre profil -------->
-      <div class="row">
-          <div class="col" id="titreprofil">
-              <h1>Mon profil</h1>
-          </div>
-      </div>
+    <!-------- Titre profil -------->
+    <div class="row">
+        <div class="col" id="titreprofil">
+            <h1>Mon profil</h1>
+        </div>
+    </div>
 
-        <!-------- Carte profil -------->
-        <div class="carte"id="profil">
+    <!-------- Carte profil -------->
+    <div class="carte" id="profil">
         <!-------- Haut de la carte -------->
-        <div class="row" >
+        <div class="row">
 
             <!-------- Profil -------->
             <!-------- Col gauche -------->
-            <div class="col" >
+            <div class="col">
 
                 <!-------- Image -------->
                 <div class="img">
-{#                    <div class="float-left">#}
+                    {#                    <div class="float-left">#}
                     {% if profil.image is not null %}
                         <img class="img-thumbnail" src="{{ asset('images/' ~ profil.image) }}">
 
@@ -42,8 +42,8 @@
             </div>
 
             <!-------- Col Droite -------->
-    <div class="col" id="droite">
-                <div class="col-11 p-1"> <h2>{{ profil.pseudo }}</h2></div>
+            <div class="col" id="droite">
+                <div class="col-11 p-1"><h2>{{ profil.pseudo }}</h2></div>
                 <br>
                 <div class="texteprofil">
                     <div class="col-11 p-1">Ville : &nbsp {{ profil.ville.nom }}</div>
@@ -54,7 +54,7 @@
                         {% else %}
                             Age &nbsp: &nbsp Non renseigné
                         {% endif %}
-                        </div>
+                    </div>
                     <div class="col-11 p-1">
                         <!-------- Ici j'ai rajouté le fait que l'âge soit renseigné ou non -------->
                         {% if profil.info is not null %}
@@ -67,17 +67,17 @@
                     <div class="col p-1" id="genre">Genre de films préféré : {{ profil.genre.type }}</div>
 
                     <!-------- Bouton apparait que si apropos n'existe pas sinon il sera affiché sous a propos -------->
-                        {% if profil.info is null %}
-                            <a type="button" href="{{ path('app_profil_edit') }}"
-                               class="btn" id="modifier1">
-                                Modifier votre profil
-                            </a>
-                        {% else %}
-                        {% endif %}
-                <br>
-    </div>
-    </div>
-    </div>
+                    {% if profil.info is null %}
+                        <a type="button" href="{{ path('app_profil_edit') }}"
+                           class="btn" id="modifier1">
+                            Modifier votre profil
+                        </a>
+                    {% else %}
+                    {% endif %}
+                    <br>
+                </div>
+            </div>
+        </div>
         <div class="row">
             <div class="col" id="apropos">
                 <!-------- Ici j'ai rajouté le fait que la partie à propos soit visible que si elle est remplie -------->
@@ -101,28 +101,25 @@
             </div>
         </div>
     </div>
-        <!-------- Fin container fluid -------->
+    <!-------- Fin container fluid -------->
 
-            {#
-                    <div class="col-3">
-                        <h1>Mes amis :</h1>
-                        <hr>
-                        <div class="card" style="width: 18rem;">
-                            <img src="{{ asset('img/placeholder.jpg') }}" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Elsa</h5>
-                                <h5 class="card-title">Paris</h5>
-                                <h5 class="card-title">Drame</h5>
-                                <p class="card-text">Ici la zone de cours texte du champ "A propos"</p>
-                                <a href="#" class="btn btn-dark">Voir le profil</a>
-                                <hr>
-                                <a href="#" class="btn btn-dark">Envoyer un mail</a>
+    {#
+                        <div class="col-3">
+                            <h1>Mes amis :</h1>
+                            <hr>
+                            <div class="card" style="width: 18rem">
+                                <img src="{{ asset('img/placeholder.jpg') }}" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Elsa</h5>
+                                    <h5 class="card-title">Paris</h5>
+                                    <h5 class="card-title">Drame</h5>
+                                    <p class="card-text">Ici la zone de cours texte du champ "A propos"</p>
+                                    <a href="#" class="btn btn-dark">Voir le profil</a>
+                                    <hr>
+                                    <a href="#" class="btn btn-dark">Envoyer un mail</a>
+                                </div>
                             </div>
                         </div>
-
-                    </div>
-            #}
-    </div>
-    </div>
+                #}
 
 {% endblock %}
