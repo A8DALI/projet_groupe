@@ -1,3 +1,17 @@
 .main {
     display: flex;
+    flex-wrap: wrap;
+}
+.police {
+    font-family: 'Mystery Quest', cursive;
+    font-size: 5em;
+    text-align: center;
+}
+.presidente {
+    border: solid 2px black;
+    border-radius: 6px;
+    flex-wrap: wrap;
+}
+.tableau {
+    flex: 12;
 }
