@@ -16,10 +16,11 @@
     <!-------- Edition profil -------->
     <div class="row">
         <div class="col text-center mb-5 mt-5">
-            <h1>Edition de mon profil</h1>
+            <h1>Modifier mon profil</h1>
         </div>
     </div>
 
+    <!--          Début cadre -->
         <div class="row d-flex justify-content-center text-center">
             <div class="col-4-xl col-4-l border rounded border-grey p-4 text-center mb-5" id="formedition">
                 <div class="row">
@@ -45,30 +46,49 @@
                 </div>
             </div>
                 </div>
-                <div class="row">
-                <div class="col" >
-                    <a type="button" href="{{ path('app_profil_delete') }}"
-                       class="btn btn-danger btn-delete" id="boutonsup">
-                        Supprimer votre profil
-                    </a>
+
+                <!--         Bouton retour -->
+                <div class="row  d-flex justify-content-center p-4" id="rowbouton">
+                <div class="col-5">
+                    <button class="btn btn-secondary"
+                       href="{{ path('app_profil_index') }}" id="boutonretour">
+                        Retour à mon profil
+                    </button>
             </div>
-                    <div class="col" >
-                        <button type="submit" class="btn btn-info">
-                            Enregistrer vos modifications
+
+                    <!--          Bouton modifier -->
+                    <div class="col-5">
+                        <button type="submit" class="btn btn-info" id="boutonmodif">
+                            Enregistrer les modifications
                         </button>
                     </div>
                     {{ form_end(form) }}
             </div>
     </div>
-
 </div>
 
+    <!--          Bouton supprimer mon profil -->
+    <div class="row ">
+        <div class="col mb-3">
+            <div class="col text-center mb-5">ou</div>
+        <div class="row">
+        <div class="col d-flex justify-content-center mb-3" >
+            <a type="button" href="{{ path('app_profil_delete') }}"
+               class="btn btn-danger btn-delete" id="boutonsup">
+                Supprimer mon profil
+            </a>
+        </div>
+    </div>
+</div>
+</div>
+
+    <!--          Partie suppression -->
     {# Le model envoyé quand on clique sur 'supprimer' #}
     <div class="modal fade" id="modal_delete" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <p>Etês-vous sûr de vouloir supprimer votre compte ?
+                    <p>Etes-vous sûr de vouloir supprimer votre compte ?
                         <br><br>Attention, cette action est irréversible !</p>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>

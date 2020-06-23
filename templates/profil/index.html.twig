@@ -41,7 +41,7 @@
 
                             <!-------- Col Droite -------->
                             <div class="col-xs ml-5 mt-5 mr-5 mb-5" id="droite">
-                                <div class="col text-center mb-4 p-1"><h2>{{ profil.pseudo }}</h2></div>
+                                <div class="col text-center mb-4 p-1"><h2 class="pseudo">{{ profil.pseudo }}</h2></div>
                                 <div class="col p-1">Ville <span class="txt">:</span> {{ profil.ville.nom }}</div>
 
                                 <!-------- L'âge renseigné ou non -------->
@@ -65,7 +65,6 @@
                                 <div class="col p-1" id="genre">Genre de films préféré <span class="txt">:</span> {{ profil.genre.type }}</div>
                             </div>
                         </div>
-
 
                         <!-------- A propos si modifié ou non -------->
                         {% if profil.info is not null %}
