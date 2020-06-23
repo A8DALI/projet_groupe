@@ -1,30 +1,56 @@
 {% extends 'base.html.twig' %}
 
+{% block javascripts %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/filmami_accueil.css') }}" type="text/css">
+{% endblock %}
+
 {% block body %}
-    <h1>Edition Profil</h1>
+<div class="container-fluid">
 
-    {{ form_start(form) }}
-
-    <div class="card-body">
-        <div class="col-md-8 p-1">{{ form_row(form.pseudo) }}</div>
-        <div class="col-md-8 p-1">{{ form_row(form.ville) }}</div>
-        <div class="col-md-8 p-1">{{ form_row(form.genre) }}</div>
-        <div class="col-md-8 p-1">{{ form_row(form.email) }}</div>
-{#        <div class="col-md-8 p-1">{{ form_row(form.mdpClair) }}</div>#}
-        <div class="col-md-8 p-1">{{ form_row(form.sexe) }}</div>
-        <div class="col-md-8 p-1">{{ form_row(form.age) }}</div>
-        <div class="col-md-8 p-1">{{ form_row(form.info) }}</div>
-        {{ form_row(form.image) }}
-        {% if original_image is not null %}
-            <p>Actuellement : </p>
-            <img src="{{ asset('images/' ~ original_image) }}" height="150px">
-        {% endif %}
+    <!-------- Edition profil -------->
+    <div class="row">
+        <div class="col text-center mb-5 mt-5">
+            <h1>Edition de mon profil</h1>
+        </div>
     </div>
+
+    <div class="row justify-content-center" id="formedition">
+        <div class="col-xs mb-5 mt-5 ml-5 mr-5">
+            {{ form_start(form) }}
+
+            <div class="col p-1">{{ form_row(form.pseudo) }}</div>
+            <div class="col p-1"> {{ form_row(form.ville) }}</div>
+            <div class="col p-1">{{ form_row(form.genre) }}</div>
+                <div class="col p-1">{{ form_row(form.email) }}</div>
+                {#        <div class="col-md-8 p-1">{{ form_row(form.mdpClair) }}</div>#}
+                    <div class="col p-1">{{ form_row(form.sexe) }}</div>
+                        <div class="col p-1">{{ form_row(form.age) }}</div>
+                            <div class="col p-1">{{ form_row(form.info) }}</div>
+                            <div class="col p-1">{{ form_row(form.image) }}</div>
+            <div class="col text-center p-1">
+                {% if original_image is not null %}
+                    <p>Image actuelle : </p>
+                    <img src="{{ asset('images/' ~ original_image) }}" height="150px">
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
 
     <div class="text-right">
         <button type="submit" class="btn btn-primary">
             Enregistrer
         </button>
+        <div class="col-xs">
+            <a type="button" href="{{ path('app_profil_edit') }}"
+               class="btn btn-danger m-2 mt-5 mb-5 rounded" >
+                Supprimer votre profil
+            </a>
+        </div>
 {#        <a class="btn btn-outline-secondary"
            href="{{ path('app_profil_index') }}">
             Retour

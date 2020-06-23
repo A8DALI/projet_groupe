@@ -12,96 +12,91 @@
     <div class="container-fluid">
 
         <!-------- Titre profil -------->
-      <div class="row">
-          <div class="col text-center mb-5 mt-5">
-              <h1>Mon profil</h1>
-          </div>
-      </div>
+        <div class="row">
+            <div class="col text-center mb-5 mt-5">
+                <h1>Mon profil</h1>
+            </div>
+        </div>
 
-        <!-------- Carte profil -------->
+        <!-------- Début carte profil -------->
+        <div class="row justify-content-center">
+            <div class="col-xs ">
+                <div class="row border border-dark rounded ml-5 mr-5 d-flex justify-content-center" id="profil">
+                    <div class="col-xs">
+                        <div class="row justify-content-center">
 
-            <div class="row d-flex justify-content-center" >
+                            <!-------- Col gauche -------->
+                            <div class="col-xs ml-5 mt-5 mr-5 mb-5">
 
-                <!-------- Col carte profil -------->
-                <div class="col-xs">
-                    <div class="rowborder mt-1 ml-5 mr-5 border-dark rounded d-flex justify-content-center" id="profil">
-                        <div class="col text-center mt-5">
-                            <h2>{{ profil.pseudo }}</h2>
-                        <div class="row">
-<div class="col text-left">
-    <div class="row">
-                <!-------- Col gauche -------->
-                <div class="col-xs ml-5 mt-5 mr-5 mb-5"  >
-                    {% if profil.image is not null %}
-                        <img class="img-thumbnail" src="{{ asset('images/' ~ profil.image) }}">
+                                <!-------- Si image modifiée: -------->
+                                {% if profil.image is not null %}
+                                    <img class="img-thumbnail" src="{{ asset('images/' ~ profil.image) }}">
 
-                    {% else %}
-                        <img class="img-thumbnail" src="{{ asset('img/placeholder_3.png') }}" alt="">
+                                    <!-------- Si pas d'image placeholder par défault: -------->
+                                {% else %}
+                                    <img class="img-thumbnail" src="{{ asset('img/placeholder_3.png') }}" alt="">
 
-                    {% endif %}
-                </div>
+                                {% endif %}
+                            </div>
 
-            <!-------- Col Droite -------->
-            <div class="col-xs ml-5 mt-5 mr-5" id="droite">
-                    <div class="col p-1">Ville : &nbsp {{ profil.ville.nom }}</div>
-                    <div class="col p-1">
-                        <!-------- L'âge soit renseigné ou non -------->
-                        {% if profil.info is not null %}
-                            Age &nbsp: &nbsp {{ profil.age }}
-                        {% else %}
-                            Age &nbsp: &nbsp Non renseigné
-                        {% endif %}
-                        </div>
-                    <div class="col p-1">
-                        <!-------- Sexe soit renseigné ou non -------->
-                        {% if profil.info is not null %}
-                            Sexe &nbsp: &nbsp {{ profil.sexe }}
-                        {% else %}
-                            Sexe &nbsp: &nbsp Non renseigné
-                        {% endif %}</div>
-                    <div class="col p-1"> Email &nbsp: &nbsp {{ profil.email }}</div>
-                    <br>
-                    <div class="col mb-1 p-1" id="genre">Genre de films préféré : {{ profil.genre.type }}</div>
+                            <!-------- Col Droite -------->
+                            <div class="col-xs ml-5 mt-5 mr-5 mb-5" id="droite">
+                                <div class="col text-center mb-4 p-1" ><h2>{{ profil.pseudo }}</h2></div>
+                                <div class="col p-1">Ville : &nbsp {{ profil.ville.nom }}</div>
 
-                <!-------- A propos est visible que si remplie -------->
+                                <!-------- L'âge renseigné ou non -------->
+                                <div class="col p-1">
+                                    {% if profil.age is not null %}
+                                        Age &nbsp: &nbsp {{ profil.age }}
+                                    {% else %}
+                                        Age &nbsp: &nbsp Non renseigné
+                                    {% endif %}
+                                </div>
 
-                {% if profil.info is not null %}
-
-                    <div class="row">
-                        <div class="col xs text-center ml-3 mr-3" id="apropos">
-                            <div class="profilinfo">
-                            <br>
-                            <div class="col-3 mb-3"><h4> A propos :</h4>
-                                {{ profil.info }}
+                                <!-------- Sexe renseigné ou non -------->
+                                <div class="col p-1">
+                                    {% if profil.sexe is not null %}
+                                        Sexe &nbsp: &nbsp {{ profil.sexe }}
+                                    {% else %}
+                                        Sexe &nbsp: &nbsp Non renseigné
+                                    {% endif %}</div>
+                                <div class="col p-1"> Email &nbsp: &nbsp {{ profil.email }}</div>
+                                <br>
+                                <div class="col p-1" id="genre">Genre de films préféré : {{ profil.genre.type }}</div>
                             </div>
                         </div>
-                        </div>
-                    </div>
-                {% else %}
-                {% endif %}
-                <br>
-            </div>
-</div>
 
 
-                        <!-------- Fin profil -------->
-                    </div>
-            </div>
-                        </div>
-                    </div>
-                    <!-------- Bouton modifier profil -------->
-                    <div class="row justify-content-center">
-                        <div class="col-xs text-center">
-                        <a type="button" href="{{ path('app_profil_edit') }}"
-                           class="btn btn-dark mt-5 mb-5 col d-flex justify-content-center" id="modifier1">
-                            Modifier votre profil
-                        </a>
-                    </div>
+                        <!-------- A propos si modifié ou non -------->
+                        {% if profil.info is not null %}
+                            <hr>
+                            <div class="row w100">
+                                <div class="col text-center ml-3 mr-3 mt-2" id="apropos">
+                                    <h4> A propos :</h4> <br>
+                                    <div class="row justify-content-center">
+                                        <div class="col-8 mb-3">
+                                            {{ profil.info|nl2br }}
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        {% else %}
+                        {% endif %}
                     </div>
                 </div>
             </div>
 
-        <!-------- Fin container fluid -------->
-    </div>
+            </div>
 
+    <div class="row d-flex justify-content-center">
+
+    <div class="col-xs">
+        <a type="button" href="{{ path('app_profil_edit') }}"
+           class="btn btn-dark mt-5 mb-5 rounded" >
+            Modifier votre profil
+        </a>
+    </div>
+    </div>
+    </div>
 {% endblock %}

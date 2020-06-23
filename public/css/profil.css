@@ -1,5 +1,4 @@
-
-
+/*  --------------  MON PROFIL -------------- */
 /* --------------  Carte profil -------------- */
 #profil, #apropos{
     background-color: black;
@@ -9,38 +8,15 @@
     max-width: 300px;
     max-height: 400px;
 }
-.profilinfo{
-    max-width: 300px;
+hr {
+    background-color: dimgrey;
 }
 
-@media (max-width: 770px) {
-        #profil {
-            display: flex;
-            flex-direction: column;
-        }
-    #genre {
-        margin-bottom: 5%;
-    }
-    #droite{
-        text-align: center;
-    }
-}
-
-/* --------------  Carte profil -------------- */
-#profil {
+/*  --------------  EDITION DE MON PROFIL -------------- */
+#formedition{
     background-color: black;
     color: white;
 }
 
-@media (max-width: 770px) {
-    #profil {
-        display: flex;
-        flex-direction: column;
-    }
-    #genre {
-        margin-bottom: 5%;
-    }
-    /*#droite{*/
-    /*    text-align: center;*/
-    /*}*/
-}
+
+
