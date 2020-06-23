@@ -1,27 +1,39 @@
 {% extends 'base.html.twig' %}
 
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/filmami_commun.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/contact.css') }}" type="text/css">
+{% endblock %}
+
 {% block body %}
 
-    <h1>Contactez-nous ! </h1>
-    <h3>Nous vous répondrons rapidement</h3><br>
+    <div class="container">
 
+        <h1>Contactez-nous ! </h1>
+        <h3>Nous vous répondrons rapidement</h3><br>
 
 
         {{ form_start(form) }}
 
         {{ form_row(form.nom) }}
+
         {{ form_row(form.email) }}
+
         {{ form_row(form.body) }}
         <br>
-        <button type="submit" class="btn btn-outline-dark">
+        <button type="submit" class="btn btn-dark">
             Envoyer
         </button><br><br>
         {{ form_end(form) }}
 
 
-    <button  type="submit" class="btn btn-outline-dark"><a href="{{ path('app_index_index') }}">
+    <button  type="submit" class="boubou btn btn-dark"><a href="{{ path('app_index_index') }}">
         Retour
     </a></button>
 
 
+
+
+    </div>
 {% endblock %}

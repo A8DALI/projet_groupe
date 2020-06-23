@@ -116,20 +116,16 @@
 
             <div class="col-4">
                 <div class="inscrit">
-                    <div class="row">
                         <span class="inscription">Pas encore membre? <br></span>
                         <div class="forminscri">
-                            <span class="inscription2">Inscrivez-vous, c'est gratuit !</span>
-                            <div class="col-7">
-
                                 <!--          Formulaire d'inscription -->
                                 <div class="card-body">
                                     {{ form_start(form) }}
-                                    <div class="col-md-8 p-1">{{ form_row(form.pseudo) }}</div>
-                                    <div class="col-md-8 p-1">{{ form_row(form.ville) }}</div>
-                                    <div class="col-md-8 p-1">{{ form_row(form.genre) }}</div>
-                                    <div class="col-md-8 p-1">{{ form_row(form.email) }}</div>
-                                    <div class="col-md-8 p-1">{{ form_row(form.mdpClair) }}</div>
+                                   {{ form_row(form.pseudo) }}
+                                   {{ form_row(form.ville) }}
+                                    {{ form_row(form.genre) }}
+                                    {{ form_row(form.email) }}
+                                    {{ form_row(form.mdpClair) }}
                                     <br>
                                     <button type="submit" class="btn btn-dark col-md-8 p-1" id="boutoninscription">
                                         Inscription
@@ -137,10 +133,8 @@
                                     {{ form_end(form) }}
                                 </div>
                             </div>
-                        </div>
                     </div>
                 </div>
-            </div>
             <br>
         </div>
 
