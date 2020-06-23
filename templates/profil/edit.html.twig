@@ -2,7 +2,12 @@
 
 {% block javascripts %}
     {{ parent() }}
-    <link rel="stylesheet" href="{{ asset('css/filmami_accueil.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/profil.css') }}" type="text/css">
+
+    <!-------- asset() pour créer le chemin vers la racine web du site qui correspond à celle du répertoire public.
+        Le fichier contient d'AJAX pour envoyer un message de confirmation avant de supprimer le compte. -------->
+    <script src="{{ asset('js/profil-delete.js') }}"></script>
+
 {% endblock %}
 
 {% block body %}
@@ -15,49 +20,69 @@
         </div>
     </div>
 
-    <div class="row justify-content-center" id="formedition">
-        <div class="col-xs mb-5 mt-5 ml-5 mr-5">
-            {{ form_start(form) }}
+        <div class="row d-flex justify-content-center text-center">
+            <div class="col-4-xl col-4-l border rounded border-grey p-4 text-center mb-5" id="formedition">
+                <div class="row">
+                    <div class="col p-4">
 
-            <div class="col p-1">{{ form_row(form.pseudo) }}</div>
-            <div class="col p-1"> {{ form_row(form.ville) }}</div>
-            <div class="col p-1">{{ form_row(form.genre) }}</div>
+                <!--          Formulaire de modification -->
+                {{ form_start(form) }}
+                <div class="col p-1">{{ form_row(form.pseudo) }}</div>
+                <div class="col p-1">{{ form_row(form.ville) }}</div>
+                <div class="col p-1">{{ form_row(form.genre) }}</div>
                 <div class="col p-1">{{ form_row(form.email) }}</div>
-                {#        <div class="col-md-8 p-1">{{ form_row(form.mdpClair) }}</div>#}
-                    <div class="col p-1">{{ form_row(form.sexe) }}</div>
-                        <div class="col p-1">{{ form_row(form.age) }}</div>
-                            <div class="col p-1">{{ form_row(form.info) }}</div>
-                            <div class="col p-1">{{ form_row(form.image) }}</div>
-            <div class="col text-center p-1">
-                {% if original_image is not null %}
-                    <p>Image actuelle : </p>
-                    <img src="{{ asset('images/' ~ original_image) }}" height="150px">
-                {% endif %}
+                <div class="col p-1">{{ form_row(form.sexe) }}</div>
+{#                <div class="col p-1">{{ form_row(form.mdpClair) }}</div>#}
+                <div class="col p-1">{{ form_row(form.age) }}</div>
+                <div class="col p-1">{{ form_row(form.info) }}</div>
+                <div class="col p-1">{{ form_row(form.image) }}</div>
+                <br>
+                <div class="col p-1 mb-4">
+                    {% if original_image is not null %}
+                        <p>Image actuelle : </p>
+                        <img src="{{ asset('images/' ~ original_image) }}" height="150px">
+                    {% endif %}
+                </div>
+            </div>
+                </div>
+                <div class="row">
+                <div class="col" >
+                    <a type="button" href="{{ path('app_profil_delete') }}"
+                       class="btn btn-danger btn-delete" id="boutonsup">
+                        Supprimer votre profil
+                    </a>
+            </div>
+                    <div class="col" >
+                        <button type="submit" class="btn btn-info">
+                            Enregistrer vos modifications
+                        </button>
+                    </div>
+                    {{ form_end(form) }}
+            </div>
+    </div>
+
+</div>
+
+    {# Le model envoyé quand on clique sur 'supprimer' #}
+    <div class="modal fade" id="modal_delete" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <p>Etês-vous sûr de vouloir supprimer votre compte ?
+                        <br><br>Attention, cette action est irréversible !</p>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary btn-confirm-delete">Oui</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Non</button>
+                </div>
             </div>
         </div>
     </div>
+
 </div>
-
-
-
-
-    <div class="text-right">
-        <button type="submit" class="btn btn-primary">
-            Enregistrer
-        </button>
-        <div class="col-xs">
-            <a type="button" href="{{ path('app_profil_edit') }}"
-               class="btn btn-danger m-2 mt-5 mb-5 rounded" >
-                Supprimer votre profil
-            </a>
-        </div>
-{#        <a class="btn btn-outline-secondary"
-           href="{{ path('app_profil_index') }}">
-            Retour
-        </a>#}
-    </div>
-
-    {{ form_end(form) }}
 
 {% endblock %}
 

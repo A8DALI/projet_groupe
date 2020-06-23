@@ -17,10 +17,36 @@ hr {
     background-color: black;
     color: white;
 }
+
 .txt{
     margin-left: 1%;
     margin-right: 1%;
 }
+
+#boutonsup{
+    line-height: 50px;
+}
+
+@media (max-width: 539px) {
+    #boutonsup{
+        line-height: 24px;
+    }
+}
+
+@media (max-width: 398px) {
+    #boutonsup{
+        line-height: 37px;
+    }
+}
+
+@media (max-width: 372px) {
+    #boutonsup{
+        line-height: 24px;
+    }
+}
+
+
+
 
 
 
