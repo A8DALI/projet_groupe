@@ -1,17 +1,24 @@
+
+{% block stylesheets %}
+    {#{{ parent() }}#}
+    {#<link rel="stylesheet" href="{{ asset('css/filmami_commun.css') }}">#}
+    <link rel="stylesheet" href="{{ asset('css/suggestions.css') }}" type="text/css">
+{% endblock %}
+
 <div class="row liste container">
     {% for suggestion in suggestions %}
-        <div class="card" style="width: 18rem;">
-            <img src="../img/placeholder.jpg" class="card-img-top" alt="...">
+        <div class="card centrez" style="width: 18rem;">
+            <img src="../img/placeholder2_25_1.jpg" class="card-img-top" alt="...">
             {#<img src="{{ asset('../img/placeholder.jpg') }}" alt="">#}
             <div class="card-body">
                 <tr>
                     <h5 class="card-title">{{ suggestion.pseudo }}</h5>
                 </tr>
                 <tr>
-                    <h5 class="card-title">{{ suggestion.ville.nom }}</h5>
+                    <span class="card-title">{{ suggestion.ville.nom }}</span> <br>
                 </tr>
                 <tr>
-                    <h5 class="card-title">{{ suggestion.genre.type }}</h5>
+                    <span class="card-title">{{ suggestion.genre.type }}</span>
                 </tr>
                 <tr>
                     <p class="card-text">Ici la zone de cours texte du champ "A propos"</p>
@@ -19,9 +26,8 @@
                 <tr>
                     <a href="#" class="btn btn-dark">Voir le profil</a>
                 </tr>
-                <hr>
                 <tr>
-                    <a href="#" class="btn btn-dark">Envoyer un mail: {{ suggestion.email }}</a>
+                    <a href="#" class="btn btn-dark mailbtn">Envoyez un mail: {{ suggestion.email }}</a>
                 </tr>
             </div>
         </div>

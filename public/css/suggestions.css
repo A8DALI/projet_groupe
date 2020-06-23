@@ -9,6 +9,17 @@
 }
 .card {
     margin-bottom: 30px;
+    background-color: rgba(85, 152, 168, 0.3);
+    border: 3px solid grey;
+}
+.card-body {
+    padding-bottom: 6px;
+}
+.btn-dark {
+    margin-bottom: 8px;
+}
+.mailbtn {
+    font-size: xx-small;
 }
 .liste {
     display: flex;
@@ -31,4 +42,10 @@
 }
 .bonfilm {
     font-size: 2em;
+    font-weight: bold;
+    text-shadow: black;
+}
+.colonnes {
+    display: flex;
+    justify-content: space-around;
 }
