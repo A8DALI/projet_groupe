@@ -3,6 +3,7 @@
 {% block javascripts %}
     {{ parent() }}
     <link rel="stylesheet" href="{{ asset('css/filmami_accueil.css') }}" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Saira+Stencil+One&display=swap" rel="stylesheet">
 {% endblock %}
 
 {% block title %}Page d'accueil{% endblock %}
@@ -10,9 +11,24 @@
 
 {% block body %}
     <div class="container-fluid">
+
+
+        <!-------- Bannière -------->
+        <div class="row banniere">
+            <div class="col text-center mt-1 mb-4">
+                <h1><span class="bienvenue">Bienvenue sur </span><br>
+
+                    <span class="double police1">Filmami</span>
+                </h1>
+                <div class="argument">Rencontrez des gens qui partagent votre passion.</div>
+
+            </div>
+        </div>
+        <!-------- Fin bannière -------->
+
         <!-------------------------- HEADER --------------------------------------->
         <div class="row d-flex  mt-3 mr-4 " id="login">
-            <div class="col d-flex justify-content-end">
+            <div class="col d-flex justify-content-center">
 
                 <!-------- Formulaire de connexion -------->
                 <form class="form-inline" action="{{ path('app_index_connexion') }}" method="post">
@@ -33,18 +49,6 @@
             </div>
         </div>
         <!-------- Fin formulaire de connexion -------->
-
-        <!-------- Bannière -------->
-        <div class="row banniere">
-            <div class="col text-center mt-1 mb-4">
-                <h1><span class="bienvenue">Bienvenue sur </span><br>
-                    <span class="double">Filmami</span>
-                </h1>
-                <div class="argument">Rencontrez des gens qui partagent votre passion.</div>
-
-            </div>
-        </div>
-        <!-------- Fin bannière -------->
 
         <!-------- Carousel -------->
         <div class="row">
