@@ -10,7 +10,10 @@
 	use Symfony\Component\HttpFoundation\File\File;
 	use Symfony\Component\HttpFoundation\File\UploadedFile;
 	use Symfony\Component\HttpFoundation\Request;
+	use Symfony\Component\HttpFoundation\Session\SessionInterface;
 	use Symfony\Component\Routing\Annotation\Route;
+	use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorage;
+	use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 
 	/**
 	 * @Route("/profil")
@@ -121,5 +124,37 @@
 			);
 
 		}
+
+		/**
+		 * @Route("/suppression")
+		 */
+		public function delete(
+			EntityManagerInterface $manager,
+			TokenStorageInterface $tokenStorage,
+			SessionInterface $session
+		)
+		{
+
+
+			$user = $this->getUser();
+
+//			// suppression de l'image de l'utilisateur s'il en a une
+//			if (!is_null($user->getImage())) {
+//				$image = $this->getParameter('upload_dir') . $user->getImage();
+//				unlink($image);
+//			}
+
+			// suppression en bdd
+			$manager->remove($user);
+			$manager->flush();
+
+			$tokenStorage->setToken(null);
+			$session->invalidate();
+
+			$this->addFlash('success', "Votre compte est supprimé");
+
+			return $this->redirectToRoute('app_index_index');
+		}
+
 	}
 
