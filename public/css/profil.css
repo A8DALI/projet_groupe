@@ -11,6 +11,9 @@
 hr {
     background-color: dimgrey;
 }
+.pseudo{
+    color: white;
+}
 
 /*  --------------  EDITION DE MON PROFIL -------------- */
 #formedition{
@@ -23,25 +26,73 @@ hr {
     margin-right: 1%;
 }
 
-#boutonsup{
-    line-height: 50px;
+@media (max-width: 513px) {
+
+#boutonretour{
+    line-height: 36.5px;
+}
 }
 
-@media (max-width: 539px) {
-    #boutonsup{
+@media (max-width: 434px) {
+
+    #boutonretour{
         line-height: 24px;
     }
 }
 
-@media (max-width: 398px) {
-    #boutonsup{
-        line-height: 37px;
+@media (max-width: 480px) {
+
+    #boutonretour{
+        margin-left: -25px;
     }
 }
 
+/* Pour Pixel 2 */
+@media (max-width: 432px) {
+
+    #boutonretour{
+        line-height: 36px;
+    }
+}
+
+/* Pour iphone 6/7/8 et Galaxy S5*/
 @media (max-width: 372px) {
-    #boutonsup{
-        line-height: 24px;
+
+    #boutonretour{
+        line-height: 25px;
+    }
+}
+
+/* Pour iphone 5*/
+@media (max-width: 320px) {
+
+    #rowbouton{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #boutonretour{
+        margin-bottom: 20px;
+        margin-left: -68px;
+        width: 200px
+    }
+
+    #boutonmodif{
+        margin-left: -68px;
+        width: 200px
+    }
+}
+
+/* Pour iphone 5*/
+@media (max-width: 320px) {
+
+    #boutonretour{
+        margin-left: -75px;
+    }
+
+    #boutonmodif{
+        margin-left: -75px;
     }
 }
 
