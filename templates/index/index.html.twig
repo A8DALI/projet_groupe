@@ -11,17 +11,18 @@
 {% block body %}
     <div class="container-fluid">
         <!-------------------------- HEADER --------------------------------------->
-        <div class="row">
+        <div class="row d-flex justify-content-center" id="login">
             <div class="col mt-4">
+
                 <!-------- Formulaire de connexion -------->
                 <form class="form-inline" action="{{ path('app_index_connexion') }}" method="post">
-                    <div class="form-group mt-2 " id="dejamembre">Déjà membre ?</div>
-                    <div class="form-group mx-sm-3 mb-2">
+                    <div class="form-group mr-3 mt-2">Déjà membre ?</div>
+                    <div class="form-group mr-3 mb-2">
                         <label for="inputPassword2" class="sr-only">Email</label>
                         <input type="email" class="form-control" name="_username" value="" placeholder="Email"
                                id="emailco">
                     </div>
-                    <div class="form-group mx-sm-3 mb-2">
+                    <div class="form-group mr-3 mb-2">
                         <label for="inputPassword2" class="sr-only">Mot de Passe</label>
                         <input type="password" class="form-control" name="_password" placeholder="Mot de Passe"
                                id="mdpco">
@@ -76,10 +77,10 @@
 
         <!-------------------------- MAIN --------------------------------------->
 
-        <div class="row">
+        <div class="row d-flex" id="main">
             <!-------- Col gauche -------->
             <!--            A propos -->
-            <div class="col-7 ml-5">
+            <div class="col col-xl-7 ml-4 mr-2">
                 <h2>Le concept</h2>
                 <br>
                 <p>Filmami est une plateforme qui permet de vous mettre en relation avec des personnes près de chez
@@ -96,7 +97,7 @@
                 <hr>
 
                 <!--- Qui sommes nous---->
-                <h2>Qui sommes nous</h2>
+                <h3>Qui sommes nous ?</h3>
                 <br>
                 <p>Nous sommes une PME dont le siège social est situé à Paris, toute récente. </p>
                 <p>Filmami a pu naitre grâce à notre intérêt à la fois pour le cinéma mais aussi pour le partage !</p>
@@ -106,44 +107,31 @@
                 <br>
             </div>
 
+            <hr class="responsive">
+
             <!-------- Col droite -------->
+            <div class="col col-xl-4">
+                <div class="row d-flex justify-content-center">
+                    <h4>Pas encore membre?</h4>
+                    <div class="col-10 border rounded border-grey p-4 text-center mb-5">
 
-            <div class="col-4 ml-5">
-                <div class="row">
-                    <div class="col ml-5 text-center">
-                        <div class="row">
-                            <div class="col-10">
-                                <div class="col mb-5 font-weight-bold text-uppercase">Pas encore membre?</div>
-                                <div class="row">
-                                    <div class="col border border-grey p-4">
-                                        <!--          Formulaire d'inscription -->
-                                        {{ form_start(form) }}
-                                        {{ form_row(form.pseudo) }}
-                                        {{ form_row(form.ville) }}
-                                        {{ form_row(form.genre) }}
-                                        {{ form_row(form.email) }}
-                                        {{ form_row(form.mdpClair) }}
-                                        <br>
-                                        <button type="submit" class="btn btn-dark col-md-8 p-1" id="boutoninscription">
-                                            Inscription
-                                        </button>
-                                        {{ form_end(form) }}
-                                    </div>
-                                </div>
+                        <!--          Formulaire d'inscription -->
+                        {{ form_start(form) }}
+                        <div class="col p-1">{{ form_row(form.pseudo) }}</div>
+                        <div class="col p-1">{{ form_row(form.ville) }}</div>
+                        <div class="col p-1">{{ form_row(form.genre) }}</div>
+                        <div class="col p-1">{{ form_row(form.email) }}</div>
+                        <div class="col p-1">{{ form_row(form.mdpClair) }}</div>
+                        <br>
+                        <button type="submit" class="btn btn-dark col-md-8 p-1" id="boutoninscription">
+                            Inscription
+                        </button>
 
-                            </div>
-                        </div>
                     </div>
                 </div>
-
-
             </div>
             <br>
         </div>
-
-        <!--            Fin main -->
-
-        <!--          Fin container -->
     </div>
 
 {% endblock %}
