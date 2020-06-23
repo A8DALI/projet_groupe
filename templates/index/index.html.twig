@@ -13,22 +13,22 @@
         <!-------------------------- HEADER --------------------------------------->
         <div class="row">
             <div class="col mt-4">
-                    <!-------- Formulaire de connexion -------->
-                    <form class="form-inline" action="{{ path('app_index_connexion') }}" method="post">
-                        <div class="form-group mt-2 " id="dejamembre">Déjà membre ?</div>
-                        <div class="form-group mx-sm-3 mb-2">
-                            <label for="inputPassword2" class="sr-only">Email</label>
-                            <input type="email" class="form-control" name="_username" value="" placeholder="Email"
-                                   id="emailco">
-                        </div>
-                        <div class="form-group mx-sm-3 mb-2">
-                            <label for="inputPassword2" class="sr-only">Mot de Passe</label>
-                            <input type="password" class="form-control" name="_password" placeholder="Mot de Passe"
-                                   id="mdpco">
-                        </div>
-                        <input type="hidden" name="_target_path" value="{{ path('app_suggestion_index') }}">
-                        <button type="submit" class="btn btn-dark mb-2" id="btnco">Se connecter</button>
-                    </form>
+                <!-------- Formulaire de connexion -------->
+                <form class="form-inline" action="{{ path('app_index_connexion') }}" method="post">
+                    <div class="form-group mt-2 " id="dejamembre">Déjà membre ?</div>
+                    <div class="form-group mx-sm-3 mb-2">
+                        <label for="inputPassword2" class="sr-only">Email</label>
+                        <input type="email" class="form-control" name="_username" value="" placeholder="Email"
+                               id="emailco">
+                    </div>
+                    <div class="form-group mx-sm-3 mb-2">
+                        <label for="inputPassword2" class="sr-only">Mot de Passe</label>
+                        <input type="password" class="form-control" name="_password" placeholder="Mot de Passe"
+                               id="mdpco">
+                    </div>
+                    <input type="hidden" name="_target_path" value="{{ path('app_suggestion_index') }}">
+                    <button type="submit" class="btn btn-dark mb-2" id="btnco">Se connecter</button>
+                </form>
             </div>
         </div>
         <!-------- Fin formulaire de connexion -------->
@@ -36,11 +36,11 @@
         <!-------- Bannière -------->
         <div class="row">
             <div class="col text-center mt-5 mb-4">
-                    <h1 class="bienvenue">Bienvenue sur <br>
-                        <span class="nomdusite">Filmami</span>
-                    </h1>
-                    <div class="argument">Rencontrez des gens qui partagent votre passion.</div>
-                    <br>
+                <h1 class="bienvenue">Bienvenue sur <br>
+                    <span class="nomdusite">Filmami</span>
+                </h1>
+                <div class="argument">Rencontrez des gens qui partagent votre passion.</div>
+                <br>
             </div>
         </div>
         <!-------- Fin bannière -------->
@@ -80,29 +80,30 @@
             <!-------- Col gauche -------->
             <!--            A propos -->
             <div class="col-7 ml-5">
-                    <h2>Le concept</h2>
+                <h2>Le concept</h2>
                 <br>
-                    <p>Filmami est une plateforme qui permet de vous mettre en relation avec des personnes près de chez
-                        vous, ayant les mêmes goûts que vous en matière de film.</p>
-                    <p>Tous les jours votre page de match vous proposera de nouveaux profils, séléctionnés juste pour
-                        vous,
-                        selon vos goûts cinématographiques. </p>
-                    <p>Si vous êtes accro aux films d'actions, vous aurez la possibilité d'en parler avec quelqu'un
-                        d'aussi
-                        passioné que vous!</p>
-                    <p>Créez vous de nouvelles amitiés autour de votre passion et ne soyez jamais seul au cinéma grâce à
-                        Filmami !</p>
-                    <br>
-                    <hr>
+                <p>Filmami est une plateforme qui permet de vous mettre en relation avec des personnes près de chez
+                    vous, ayant les mêmes goûts que vous en matière de film.</p>
+                <p>Tous les jours votre page de match vous proposera de nouveaux profils, séléctionnés juste pour
+                    vous,
+                    selon vos goûts cinématographiques. </p>
+                <p>Si vous êtes accro aux films d'actions, vous aurez la possibilité d'en parler avec quelqu'un
+                    d'aussi
+                    passioné que vous!</p>
+                <p>Créez vous de nouvelles amitiés autour de votre passion et ne soyez jamais seul au cinéma grâce à
+                    Filmami !</p>
+                <br>
+                <hr>
 
-                    <!--- Qui sommes nous---->
-                    <h2>Qui sommes nous</h2>
+                <!--- Qui sommes nous---->
+                <h2>Qui sommes nous</h2>
                 <br>
-                    <p>Nous sommes une PME dont le siège social est situé à Paris, toute récente. </p>
+                <p>Nous sommes une PME dont le siège social est situé à Paris, toute récente. </p>
                 <p>Filmami a pu naitre grâce à notre intérêt à la fois pour le cinéma mais aussi pour le partage !</p>
-                    <p>Notre objectif ? Que tous les fans de cinema puissent se retrouver sur une plateforme pour partager leur passion commune.</p>
+                <p>Notre objectif ? Que tous les fans de cinema puissent se retrouver sur une plateforme pour partager
+                    leur passion commune.</p>
                 <p>N'hésitez pas à nous contacter pour toute demande d'informations supplémentaires.</p>
-                    <br>
+                <br>
             </div>
 
             <!-------- Col droite -------->
@@ -110,28 +111,28 @@
             <div class="col-4 ml-5">
                 <div class="row">
                     <div class="col ml-5 text-center">
-                    <div class="row">
-                        <div class="col-10">
-                            <div class="col mb-5 font-weight-bold text-uppercase">Pas encore membre?</div>
-<div class="row">
-    <div class="col border border-grey p-4">
-        <!--          Formulaire d'inscription -->
-        {{ form_start(form) }}
-        {{ form_row(form.pseudo) }}
-        {{ form_row(form.ville) }}
-        {{ form_row(form.genre) }}
-        {{ form_row(form.email) }}
-        {{ form_row(form.mdpClair) }}
-        <br>
-        <button type="submit" class="btn btn-dark col-md-8 p-1" id="boutoninscription">
-            Inscription
-        </button>
-        {{ form_end(form) }}
-    </div>
-</div>
+                        <div class="row">
+                            <div class="col-10">
+                                <div class="col mb-5 font-weight-bold text-uppercase">Pas encore membre?</div>
+                                <div class="row">
+                                    <div class="col border border-grey p-4">
+                                        <!--          Formulaire d'inscription -->
+                                        {{ form_start(form) }}
+                                        {{ form_row(form.pseudo) }}
+                                        {{ form_row(form.ville) }}
+                                        {{ form_row(form.genre) }}
+                                        {{ form_row(form.email) }}
+                                        {{ form_row(form.mdpClair) }}
+                                        <br>
+                                        <button type="submit" class="btn btn-dark col-md-8 p-1" id="boutoninscription">
+                                            Inscription
+                                        </button>
+                                        {{ form_end(form) }}
+                                    </div>
+                                </div>
 
+                            </div>
                         </div>
-                    </div>
                     </div>
                 </div>
 

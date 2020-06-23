@@ -43,27 +43,27 @@
                         <!-------- Col Droite -------->
                         <div class="col-xs ml-5 mt-5 mr-5 mb-5" id="droite">
                             <div class="col text-center mb-4 p-1" ><h2>{{ profilsuggestion.pseudo }}</h2></div>
-                            <div class="col p-1">Ville : &nbsp {{ profilsuggestion.ville.nom }}</div>
+                            <div class="col p-1">Ville <span class="txt">:</span> {{ profilsuggestion.ville.nom }}</div>
 
                             <!-------- L'âge renseigné ou non -------->
                             <div class="col p-1">
                                 {% if profilsuggestion.age is not null %}
-                                    Age &nbsp: &nbsp {{ profilsuggestion.age }}
+                                    Age <span class="txt">:</span>{{ profilsuggestion.age }}
                                 {% else %}
-                                    Age &nbsp: &nbsp Non renseigné
+                                    Age <span class="txt">:</span> Non renseigné
                                 {% endif %}
                             </div>
 
                             <!-------- Sexe renseigné ou non -------->
                             <div class="col p-1">
                                 {% if profilsuggestion.sexe is not null %}
-                                    Sexe &nbsp: &nbsp {{ profilsuggestion.sexe }}
+                                    Sexe <span class="txt">:</span> {{ profilsuggestion.sexe }}
                                 {% else %}
-                                    Sexe &nbsp: &nbsp Non renseigné
+                                    Sexe <span class="txt">:</span> Non renseigné
                                 {% endif %}</div>
-                            <div class="col p-1"> Email &nbsp: &nbsp {{ profilsuggestion.email }}</div>
+                            <div class="col p-1"> Email <span class="txt">:</span> {{ profilsuggestion.email }}</div>
                             <br>
-                            <div class="col p-1" id="genre">Genre de films préféré : {{ profilsuggestion.genre.type }}</div>
+                            <div class="col p-1" id="genre">Genre de films préféré <span class="txt">:</span> {{ profilsuggestion.genre.type }}</div>
                         </div>
                     </div>
 
