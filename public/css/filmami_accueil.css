@@ -10,7 +10,10 @@ h4 {
 .responsive {
     display: none;
 }
-
+/* ---------------  Bannière ------------------- */
+.bienvenue {
+    font-size: small;
+}
 /* ---------------  Media querie 790 px ----------------- */
 @media (max-width: 790px) {
     #main {
