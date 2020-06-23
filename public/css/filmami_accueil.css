@@ -1,200 +1,53 @@
-/* ----------------------------- HEADER ---------------------- */
+/* ---------------  MAIN ----------------- */
+h3 {
+    margin-top: 4%;
+}
 
+h4 {
+    margin-bottom: 4%;
+}
 
-/*!* ----- Formulaire de connexion ---- *!*/
+.responsive {
+    display: none;
+}
 
-/*.formconnex {*/
-/*    text-align: right;*/
-/*    margin-bottom: 40px;*/
+/* ---------------  Media querie 790 px ----------------- */
+@media (max-width: 790px) {
+    #main {
+        display: flex;
+        flex-direction: column;
+    }
 
-/*}*/
+    h2, h3 {
+        text-align: center;
+    }
 
-/*!* ----- Bannière ---- *!*/
-/*.banniere {*/
-/*    text-align: center;*/
-/*}*/
+    h2 {
+        margin-right: 10%;
+    }
 
-/*.nomdusite {*/
-/*    font-size: 2em;*/
-/*}*/
+    h3 {
+        margin-right: 6.5%;
+    }
 
-/*.argument {*/
-/*    font-size: 1.5rem;*/
-/*    margin-left: 30px;*/
-/*}*/
+    p {
+        margin-right: 6.5%;
+    }
 
-/*!* ---------------------------  MAIN --------------------------------- *!*/
-/*!* ----- Partie gauche ---- *!*/
-/*.colgauche {*/
-/*    margin-left: 40px;*/
-/*}*/
+    .responsive {
+        display: flex;
+    }
+}
 
-/*!* ----- Partie droite ---- *!*/
+/* ---------------  Media 742 px ----------------- */
+/* Login */
 
-/*!* ----- Texte au dessus du formulaire d'inscription ---- *!*/
-/*.inscription, .inscription2 {*/
-/*    font-size: 1.5rem;*/
-/*    margin-left: 3%;*/
-/*}*/
-
-/*!* ----- Formulaire inscription ---- *!*/
-/*.card-body {*/
-/*    margin-left: 10%;*/
-/*    margin-top: 5%;*/
-/*    border: dimgrey solid 1px;*/
-/*}*/
-
-/*!* -------------------------------------- MEDIA QUERIES ------------------------------------------------ *!*/
-
-/*!* ----- Très grand écrans ---- *!*/
-/*@media (max-width: 1458px) {*/
-
-/*    .apropos {*/
-/*        width: 70%;*/
-/*    }*/
-
-/*    .card-body, .inscription, .inscription2 {*/
-/*        margin-left: -100px;*/
-/*    }*/
-/*}*/
-
-/*!* Bouton inscription :*!*/
-
-/*#boutoninscription {*/
-/*    margin-left: 5%;*/
-/*}*/
-
-/*!* ------------------------------------------- Media 865px -------------------------------- *!*/
-/*@media (max-width: 865px) {*/
-
-/*    !* ----------------------- HEADER ---------------------- *!*/
-
-/*    !* ----- Zone de connexion ---- *!*/
-/*    .form-inline {*/
-/*        display: flex;*/
-/*        flex-direction: column;*/
-/*        text-align: center;*/
-/*        margin-left: auto;*/
-/*        margin-right: auto;*/
-/*    }*/
-
-/*    .form-group {*/
-/*        font-size: medium;*/
-/*    }*/
-
-/*    !* ----- Bannière ---- *!*/
-/*    .bienvenue {*/
-/*        margin-top: 5%;*/
-/*        font-size: x-large;*/
-/*    }*/
-
-/*    h2 {*/
-/*        text-align: center;*/
-/*        margin-bottom: 10px;*/
-/*        margin-left: 10px;*/
-/*    }*/
-
-/*    .banniere {*/
-/*        text-align: center;*/
-/*    }*/
-
-/*    .nomdusite {*/
-/*        font-size: xx-large;*/
-/*        margin-left: 0;*/
-/*    }*/
-
-/*    .argument {*/
-/*        font-size: medium;*/
-/*    }*/
-
-/*    !* ---------------------- MAIN ------------------------------ *!*/
-/*    !*----- Général ----*!*/
-/*    .row {*/
-/*        display: flex;*/
-/*        flex-direction: column;*/
-/*    }*/
-
-/*    !* ----- Main gauche ---- *!*/
-/*    .apropos {*/
-/*        width: 150%;*/
-/*    }*/
-
-/*    p {*/
-/*        margin-left: 30px;*/
-/*        margin-right: 0;*/
-/*    }*/
-
-/*    !* ----- Main Droit ---- *!*/
-/*    .col-4 {*/
-/*        margin-left: 50%;*/
-/*    }*/
-
-/*    .inscription, .inscription2 {*/
-/*        margin-left: -180px;*/
-/*    }*/
-
-/*    .card-body {*/
-/*        margin-left: -200px;*/
-/*    }*/
-
-
-/*    !* ----- Boutons ---- *!*/
-/*    #boutoninscription {*/
-/*        display: inline;*/
-/*        margin-bottom: 20px;*/
-/*        margin-left: -1%;*/
-/*        width: 80%;*/
-/*    }*/
-/*}*/
-
-/*!*Media 472px*!*/
-/*@media (max-width: 550px) {*/
-/*    #emailco {*/
-/*        width: 100%;*/
-/*    }*/
-
-/*    #mdpco {*/
-/*        width: 100%;*/
-/*    }*/
-/*}*/
-
-/*!*Media 472px*!*/
-/*@media (max-width: 472px) {*/
-/*    .col-4 {*/
-/*        margin-left: 60%;*/
-/*    }*/
-/*}*/
-
-/*!*Media 395px Pixel 2*!*/
-/*@media (max-width: 395px) {*/
-/*    .col-4 {*/
-/*        margin-left: 70%;*/
-/*    }*/
-
-/*    .inscription, .inscription2 {*/
-/*        font-size: large;*/
-/*    }*/
-
-/*    .col-7 {*/
-/*        margin-top: 10px;*/
-/*    }*/
-/*}*/
-
-/*!*Media 291x Iphone 5 et -*!*/
-/*@media (max-width: 291px) {*/
-/*    .col-4 {*/
-/*        margin-left: 90%;*/
-/*    }*/
-
-/*    .inscription, .inscription2 {*/
-/*        font-size: large;*/
-/*    }*/
-
-/*    .inscription, .inscription2 {*/
-/*        font-size: medium;*/
-/*    }*/
-/*}*/
-
+@media (max-width: 742px) {
+    .form-inline {
+        display: flex;
+        flex-direction: column;
+    }
+}
 
 
 
