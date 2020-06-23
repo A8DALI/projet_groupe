@@ -45,10 +45,14 @@ h4 {
 /* ---------------  Media 742 px ----------------- */
 /* Login */
 
-@media (max-width: 742px) {
+@media (max-width: 781px) {
     .form-inline {
         display: flex;
         flex-direction: column;
+        margin: auto;
+    }
+    #login{
+        margin-left: 4%;
     }
 }
 

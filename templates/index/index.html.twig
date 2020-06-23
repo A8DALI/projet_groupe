@@ -11,8 +11,8 @@
 {% block body %}
     <div class="container-fluid">
         <!-------------------------- HEADER --------------------------------------->
-        <div class="row d-flex justify-content-center mt-2" id="login">
-            <div class="col">
+        <div class="row d-flex  mt-3 mr-4 " id="login">
+            <div class="col d-flex justify-content-end">
 
                 <!-------- Formulaire de connexion -------->
                 <form class="form-inline" action="{{ path('app_index_connexion') }}" method="post">
@@ -36,7 +36,7 @@
 
         <!-------- Bannière -------->
         <div class="row banniere">
-            <div class="col text-center mt-5 mb-4">
+            <div class="col text-center mt-1 mb-4">
                 <h1><span class="bienvenue">Bienvenue sur </span><br>
                     <span class="double">Filmami</span>
                 </h1>
