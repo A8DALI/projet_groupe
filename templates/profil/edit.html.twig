@@ -8,6 +8,14 @@
         Le fichier contient d'AJAX pour envoyer un message de confirmation avant de supprimer le compte. -------->
     <script src="{{ asset('js/profil-delete.js') }}"></script>
 
+    <!-------- Pour afficher le nom de l'image téléchargée -------->
+    <script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            bsCustomFileInput.init();
+        });
+    </script>
+
 {% endblock %}
 
 {% block body %}
