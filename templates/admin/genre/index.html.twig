@@ -11,7 +11,7 @@
 
             {{ form_row(form.type) }}
             <hr>
-            <button class="btn btn-dark" type="submit">Validez</button>
+            <button class="btn btn-dark" title="Ajouter ce nouveau genre de film à la liste des genres" type="submit">Valider</button>
             <hr>
 
             {{ form_end(form) }}
@@ -25,9 +25,9 @@
                     <tr>
                         <td>{{ genre.type }}</td>
                         <td>
-                            <a class="btn btn-dark" href="{{ path('app_admin_genre_index', {'id': genre.id}) }}">Modifier</a>
+                            <a class="btn btn-dark" title="Modifier l'orthographe de ce genre" href="{{ path('app_admin_genre_index', {'id': genre.id}) }}">Modifier</a>
                             <a href="{{ path('app_admin_genre_efface', {'id': genre.id}) }}"
-                               class="btn btn-dark btn-delete">Supprimer</a>
+                               class="btn btn-dark btn-delete" title="Supprimer ce genre">Supprimer</a>
                         </td>
                     </tr>
                 {% endfor %}

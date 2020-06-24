@@ -12,7 +12,7 @@
 
             {{ form_row(form.nom) }}
             <hr>
-            <button class="btn btn-dark" type="submit">Validez</button>
+            <button class="btn btn-dark" title="Ajouter cette nouvelle ville à la liste des villes" type="submit">Valider</button>
             <hr>
             {{ form_end(form) }}
 
@@ -25,9 +25,9 @@
                     <tr>
                         <td>{{ ville.nom }}</td>
                         <td>
-                            <a class="btn btn-dark" href="{{ path('app_admin_ville_index', {'id': ville.id}) }}">Modifier</a>
+                            <a class="btn btn-dark" title="Modifier l'orthographe de cette ville" href="{{ path('app_admin_ville_index', {'id': ville.id}) }}">Modifier</a>
                             <a href="{{ path('app_admin_ville_efface', {'id': ville.id}) }}"
-                               class="btn btn-dark btn-delete">Supprimer</a>
+                               class="btn btn-dark btn-delete" title="Supprimer cette ville">Supprimer</a>
                         </td>
                     </tr>
                 {% endfor %}
