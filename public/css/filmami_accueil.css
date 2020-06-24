@@ -15,7 +15,11 @@ h4 {
     font-size: small;
 }
 /*   ----------------    nom du site  -------------*/
-
+.police {
+    font-family: 'Saira Stencil One', cursive;
+    color: #b30a0a;
+    text-shadow: 0.05em 0.05em rgba(0, 0, 0, 0.87);
+}
 .police1 {
     font-family: 'Saira Stencil One', cursive;
     color: #b30a0a;

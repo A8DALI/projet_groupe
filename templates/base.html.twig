@@ -14,13 +14,13 @@
         <link rel="stylesheet" href="{{ asset('css/filmami_commun.css') }}">
     {% endblock %}
     <title>Filmami</title>
-    <link type="image/jpeg" rel="icon" href="{{ asset('clap_onglet.jpg') }}" />
+    <link type="image/jpeg" rel="icon" href="{{ asset('favicon_li.png') }}" />
 </head>
 {#         ///////         NAVBAR    ADMIN            ///////               #}
 {% if is_granted('ROLE_ADMIN') %}
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
-        <a href="{{ path('app_index_index') }}"  alt=""><img class="navbar-brand" width="85" height="60" src="{{ asset('img/logo.png') }}" alt=""></a>
-        <a class="navbar-brand policelogo" href="{{ path('app_index_index') }}">FilmAmi</a>
+        <a href="{{ path('app_index_index') }}"  alt="notre logo" title="Revenir à l'accueil"><img class="navbar-brand" width="85" height="60" src="{{ asset('img/logo.png') }}" alt=""></a>
+        <a class="navbar-brand policelogo" title="Revenir à l'accueil" href="{{ path('app_index_index') }}">FilmAmi</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -28,19 +28,19 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="{{ path('app_index_index') }}">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" title="Revenir à l'accueil" href="{{ path('app_index_index') }}">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ path('app_suggestion_index') }}">Suggestions</a>
+                    <a class="nav-link" title="Voir la page des suggestions" href="{{ path('app_suggestion_index') }}">Suggestions</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ path('app_profil_index') }}">Mon profil</a>
+                    <a class="nav-link" title="Voir la page Mon Profil" href="{{ path('app_profil_index') }}">Mon profil</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ path('app_admin_ville_index') }}">Villes</a>
+                    <a class="nav-link" title="M'enfin dude t'es admin ... T'as vraiment besoin de lire les infobulles?" href="{{ path('app_admin_ville_index') }}">Villes</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ path('app_admin_genre_index') }}">Genre de films</a>
+                    <a class="nav-link" title="M'enfin dude t'es admin ... T'as vraiment besoin de lire les infobulles?" href="{{ path('app_admin_genre_index') }}">Genre de films</a>
                 </li>
             </ul>
             <div class="bonjour">
@@ -49,11 +49,11 @@
                 </div>
                 <div>
 {#
-                    <button class="nav-item btn btn-outline-dark my-2 my-sm-0" type="submit"><a href="{{ path('/chat/index') }}">Chattez en ligne!</a></button>
+                    <button title="Discutez en direct avec les autres membres connectés!" class="nav-item btn btn-outline-dark my-2 my-sm-0" type="submit"><a href="{{ path('/chat/index') }}">Chattez en ligne!</a></button>
 #}
                 </div>
                 <div>
-                    <button class="nav-item btn btn-outline-dark my-2 my-sm-0" type="submit"><a href="{{ path('app_index_logout') }}">Déconnexion</a></button>
+                    <button title="Quitter l'espace membres" class="nav-item btn btn-outline-dark my-2 my-sm-0" type="submit"><a href="{{ path('app_index_logout') }}">Déconnexion</a></button>
                 </div>
             </div>
         </div>
@@ -63,8 +63,8 @@
 {#         ///////         NAVBAR   PUBLIC             ///////               #}
 {% if is_granted('ROLE_USER') %}
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <a href="{{ path('app_index_index') }}"  alt=""><img class="navbar-brand" width="85" height="60" src="{{ asset('img/logo.png') }}" alt=""></a>
-        <a class="navbar-brand policelogo" href="{{ path('app_index_index') }}">FilmAmi</a>
+        <a href="{{ path('app_index_index') }}"  alt=""><img title="Revenir à l'accueil" class="navbar-brand" width="85" height="60" src="{{ asset('img/logo.png') }}" alt=""></a>
+        <a class="navbar-brand policelogo" title="Revenir à l'accueil" href="{{ path('app_index_index') }}">FilmAmi</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -72,13 +72,13 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="{{ path('app_index_index') }}">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" title="Revenir à l'accueil" href="{{ path('app_index_index') }}">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ path('app_suggestion_index') }}">Suggestions</a>
+                    <a class="nav-link" title="Voir la page des suggestions" href="{{ path('app_suggestion_index') }}">Suggestions</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ path('app_profil_index') }}">Mon profil</a>
+                    <a class="nav-link" title="Voir la page Mon Profil" href="{{ path('app_profil_index') }}">Mon profil</a>
                 </li>
             </ul>
             <div class="bonjour">
@@ -91,7 +91,7 @@
 #}
                 </div>
                 <div>
-                    <button class="nav-item btn btn-outline-dark my-2 my-sm-0" type="submit"><a href="{{ path('app_index_logout') }}">Déconnexion</a></button>
+                    <button title="Quitter l'espace membres" class="nav-item btn btn-outline-dark my-2 my-sm-0" type="submit"><a href="{{ path('app_index_logout') }}">Déconnexion</a></button>
                 </div>
             </div>
         </div>
