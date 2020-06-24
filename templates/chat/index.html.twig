@@ -67,7 +67,7 @@
 					});
 
 					$('#messages').prepend("<p>" + pseudo + " dit maintenant : " + message + "</p>");// on ajoute le message dans la zone prévue
-
+					$('#message').val('').change();
 				} else {
 
 					alert("Votre message est vide");
