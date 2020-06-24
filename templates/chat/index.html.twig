@@ -24,11 +24,11 @@
 		</div>
 
 		<!-------- Mon message -------->
-		<div class="col text-center mb-5 mt-5" id="monmessage">
+		<div class="col text-center mb-3 ml-4 mt-5 mr-4" id="monmessage">
 				<div class="col mb-4"><h4>Mon message :</h4></div>
 				<div class="col"><label for="message"></label></div>
-			<div class="col"><textarea id="message" name="message" rows="6" cols="80"></textarea></div>
-			<div class="col mt-2"><button id="envoi">Envoyez mon message </button></div>
+			<textarea class="col" id="message" name="message" rows="4" cols="60"></textarea>
+			<div class="col mt-4"><button id="envoi">Envoyez mon message </button></div>
 
 		</div>
 	</div>
@@ -46,6 +46,7 @@
 	<!-------- Style -------->
 	{{ parent() }}
 	<link rel="stylesheet" href="{{ asset('css/chat.css') }}" type="text/css">
+
 
 	<script>
 		$(document).ready(function () {
