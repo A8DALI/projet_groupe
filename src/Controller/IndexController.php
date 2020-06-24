@@ -71,10 +71,6 @@ class IndexController extends AbstractController
             $this->addFlash('error', 'Identifiants incorrects');
         }
 
-        return $this->render('index/index.html.twig',
-            [
-                'last_username' => $lastUsername
-            ]);
 
     }
 
