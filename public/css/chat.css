@@ -1,0 +1,15 @@
+#messageauteur{
+    text-transform: uppercase;
+    font-weight: bold;
+}
+#affichagemessage{
+    background-color: rgba(121, 121, 121, 0.16);
+}
+#message{
+    height: 200px;
+}
+#envoi{
+    width: 250px;
+   height: 50px;
+}
+
