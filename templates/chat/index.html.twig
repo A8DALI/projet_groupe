@@ -17,20 +17,23 @@
 
 
 	<div class="row mb-4 d-flex justify-content-center" >
+
+		<!-------- Mon message -------->
+		<div class="col-md-6 text-center justify-content-start" id="monmessage">
+			<div class="col mb-4"><h4>Mon message :</h4></div>
+			<div class="col"><label for="message"></label></div>
+			<textarea class="col mb-3" id="message" name="message" rows="4" cols="60"></textarea>
+			<div class="col mb-4"><button id="envoi">Envoyez mon message </button></div>
+		</div>
+
+
 		<!-------- Affichage des messages -------->
-		<div class="col text-center border border-light rounded ml-5" id="affichagemessage">
+		<div class="col-md-5 text-center border border-light rounded justify-content-end" id="affichagemessage">
 			<div class="col mb-5 mt-5 mr-4"><h3>Derniers messages :</h3></div>
 			<div class="col p-5" id="messages"></div>
 		</div>
 
-		<!-------- Mon message -------->
-		<div class="col text-center mb-5 mt-5" id="monmessage">
-				<div class="col mb-4"><h4>Mon message :</h4></div>
-				<div class="col"><label for="message"></label></div>
-			<div class="col"><textarea id="message" name="message" rows="6" cols="80"></textarea></div>
-			<div class="col mt-2"><button id="envoi">Envoyez mon message </button></div>
 
-		</div>
 	</div>
 
 
@@ -46,6 +49,7 @@
 	<!-------- Style -------->
 	{{ parent() }}
 	<link rel="stylesheet" href="{{ asset('css/chat.css') }}" type="text/css">
+
 
 	<script>
 		$(document).ready(function () {

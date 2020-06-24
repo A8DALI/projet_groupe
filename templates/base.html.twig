@@ -49,7 +49,7 @@
                 </div>
                 <div>
                     <button title="Discutez en direct avec les autres membres connectés!" class="nav-item btn btn-outline-dark my-2 my-sm-0"
-                     type="submit"><a href="{{ path('app_chat_index') }}">Chattez en ligne!</a></button>
+                     type="submit"><a href="{{ path('app_chat_index') }}">Chattez en ligne !</a></button>
                 </div>
                 <div>
                     <button title="Quitter l'espace membres" class="nav-item col-xs btn btn-outline-dark my-2 my-sm-0" type="submit"><a href="{{ path('app_index_logout') }}">Déconnexion</a></button>
@@ -86,7 +86,7 @@
                 </div>
                 <div>
                     <button class="nav-item btn btn-outline-dark my-2 my-sm-0" type="submit">
-                    <a href="{{ path('app_chat_index') }}">Chattez en ligne!</a></button>
+                    <a href="{{ path('app_chat_index') }}">Chattez en ligne !</a></button>
                 </div>
                 <div>
                     <button title="Quitter l'espace membres" class="nav-item btn btn-outline-dark my-2 my-sm-0" type="submit"><a href="{{ path('app_index_logout') }}">Déconnexion</a></button>
@@ -121,14 +121,14 @@
 
     {#    footer html #}
     <footer>
+        <span><a title="Envoyez-nous un message !" class="double" href="{{ path('app_index_contact') }}">Contactez-nous !</a></span>
+        <hr>
         <span>Nos réseaux sociaux :</span>
         <div class="row">
             <a title="Visitez notre page Twitter" href="https://twitter.com/"><img src="{{ asset('img/logo_twitter.png') }}" alt=""></a>
             <a title="Visitez notre page Instagram" href="https://www.instagram.com/"><img src="{{ asset('img/logo_instagram.png') }}" alt=""></a>
             <a title="Visitez notre page Facebook" href="https://www.facebook.com/"><img src="{{ asset('img/logo_facebook.png') }}" alt=""></a>
         </div>
-        <hr>
-        <span><a title="Envoyez-nous un message !" class="double" href="{{ path('app_index_contact') }}">Contactez-nous !</a></span>
         <hr>
         <span> Copyright &copy;Filmami 2020</span>
     </footer>

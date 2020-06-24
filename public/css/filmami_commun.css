@@ -23,6 +23,16 @@
     display: flex;
     align-items: center;
 }
+.police {
+    font-family: 'Saira Stencil One', cursive;
+    color: #b30a0a;
+    text-shadow: 0.05em 0.05em rgba(0, 0, 0, 0.87);
+}
+.police1 {
+    font-family: 'Saira Stencil One', cursive;
+    color: #b30a0a !important;
+    text-shadow: 0.1em 0.1em rgba(0, 0, 0, 0.87) !important;
+}
 .policelogo {
     font-family: 'Saira Stencil One', cursive;
     color: #b30a0a !important;
@@ -57,4 +67,7 @@ footer a:hover {
 }
 .quatre {
     font-size: 4em;
+}
+.flexy {
+    display: flex;
 }

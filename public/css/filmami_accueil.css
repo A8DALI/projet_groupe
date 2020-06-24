@@ -6,7 +6,9 @@ h3 {
 h4 {
     margin-bottom: 4%;
 }
-
+.mb {
+    margin-bottom: 20px;
+}
 .responsive {
     display: none;
 }
@@ -15,16 +17,7 @@ h4 {
     font-size: small;
 }
 /*   ----------------    nom du site  -------------*/
-.police {
-    font-family: 'Saira Stencil One', cursive;
-    color: #b30a0a;
-    text-shadow: 0.05em 0.05em rgba(0, 0, 0, 0.87);
-}
-.police1 {
-    font-family: 'Saira Stencil One', cursive;
-    color: #b30a0a;
-    text-shadow: 0.1em 0.1em rgba(0, 0, 0, 0.87);
-}
+
 /* ---------------  Media querie 790 px ----------------- */
 @media (max-width: 790px) {
     #main {

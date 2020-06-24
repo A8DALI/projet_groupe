@@ -16,11 +16,16 @@
 {% block body %}
 
     <div class="container-fluid">
-        <div class="centrez">
-            <p class="voici">Voici les personnes près de chez vous qui partagent vos goûts cinématographiques! Vous pouvez :
-                visiter leur profil, et peut-être ensuite leur proposer d'être votre ami sur ce site,
-                ou directement leur envoyer un mail pour leur proposer une séance, <span class="bonfilm">Bon film!</span>
-            </p>
+        <div class="centrez flexy mt">
+            <div class="col-1"></div>
+            <div class="col-10">
+                <p class="voici">Voici les personnes près de chez vous qui partagent vos goûts cinématographiques! Vous pouvez :
+                    visiter leur profil, et peut-être ensuite leur proposer d'être votre ami sur ce site,
+                    ou directement leur envoyer un mail pour leur proposer une séance, <span class="bonfilm">Bon film!</span>
+                </p>
+            </div>
+
+
         </div>
         <hr>
 
@@ -31,14 +36,13 @@
                     {% for suggestion in suggestions %}
                         <div class="card centrez" style="width: 18rem;">
                             {% if suggestion.image is not null %}
-                                <img class="img-thumbnail" src="{{ asset('images/' ~ suggestion.image) }}">
+                                <img class="card-img-top" src="{{ asset('images/' ~ suggestion.image) }}">
 
                                 <!-------- Si pas d'image placeholder par défault: -------->
                             {% else %}
-                                <img class="img-thumbnail" src="{{ asset('img/placeholder_3.png') }}" alt="">
+                                <img class="img-thumbnail" src="{{ asset('img/placeholder2_25_1.jpg') }}" alt="">
 
                             {% endif %}
-                            {#<img src="{{ asset('../img/placeholder.jpg') }}" alt="">#}
                             <div class="card-body">
                                 <tr>
                                     <h5 class="card-text">{{ suggestion.pseudo }}</h5>
