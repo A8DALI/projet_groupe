@@ -48,7 +48,7 @@
                 <div class="col p-1 mb-4">
                     {% if original_image is not null %}
                         <p>Image actuelle : </p>
-                        <img src="{{ asset('images/' ~ original_image) }}" height="150px">
+                        <img src="{{ asset('images/' ~ original_image) }}" height="150px" alt="Image actuelle de mon profil">
                     {% endif %}
                 </div>
             </div>
@@ -57,7 +57,7 @@
                 <!--         Bouton retour -->
                 <div class="row  d-flex justify-content-center p-4" id="rowbouton">
                 <div class="col-5">
-                    <button class="btn btn-secondary"
+                    <button class="btn btn-secondary" title="Retourner sur ma page profil"
                        href="{{ path('app_profil_index') }}" id="boutonretour">
                         Retour à mon profil
                     </button>
@@ -65,7 +65,7 @@
 
                     <!--          Bouton modifier -->
                     <div class="col-5">
-                        <button type="submit" class="btn btn-info" id="boutonmodif">
+                        <button type="submit" class="btn btn-info" id="boutonmodif" title="Enregistrer les nouvelles informations de mon profil">
                             Enregistrer les modifications
                         </button>
                     </div>
@@ -80,7 +80,7 @@
             <div class="col text-center mb-5">ou</div>
         <div class="row">
         <div class="col d-flex justify-content-center mb-3" >
-            <a type="button" href="{{ path('app_profil_delete') }}"
+            <a type="button" href="{{ path('app_profil_delete') }}" title="Supprimer mon profil définitivement. Attention cette action est irréversible"
                class="btn btn-danger btn-delete" id="boutonsup">
                 Supprimer mon profil
             </a>
