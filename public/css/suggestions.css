@@ -1,8 +1,5 @@
-
-.police {
-    font-family: 'Mystery Quest', cursive;
-    font-size: 5em;
-    text-align: center;
+.mt {
+    margin-top: 90px;
 }
 .main {
     display: flex;
