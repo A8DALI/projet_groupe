@@ -31,11 +31,11 @@
 
                             <!-------- Si image modifiée: -------->
                             {% if profilsuggestion.image is not null %}
-                                <img class="img-thumbnail" src="{{ asset('images/' ~ profilsuggestion.image) }}">
+                                <img class="img-thumbnail" src="{{ asset('images/' ~ profilsuggestion.image) }}" alt="Image de l'utilisateur">
 
                                 <!-------- Si pas d'image placeholder par défault: -------->
                             {% else %}
-                                <img class="img-thumbnail" src="{{ asset('img/placeholder_3.png') }}" alt="">
+                                <img class="img-thumbnail" src="{{ asset('img/placeholder_3.png') }}" alt="Image par défault">
 
                             {% endif %}
                         </div>

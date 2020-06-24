@@ -30,11 +30,11 @@
 
                                 <!-------- Si image modifiée: -------->
                                 {% if profil.image is not null %}
-                                    <img class="img-thumbnail" src="{{ asset('images/' ~ profil.image) }}">
+                                    <img class="img-thumbnail" src="{{ asset('images/' ~ profil.image) }}" alt="Mon image">
 
                                     <!-------- Si pas d'image placeholder par défault: -------->
                                 {% else %}
-                                    <img class="img-thumbnail" src="{{ asset('img/placeholder_3.png') }}" alt="">
+                                    <img class="img-thumbnail" src="{{ asset('img/placeholder_3.png') }}" alt="Image de mon profil par défault">
 
                                 {% endif %}
                             </div>
@@ -92,8 +92,8 @@
 
             <div class="col-xs">
                 <a type="button" href="{{ path('app_profil_edit') }}"
-                   class="btn btn-dark mt-5 mb-5 rounded">
-                    Modifier votre profil
+                   class="btn btn-dark mt-5 mb-5 rounded" title="Ajouter ou modifier des informations sur mon profil">
+                    Modifier mon profil
                 </a>
             </div>
         </div>

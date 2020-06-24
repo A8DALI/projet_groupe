@@ -27,8 +27,10 @@
         <!-------- Fin bannière -------->
 
         <!-------------------------- HEADER --------------------------------------->
+        {% if app.user is null  %}
         <div class="row d-flex  mt-3 mr-4 " id="login">
             <div class="col d-flex justify-content-center">
+
 
                 <!-------- Formulaire de connexion -------->
                 <form class="form-inline" action="{{ path('app_index_connexion') }}" method="post">
@@ -49,6 +51,9 @@
             </div>
         </div>
         <!-------- Fin formulaire de connexion -------->
+        {% else %}
+
+        {% endif %}
 
         <!-------- Carousel -------->
         <div class="row">
