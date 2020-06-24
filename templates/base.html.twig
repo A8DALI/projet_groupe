@@ -20,7 +20,7 @@
 {% if is_granted('ROLE_ADMIN') %}
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
         <a href="{{ path('app_index_index') }}"  alt=""><img class="navbar-brand" width="85" height="60" src="{{ asset('img/logo.png') }}" alt=""></a>
-        <a class="navbar-brand police1" href="{{ path('app_index_index') }}">FilmAmi</a>
+        <a class="navbar-brand policelogo" href="{{ path('app_index_index') }}">FilmAmi</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -46,6 +46,11 @@
             <div class="bonjour">
                 <div class="davy">
                     <a class="nav-item nav-link nav-link2" href="#">Bonjour {{ app.user }} !</a>
+                </div>
+                <div>
+{#
+                    <button class="nav-item btn btn-outline-dark my-2 my-sm-0" type="submit"><a href="{{ path('/chat/index') }}">Chattez en ligne!</a></button>
+#}
                 </div>
                 <div>
                     <button class="nav-item btn btn-outline-dark my-2 my-sm-0" type="submit"><a href="{{ path('app_index_logout') }}">Déconnexion</a></button>
@@ -81,6 +86,11 @@
                     <a class="nav-item nav-link nav-link2" href="#">Bonjour {{ app.user }} !</a>
                 </div>
                 <div>
+{#
+                    <button class="nav-item btn btn-outline-dark my-2 my-sm-0" type="submit"><a href="{{ path('/chat/index') }}">Chattez en ligne!</a></button>
+#}
+                </div>
+                <div>
                     <button class="nav-item btn btn-outline-dark my-2 my-sm-0" type="submit"><a href="{{ path('app_index_logout') }}">Déconnexion</a></button>
                 </div>
             </div>
@@ -88,6 +98,8 @@
     </nav>
 {% endif %}
 {#         ///////        FIN    NAVBAR    PUBLIC            ///////               #}
+
+
 <main class="container-fluid">
 
     {# pour l'affichage des messages flash #}
@@ -104,7 +116,9 @@
             </div>
         {% endfor %}
     {% endfor %}
+
 </main>
+
     {% block body %}{% endblock %}
 
     {#    footer html #}

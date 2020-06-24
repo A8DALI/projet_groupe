@@ -22,8 +22,10 @@
     display: flex;
     align-items: center;
 }
-.police1 {
+.policelogo {
     font-family: 'Saira Stencil One', cursive;
+    color: #b30a0a !important;
+    text-shadow: 0.05em 0.05em white !important;
 }
 body {
     margin-top: 82px

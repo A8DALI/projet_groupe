@@ -18,7 +18,7 @@ class GenreType extends AbstractType
                 [
                     'label'=>'Nom du genre',
                     'attr'=>[
-                        'placeholder'=>'Ajouter une genre de film'
+                        'placeholder'=>'Ajouter un genre de film'
                     ]
                 ]
             )

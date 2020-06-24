@@ -11,7 +11,7 @@
     <div class="container">
         <h1>Contactez-nous ! </h1>
         <h3>Nous vous répondrons rapidement</h3><br>
-
+        <hr>
 
         {{ form_start(form) }}
 
@@ -21,13 +21,13 @@
 
         {{ form_row(form.body) }}
         <br>
-        <button type="submit" class="btn btn-dark">
+        <button type="submit" class="btn btn-dark" title="Envoyez-nous votre message!">
             Envoyer
         </button><br><br>
         {{ form_end(form) }}
 
-
-    <button  type="submit" class="boubou btn btn-dark"><a href="{{ path('app_index_index') }}">
+        <hr>
+    <button  type="submit" class="boubou btn btn-dark" title="Revenir à l'accueil"><a href="{{ path('app_index_index') }}">
         Retour
     </a></button>
 
