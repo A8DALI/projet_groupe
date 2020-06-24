@@ -17,6 +17,7 @@
 }
 .bonjour {
     display: flex;
+    flex-wrap: wrap;
 }
 .davy {
     display: flex;
@@ -45,7 +46,7 @@ footer a {
     color: white;
 }
 footer a:hover {
-    color: white;
+    color: #34547d;
     text-decoration:none;
 }
 .double {
