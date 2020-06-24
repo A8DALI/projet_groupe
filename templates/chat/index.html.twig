@@ -4,22 +4,48 @@
 
 {% block body %}
 
-	<h3>Bienvenue sur le chat {{ app.user }}</h3>
+<div class="container-fluid">
 
-	<input type="text" id="message">
+	<!-------- Titre profil -------->
+	<div class="row">
+		<div class="col text-center mb-5 mt-5">
+			<h1> Bienvenue {{ app.user }} ! </h1>
+				<br>
+			<h2>Vous êtes sur le chat général:</h2>
+		</div>
+	</div>
 
-	<button id="envoi">Envoyez votre message !</button><br>
 
-	<h6>Les derniers messages :</h6>
-	<div id="messages"></div>
+	<div class="row mb-4 d-flex justify-content-center" >
+		<!-------- Affichage des messages -------->
+		<div class="col text-center border border-light rounded ml-5" id="affichagemessage">
+			<div class="col mb-5 mt-5 mr-4"><h3>Derniers messages :</h3></div>
+			<div class="col p-5" id="messages"></div>
+		</div>
+
+		<!-------- Mon message -------->
+		<div class="col text-center mb-5 mt-5" id="monmessage">
+				<div class="col mb-4"><h4>Mon message :</h4></div>
+				<div class="col"><label for="message"></label></div>
+			<div class="col"><textarea id="message" name="message" rows="6" cols="80"></textarea></div>
+			<div class="col mt-2"><button id="envoi">Envoyez mon message </button></div>
+
+		</div>
+	</div>
 
 
+	<!-------- Envoyer votre message -------->
 
+
+</div>
+	<!-------- Fin container -------->
 {% endblock %}
 
 {% block javascripts %}
 
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<!-------- Style -------->
+	{{ parent() }}
+	<link rel="stylesheet" href="{{ asset('css/chat.css') }}" type="text/css">
 
 	<script>
 		$(document).ready(function () {

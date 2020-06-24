@@ -17,6 +17,7 @@
 }
 .bonjour {
     display: flex;
+    flex-wrap: wrap;
 }
 .davy {
     display: flex;
@@ -45,9 +46,15 @@ footer a {
     color: white;
 }
 footer a:hover {
-    color: white;
+    color: #34547d;
     text-decoration:none;
 }
 .double {
     font-size: 2em;
+}
+.triple {
+    font-size: 3em;
+}
+.quatre {
+    font-size: 4em;
 }
