@@ -1,0 +1,69 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bienvenue sur le Chat {% endblock %}
+
+{% block body %}
+
+	<h3>Bienvenue sur le chat {{ app.user }}</h3>
+
+	<input type="text" id="message">
+
+	<button id="envoi">Envoyez votre message !</button><br>
+
+	<h6>Les derniers messages</h6>
+	<div id="messages"></div>
+
+
+
+{% endblock %}
+
+{% block javascripts %}
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+	<script>
+		$(document).ready(function () {
+
+			$('#envoi').click(function (e) {
+				e.preventDefault(); // on empêche le bouton d'envoyer le formulaire
+
+				var pseudo = '{{ app.user }}'; // on sécurise les données
+				var message = $('#message').val();
+
+				if (message != "" && pseudo !="") {// on vérifie que les variables ne sont pas vides
+					$.ajax({
+						url: "/chat/traitement", // on donne l'URL du fichier de traitement
+						type: "post", // la requête est de type POST
+						data: {message: message}, // et on envoie nos données
+					});
+
+					$('#messages').prepend("<p>" + pseudo + " dit maintenant : " + message + "</p>"); // on ajoute le message dans la zone prévue
+
+				} else {
+
+					alert("Votre message est vide");
+				}
+			});
+
+
+			function charger() {
+
+				//var id = $('#messages p:first-child').attr('id'); // on récupère l'id le plus récent
+
+				$.ajax({
+					url: "/chat/affichage",
+					type: 'post',
+					//data : {id : id},
+					success: function (response) {
+						$('#messages').replaceWith(response); // on veut ajouter les nouveaux messages au début du bloc #messages
+					}
+				});
+
+			}
+
+			setInterval(charger, 5000);
+		});
+
+	</script>
+
+{% endblock %}

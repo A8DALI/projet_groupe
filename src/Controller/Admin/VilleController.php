@@ -28,7 +28,7 @@ class VilleController extends AbstractController
         } else {
             $ville = $repository->find($id);
 
-            $this->addFlash('info', 'Modifiez dans le champ de saisie et validez');
+            $this->addFlash('info', 'Modifiez la ville dans le champ de saisi et validez');
 
         }
 
@@ -61,7 +61,7 @@ class VilleController extends AbstractController
         $manager->remove($ville);
         $manager->flush();
 
-        $this->addFlash('success', 'Ville bien effacée');
+        $this->addFlash('success', 'Ville supprimée');
 
         return $this->redirectToRoute('app_admin_ville_index');
     }

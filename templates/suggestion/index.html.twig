@@ -30,7 +30,14 @@
                 <div class="row liste">
                     {% for suggestion in suggestions %}
                         <div class="card centrez" style="width: 18rem;">
-                            <img src="../img/placeholder2_25_1.jpg" class="card-img-top" alt="...">
+                            {% if suggestion.image is not null %}
+                                <img class="img-thumbnail" src="{{ asset('images/' ~ suggestion.image) }}">
+
+                                <!-------- Si pas d'image placeholder par défault: -------->
+                            {% else %}
+                                <img class="img-thumbnail" src="{{ asset('img/placeholder_3.png') }}" alt="">
+
+                            {% endif %}
                             {#<img src="{{ asset('../img/placeholder.jpg') }}" alt="">#}
                             <div class="card-body">
                                 <tr>

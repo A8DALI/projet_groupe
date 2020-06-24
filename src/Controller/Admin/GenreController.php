@@ -30,7 +30,7 @@ class GenreController extends AbstractController
         } else {
             $genre = $repository->find($id);
 
-            $this->addFlash('info', 'Modifiez dans le champ de saisie et validez');
+            $this->addFlash('info', 'Modifiez le genre dans le champ de saisi et validez');
         }
 
         $form = $this->createForm(GenreType::class, $genre);
@@ -63,7 +63,7 @@ class GenreController extends AbstractController
         $manager->remove($genre);
         $manager->flush();
 
-        $this->addFlash('success', 'Genre bien effacé');
+        $this->addFlash('success', 'Genre supprimé');
 
         return $this->redirectToRoute('app_admin_genre_index');
     }
