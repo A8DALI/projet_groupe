@@ -43,7 +43,7 @@ class IndexController extends AbstractController
                 $manager->persist($user);
                 $manager->flush();
 
-                $this->addFlash('sucess', 'Vous êtes bien enregistré, connectez vous pour profiter du site !');
+                $this->addFlash('success', 'Vous êtes bien enregistré, connectez vous pour profiter du site !');
 
                 return $this->redirectToRoute('app_index_index');
 

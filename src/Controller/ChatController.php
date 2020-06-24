@@ -43,11 +43,12 @@ class ChatController extends AbstractController
                 [
                     'messages' => $messages
                 ]);
+
         } else {
 
             $this->addFlash('info', 'Vous devez être connecté pour accéder au Chat');
 
-            return $this->redirectToRoute('app_chat_index');
+            return $this->redirectToRoute('app_index_index');
         }
 
     }
@@ -59,7 +60,7 @@ class ChatController extends AbstractController
     {
 
 
-        $messages = $repository->findBy([], ['id'=>'DESC'], 3);
+        $messages = $repository->findBy([], ['id'=>'DESC'], 10);
 
 
         return $this->render('chat/affichage.html.twig',

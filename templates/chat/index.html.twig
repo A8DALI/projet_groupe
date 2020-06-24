@@ -7,31 +7,12 @@
 	<h3>Bienvenue sur le chat {{ app.user }}</h3>
 
 	<input type="text" id="message">
-{#	<input type="hidden" id="id" value="{{ id }}">#}
 
+	<button id="envoi">Envoyez votre message !</button><br>
 
-{#
-	{{ form_start(form) }}
+	<h6>Les derniers messages</h6>
+	<div id="messages"></div>
 
-	<div id="message">
-		{{ form_row(form.message) }}
-	</div>#}
-
-	<button id="envoi">Envoyez votre message !</button>
-
-{#	{{ form_end(form) }}#}
-
-
-
-		<div id="messages"></div>
-
-	{#{% for message in messages %}
-		<div class="card bg-light mb-3 p-2">
-			Par {{ message.auteur }}
-			<div class="text-muted">Le {{ message.datePublication|date('d/m/Y H:i') }}</div>
-			{{ message.message }}
-		</div>
-	{% endfor %}#}
 
 
 {% endblock %}
@@ -49,15 +30,18 @@
 				var pseudo = '{{ app.user }}'; // on sécurise les données
 				var message = $('#message').val();
 
-				if (message != "") { // on vérifie que les variables ne sont pas vides
+				if (message != "" && pseudo !="") {// on vérifie que les variables ne sont pas vides
 					$.ajax({
 						url: "/chat/traitement", // on donne l'URL du fichier de traitement
 						type: "post", // la requête est de type POST
 						data: {message: message}, // et on envoie nos données
 					});
 
-					$('#messages').prepend("<p>" + pseudo + " dit : " + message + "</p>"); // on ajoute le message dans la zone prévue
+					$('#messages').prepend("<p>" + pseudo + " dit maintenant : " + message + "</p>"); // on ajoute le message dans la zone prévue
 
+				} else {
+
+					alert("Votre message est vide");
 				}
 			});
 
@@ -77,7 +61,7 @@
 
 			}
 
-			setInterval(charger, 2000);
+			setInterval(charger, 5000);
 		});
 
 	</script>

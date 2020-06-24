@@ -38,13 +38,14 @@ class InscriptionType extends AbstractType
                     'type'=>PasswordType::class,
                     'first_options' => [
                         'label' => 'Mot de passe',
+                        'help'=> 'Le mot de passe doit contenir au moins une minuscule, une majuscule et
+                         un chiffre'
                     ],
                    'second_options' => [
                        'label' => 'Confirmation du mot de passe'
                    ],
                    'invalid_message' => 'La confirmation ne correspond pas au mot de passe'
                 ]
-
             )
             //->add('role')
             ->add('ville',
