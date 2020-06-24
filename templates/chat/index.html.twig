@@ -10,7 +10,7 @@
 
 	<button id="envoi">Envoyez votre message !</button><br>
 
-	<h6>Les derniers messages</h6>
+	<h6>Les derniers messages :</h6>
 	<div id="messages"></div>
 
 
@@ -48,12 +48,9 @@
 
 			function charger() {
 
-				//var id = $('#messages p:first-child').attr('id'); // on récupère l'id le plus récent
-
 				$.ajax({
 					url: "/chat/affichage",
 					type: 'post',
-					//data : {id : id},
 					success: function (response) {
 						$('#messages').replaceWith(response); // on veut ajouter les nouveaux messages au début du bloc #messages
 					}
@@ -64,6 +61,8 @@
 			setInterval(charger, 5000);
 		});
 
+
 	</script>
+
 
 {% endblock %}

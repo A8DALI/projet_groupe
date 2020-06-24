@@ -44,7 +44,7 @@
                         		/**
                         		 * @var string|null
                         		 * @Assert\NotBlank(message="Le mot de passe est obligatoire", groups={"registration"})
-                        		 * @Assert\Regex("/^[a-zA-Z0-9_]{6,20}$/", message="Mot de passe non conforme")
+                        		 * @Assert\Regex("/^[a-zA-Z0-9_]{5,15}$/", message="Mot de passe non conforme")
                         		 */
                         		private $mdpClair;
                         

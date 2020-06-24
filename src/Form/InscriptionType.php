@@ -38,8 +38,8 @@ class InscriptionType extends AbstractType
                     'type'=>PasswordType::class,
                     'first_options' => [
                         'label' => 'Mot de passe',
-                        'help'=> 'Le mot de passe doit contenir au moins une minuscule, une majuscule et
-                         un chiffre'
+                        'help'=> 'Le mot de passe ne peut contenir que des minuscules, des majuscules, 
+                         des chiffres ou _ et doit faire entre 5 et 15 caractères'
                     ],
                    'second_options' => [
                        'label' => 'Confirmation du mot de passe'
