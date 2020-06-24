@@ -62,17 +62,19 @@ class IndexController extends AbstractController
     public function connexion(AuthenticationUtils $authenticationUtils)
     {
 
-            $error = $authenticationUtils->getLastAuthenticationError();
-            //$lastUsername = $authenticationUtils->getLastUsername();
+        $error = $authenticationUtils->getLastAuthenticationError();
 
-            if (!empty($error)) {
+        //l'identifiant saisi en cas de mauvaise authentification
+        $lastUsername = $authenticationUtils->getLastUsername();
 
-                $this->addFlash('error', 'Identifiants incorrects');
+        if(!empty($error)){
+            $this->addFlash('error', 'Identifiants incorrects');
+        }
 
-            }
-
-            //$this->addFlash('success', 'Vous êtes connecté');
-
+        return $this->render('index/index.html.twig',
+            [
+                'last_username' => $lastUsername
+            ]);
 
     }
 
