@@ -1,10 +1,14 @@
 <div id="messages">
     {% for message in messages %}
         <div class="card bg-light mb-3 p-2">
-            Par {{ message.auteur }}
+            Par
+            {% if message.auteur == app.user %}
+                moi
+            {% else %}
+                {{ message.auteur }}
+            {% endif %}
             <div class="text-muted">Le {{ message.datePublication|date('d/m/Y H:i') }}</div>
             {{ message.message }}
-            <input type="hidden" name="id" value="{{ message.id }}">
         </div>
     {% endfor %}
 </div>

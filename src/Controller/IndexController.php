@@ -63,7 +63,7 @@ class IndexController extends AbstractController
     {
 
             $error = $authenticationUtils->getLastAuthenticationError();
-            $lastUsername = $authenticationUtils->getLastUsername();
+            //$lastUsername = $authenticationUtils->getLastUsername();
 
             if (!empty($error)) {
 
@@ -71,7 +71,7 @@ class IndexController extends AbstractController
 
             }
 
-            $this->addFlash('success', 'Vous êtes connecté');
+            //$this->addFlash('success', 'Vous êtes connecté');
 
 
     }

@@ -106,7 +106,7 @@
 					$manager->persist($details);
 					$manager->flush();
 
-					$this->addFlash('success', "Le profile est mis à jour");
+					$this->addFlash('success', "Votre profil est mis à jour");
 
 					return $this->redirectToRoute('app_profil_index');
 				} else {
@@ -151,7 +151,7 @@
 			$tokenStorage->setToken(null);
 			$session->invalidate();
 
-			$this->addFlash('success', "Votre compte est supprimé");
+			$this->addFlash('success', "Votre profil est supprimé");
 
 			return $this->redirectToRoute('app_index_index');
 		}
