@@ -13,3 +13,20 @@
    height: 50px;
 }
 
+#monmessage{
+    margin-right: 80px;
+}
+/* ------------------ MEDIA ---------------- */
+
+@media (max-width: 1450px) {
+    #monmessage{
+        margin-right: 60px;
+    }
+}
+@media (max-width: 718px) {
+    .row {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+    }
+}
