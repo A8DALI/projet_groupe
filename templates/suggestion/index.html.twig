@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block stylesheets %}
-   {{ parent() }}
+    {{ parent() }}
     <link rel="stylesheet" href="{{ asset('css/filmami_commun.css') }}">
     <link rel="stylesheet" href="{{ asset('css/suggestions.css') }}" type="text/css">
 {% endblock %}
@@ -17,33 +17,30 @@
 
     <div class="container-fluid">
         <div class="centrez">
-            <span class="voici">Voici les personnes près de chez vous qui partagent vos goûts cinématographiques!</span> <br>
-
-            <span class="pouvez">Vous pouvez :</span> <br>
-            <span class="visiter">- Visiter leur profil, et peut-être ensuite leur proposer d'être votre ami sur ce site.</span> <br>
-            <span>- Ou directement leur envoyer un mail pour leur proposer une séance!</span> <br>
-            <span class="bonfilm">Bon film !</span>
-            <hr>
+            <p class="voici">Voici les personnes près de chez vous qui partagent vos goûts cinématographiques! Vous pouvez :
+                visiter leur profil, et peut-être ensuite leur proposer d'être votre ami sur ce site,
+                ou directement leur envoyer un mail pour leur proposer une séance, <span class="bonfilm">Bon film!</span>
+            </p>
         </div>
-
+        <hr>
 
         <div class="col-12">
             <!--          Container des 3 cartes pour traitement Ajax          -->
-            <div id="cartes_row" >
+            <div id="cartes_row">
                 <div class="row liste">
                     {% for suggestion in suggestions %}
                         <div class="card centrez" style="width: 18rem;">
-                            <img src="../img/placeholder2_25.jpg" class="card-img-top" alt="...">
+                            <img src="../img/placeholder2_25_1.jpg" class="card-img-top" alt="...">
                             {#<img src="{{ asset('../img/placeholder.jpg') }}" alt="">#}
                             <div class="card-body">
                                 <tr>
-                                    <h5 class="card-title">{{ suggestion.pseudo }}</h5>
+                                    <h5 class="card-text">{{ suggestion.pseudo }}</h5>
                                 </tr>
                                 <tr>
-                                    <span class="card-title">{{ suggestion.ville.nom }}</span> <br>
+                                    <span class="card-text">{{ suggestion.ville.nom }}</span> <br>
                                 </tr>
                                 <tr>
-                                    <span class="card-title">{{ suggestion.genre.type }}</span>
+                                    <span class="card-text">{{ suggestion.genre.type }}</span>
                                 </tr>
                                 <tr>
                                     <p class="card-text">Ici la zone de cours texte du champ "A propos"</p>
@@ -52,9 +49,9 @@
                                     <a href="{{ path('app_suggestion_profilsuggestion', {'id': suggestion.id}) }}}"
                                        class="btn btn-dark">Voir le profil</a>
                                 </tr>
-                                <hr>
+                                <br>
                                 <tr>
-                                    <a href="#" class="btn btn-dark">Envoyez un mail: {{ suggestion.email }}</a>
+                                    <a href="#" class="btn btn-dark mailbtn">Envoyez un mail: {{ suggestion.email }}</a>
                                 </tr>
                             </div>
                         </div>
@@ -64,19 +61,19 @@
         </div>
         <hr>
         <div class="liste">
-        <div>
-            <span class="voici">Voulez-vous voir d'autres personnes ?</span>
-            <form id="plus" method="get">
-                <a type="button" id="load" class="btn btn-dark mb-2
+            <div>
+                <span class="voici">Voulez-vous voir d'autres personnes ?</span>
+                <form id="plus" method="get">
+                    <a type="button" id="load" class="btn btn-dark mb-2
             href="{{ path('app_suggestion_plusdesuggestions') }}" >
-                Voir plus de résultats !
-                </a>
-            </form>
-        </div>
-        <div>
-            <span class="voici">Voulez-vous voir votre profil?</span> <br>
-                <a type="button"  class="btn btn-dark mb-2" href="{{ path('app_profil_index') }}" > Voir mon profil !</a>
-        </div>
+                    Voir plus de résultats !
+                    </a>
+                </form>
+            </div>
+            <div>
+                <span class="voici">Voulez-vous voir votre profil?</span> <br>
+                <a type="button" class="btn btn-dark mb-2" href="{{ path('app_profil_index') }}"> Voir mon profil !</a>
+            </div>
         </div>
 
     </div>

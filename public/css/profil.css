@@ -1,230 +1,100 @@
-/* --------------------  MAIN ------------------------  */
-
-/* ---------- Mon profil ------------- */
-h1 {
-    text-align: center;
+/*  --------------  MON PROFIL -------------- */
+/* --------------  Carte profil -------------- */
+#profil, #apropos{
+    background-color: black;
+    color: white;
+}
+.img-thumbnail{
+    max-width: 300px;
+    max-height: 400px;
+}
+hr {
+    background-color: dimgrey;
+}
+.pseudo{
+    color: white;
 }
 
-/* --------------  Carte profil -------------- */
-#profil {
-    border: 1px solid dimgrey;
-    border-radius: 20px;
-    margin: 3% 20% 5% 20%;
+/*  --------------  EDITION DE MON PROFIL -------------- */
+#formedition{
     background-color: black;
     color: white;
 }
 
-/* ------ Image à gauche --------- */
-.img-thumbnail {
-    margin: 10% 0 10% 12%;
-    max-width: 365px;
+.txt{
+    margin-left: 1%;
+    margin-right: 1%;
 }
 
-/* ------ Nom profil ----- */
-h2 {
-    font-size: x-large;
-    margin-top: 15%;
+@media (max-width: 513px) {
+
+#boutonretour{
+    line-height: 36.5px;
+}
 }
 
-/* ----- Texte à droite de l'image ---- */
-.texteprofil {
-    font-size: large;
-}
+@media (max-width: 434px) {
 
-.col-11, #genre, #modifier1 {
-    margin-bottom: 1%;
-    margin-left: 15%;
-}
-
-p {
-    margin: 0 3% 3% 3%;
-    text-align: center;
-
-}
-
-hr {
-    background-color: dimgrey;
-}
-
-
-/* ------- A propos --------- */
-h3 {
-    font-size: large;
-    text-align: center;
-    margin-bottom: 2%;
-}
-
-
-/* -------- Bouton de modification -------- */
-
-/* -------- Si a propos n'est pas affiché car il n'a pas été modifié -------- */
-#modifier1 {
-    background-color: dimgrey;
-    color: white;
-    display: block;
-    margin-top: 5%;
-    width: 180px;
-}
-
-/* -------- Si a propos a été modifié -------- */
-#modifier2 {
-    background-color: dimgrey;
-    color: white;
-    text-align: center;
-    display: block;
-    margin: 0 auto 3% auto;
-
-}
-
-/* ---------------------------------------------------- Responsive ------------------------------------------------- */
-/* ------------------------------------------- Media 1500px -------------------------------- */
-@media (max-width: 1500px) {
-
-    /* --------------  Carte profil -------------- */
-    #profil {
-        margin: 3% 15% 5% 15%;
+    #boutonretour{
+        line-height: 24px;
     }
 }
 
-/* ------------------------------------------- Media 1300px -------------------------------- */
-@media (max-width: 1300px) {
+@media (max-width: 480px) {
 
-    /* --------------  Carte profil -------------- */
-    #profil {
-        margin: 3% 10% 5% 10%;
+    #boutonretour{
+        margin-left: -25px;
     }
 }
 
-/* ------------------------------------------- Media 1100 px Ipad Pro -------------------------------- */
-@media (max-width: 1100px) {
+/* Pour Pixel 2 */
+@media (max-width: 432px) {
 
-    /* --------------  Carte profil -------------- */
-    #profil {
-        margin: 3% 5% 5% 5%;
+    #boutonretour{
+        line-height: 36px;
     }
 }
 
-/* ------------------------------------------- Media 850px -------------------------------- */
-@media (max-width: 850px) {
+/* Pour iphone 6/7/8 et Galaxy S5*/
+@media (max-width: 372px) {
 
-    /* --------------  Aligner carte verticalement -------------- */
-    .row {
+    #boutonretour{
+        line-height: 25px;
+    }
+}
+
+/* Pour iphone 5*/
+@media (max-width: 320px) {
+
+    #rowbouton{
         display: flex;
         flex-direction: column;
+        align-items: center;
     }
 
-    /* --------------  Centrer image -------------- */
-    .img-thumbnail {
-        display: block;
-        margin: 10% auto 5% auto;
+    #boutonretour{
+        margin-bottom: 20px;
+        margin-left: -68px;
+        width: 200px
     }
 
-    /* --------------  Margin Texte -------------- */
-    .col-11, #genre {
-        margin-left: 35%;
-    }
-
-    h2 {
-        margin-left: 55px;
-        margin-top: 3%;
-    }
-
-    /* --------------  Margin bouton -------------- */
-    #modifier1 {
-        margin-left: 37%;
+    #boutonmodif{
+        margin-left: -68px;
+        width: 200px
     }
 }
 
-/* ------------------------------------------- Media 796px Ipad -------------------------------- */
-
-@media (max-width: 796px) {
-    .col-11, #genre {
-        margin-left: 33%;
-    }
-}
-
-/* ------------------------------------------- Media 660px -------------------------------- */
-@media (max-width: 660px) {
-    .col-11, #genre {
-        margin-left: 30%;
-    }
-}
-
-/* ------------------------------------------- Media 560px -------------------------------- */
-@media (max-width: 560px) {
-    .col-11, #genre {
-        margin-left: 27%;
-    }
-}
-
-/* ------------------------------------------- Media 500px -------------------------------- */
-@media (max-width: 500px) {
-    .col-11, #genre {
-        margin-left: 24%;
-    }
-}
-
-/* ------------------------------------------- Media 414 px Iphone 6/7 +  -------------------------------- */
-@media (max-width: 414px) {
-
-    .img-thumbnail {
-        width: 80%;
-    }
-
-    .col-11, #genre {
-        margin-left: 15%;
-        font-size: medium;
-    }
-
-    /*Suppresion de l'espace entre email et genre de film*/
-    br {
-        display: none;
-    }
-
-    /* Placement bouton*/
-    #modifier1 {
-        margin: 8% 0 8% 26%;
-        width: 50%;
-    }
-}
-
-
-/* ------------------------------------------- Media 375 px Iphone 6/7/8 -------------------------------- */
-@media (max-width: 411px) {
-
-    .col-11, #genre {
-        margin-left: 13%;
-    }
-}
-
-/* ------------------------------------------- Media 360px Moto G4 / GalaxyS5 -------------------------------- */
-@media (max-width: 360px) {
-    .img-thumbnail {
-        width: 60%;
-    }
-
-    h2 {
-        margin-bottom: 5%;
-    }
-
-    .col-11, #genre {
-        margin-left: 11%;
-    }
-
-    #modifier1 {
-        width: 60%;
-        margin-left: 20%;
-        font-size: small;
-    }
-}
-
-/* ------------------------------------------- Media 320px Iphone5 -------------------------------- */
+/* Pour iphone 5*/
 @media (max-width: 320px) {
-    .col-11, #genre {
-        margin-left: 5%;
+
+    #boutonretour{
+        margin-left: -75px;
+    }
+
+    #boutonmodif{
+        margin-left: -75px;
     }
 }
-
 
 
 
