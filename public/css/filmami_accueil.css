@@ -18,6 +18,8 @@ h4 {
 
 .police1 {
     font-family: 'Saira Stencil One', cursive;
+    color: #b30a0a;
+    text-shadow: 0.1em 0.1em rgba(0, 0, 0, 0.87);
 }
 /* ---------------  Media querie 790 px ----------------- */
 @media (max-width: 790px) {
