@@ -36,11 +36,18 @@
                 <li class="nav-item">
                     <a class="nav-link" title="Voir la page Mon Profil" href="{{ path('app_profil_index') }}">Mon profil</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" title="M'enfin dude t'es admin ... T'as vraiment besoin de lire les infobulles?" href="{{ path('app_admin_ville_index') }}">Villes</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" title="M'enfin dude t'es admin ... T'as vraiment besoin de lire les infobulles?" href="{{ path('app_admin_genre_index') }}">Genre de films</a>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Dropdown
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{ path('app_admin_ville_index') }}">VILLES Gestion Admin</a>
+                        <a class="dropdown-item" href="{{ path('app_admin_genre_index') }}">GENRES DE FILMS Gestion Admin</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="{{ path('app_profil_edit') }}">Vers " Modifier mon Profil</a>
+
+                    </div>
                 </li>
             </ul>
             <div class="bonjour">
