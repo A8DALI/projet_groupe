@@ -39,10 +39,10 @@ class ChatController extends AbstractController
             $manager->persist($messages);
             $manager->flush();
 
-            return $this->redirectToRoute('app_chat_index',
+            /*return $this->redirectToRoute('app_chat_index',
                 [
                     'messages' => $messages
-                ]);
+                ]);*/
 
         } else {
 

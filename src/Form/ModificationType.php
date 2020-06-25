@@ -82,6 +82,7 @@
 					        'Non renseigné' => 'Non renseigné',
                             'Femme' => 'Femme',
                             'Homme' => 'Homme',
+                            'Non binaire' => 'Non binaire'
                         ]
                     ]
 				)->add('age',
