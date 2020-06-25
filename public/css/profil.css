@@ -11,8 +11,14 @@
 hr {
     background-color: dimgrey;
 }
-.pseudo{
-    color: white;
+#profil{
+    margin: 0;
+}
+@media (max-width: 462px) {
+
+    #boutonretour{
+        line-height: 36.5px;
+    }
 }
 
 /*  --------------  EDITION DE MON PROFIL -------------- */
