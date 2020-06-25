@@ -13,7 +13,7 @@
 
                 <!-------- Si pas d'image placeholder par défault: -------->
             {% else %}
-                <img class="card-img-top" src="{{ asset('img/placeholder2_25_1.jpg') }}" alt="">
+                <img class="card-img-top" src="{{ asset('img/placeholder2_25_1.jpg') }}" alt="image alternative de profil">
 
             {% endif %}
             <div class="card-body">
@@ -30,10 +30,10 @@
                     <p class="card-text">Ici la zone de cours texte du champ "A propos"</p>
                 </tr>
                 <tr>
-                    <a href="#" class="btn btn-dark">Voir le profil</a>
+                    <a href="#" title="Visiter le profil de cette personne" class="btn btn-dark">Voir le profil</a>
                 </tr>
                 <tr>
-                    <a href="#" class="btn btn-dark mailbtn">Envoyez un mail: {{ suggestion.email }}</a>
+                    <a href="#" title="Envoyer un message à cette personne" class="btn btn-dark mailbtn">Envoyez un mail: {{ suggestion.email }}</a>
                 </tr>
             </div>
         </div>
