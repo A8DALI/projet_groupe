@@ -40,7 +40,7 @@
 
                                 <!-------- Si pas d'image placeholder par défault: -------->
                             {% else %}
-                                <img class="taille_img card-img-top" src="{{ asset('img/placeholder2_25_1.jpg') }}" alt="">
+                                <img class="taille_img card-img-top" src="{{ asset('img/placeholder2_25_1.jpg') }}" alt="image alternative de profil">
 
                             {% endif %}
                             <div class="card-body">
@@ -58,11 +58,11 @@
                                 </tr>
                                 <tr>
                                     <a href="{{ path('app_suggestion_profilsuggestion', {'id': suggestion.id}) }}}"
-                                       class="btn btn-dark">Voir le profil</a>
+                                       class="btn btn-dark" title="Visiter le profil de cette personne">Voir le profil</a>
                                 </tr>
                                 <br>
                                 <tr>
-                                    <a href="#" class="btn btn-dark mailbtn">Envoyez un mail: {{ suggestion.email }}</a>
+                                    <a href="#" class="btn btn-dark mailbtn" title="Envoyer un message à cette personne">Envoyez un mail: {{ suggestion.email }}</a>
                                 </tr>
                             </div>
                         </div>
@@ -75,7 +75,7 @@
             <div>
                 <span class="voici">Voulez-vous voir d'autres personnes ?</span>
                 <form id="plus" method="get">
-                    <a type="button" id="load" class="btn btn-dark mb-2
+                    <a type="button" title="Voir les résultats suivants" id="load" class="btn btn-dark mb-2
             href="{{ path('app_suggestion_plusdesuggestions') }}" >
                     Voir plus de résultats !
                     </a>
@@ -83,7 +83,7 @@
             </div>
             <div>
                 <span class="voici">Voulez-vous voir votre profil?</span> <br>
-                <a type="button" class="btn btn-dark mb-2" href="{{ path('app_profil_index') }}"> Voir mon profil !</a>
+                <a type="button" title="Aller sur la page de votre profil" class="btn btn-dark mb-2" href="{{ path('app_profil_index') }}"> Voir mon profil !</a>
             </div>
         </div>
 
