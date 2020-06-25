@@ -29,7 +29,8 @@ class InscriptionType extends AbstractType
             ->add('email',
                 EmailType::class,
                 [
-                    'label' => 'E-mail'
+                    'label' => 'E-mail',
+                    'help' => 'Votre e-mail sera visible par les utilisateurs'
                 ]
             )
             ->add('mdpClair',
