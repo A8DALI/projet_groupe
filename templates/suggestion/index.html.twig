@@ -53,6 +53,7 @@
                                 <tr>
                                     <span class="card-text">{{ suggestion.genre.type }}</span>
                                 </tr>
+                                <hr>
                                 <tr>
                                     <p class="card-text">{{ suggestion.info }}</p>
                                 </tr>
@@ -72,7 +73,7 @@
         </div>
         <hr>
         <div class="liste">
-            <div>
+            <div class="centrez">
                 <span class="voici">Voulez-vous voir d'autres personnes ?</span>
                 <form id="plus" method="get">
                     <a type="button" title="Voir les résultats suivants" id="load" class="btn btn-dark mb-2
@@ -81,7 +82,7 @@
                     </a>
                 </form>
             </div>
-            <div>
+            <div class="centrez">
                 <span class="voici">Voulez-vous voir votre profil?</span> <br>
                 <a type="button" title="Aller sur la page de votre profil" class="btn btn-dark mb-2" href="{{ path('app_profil_index') }}"> Voir mon profil !</a>
             </div>
