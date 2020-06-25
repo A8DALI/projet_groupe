@@ -65,14 +65,16 @@ class IndexController extends AbstractController
         $error = $authenticationUtils->getLastAuthenticationError();
 
         //l'identifiant saisi en cas de mauvaise authentification
-        $lastUsername = $authenticationUtils->getLastUsername();
+        //$lastUsername = $authenticationUtils->getLastUsername();
 
         if(!empty($error)){
+
             $this->addFlash('error', 'Identifiants incorrects');
+
+            //return $this->redirectToRoute('app_index_index');
         }
-
-
     }
+
 
     /**
      * @Route("/deconnexion")
