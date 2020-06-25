@@ -9,6 +9,10 @@
     background-color: rgba(85, 152, 168, 0.3);
     border: 3px solid grey;
 }
+/*.taille_img {
+    min-height: 160px;
+    max-height: 220px;
+}*/
 .card-body {
     padding-bottom: 6px;
 }

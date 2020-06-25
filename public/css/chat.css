@@ -3,7 +3,7 @@
     font-weight: bold;
 }
 #affichagemessage{
-    background-color: rgba(121, 121, 121, 0.16);
+    background-color: #ececec;
 }
 #message{
     height: 200px;
@@ -14,7 +14,7 @@
 }
 
 #monmessage{
-    margin-right: 80px;
+    margin-right: 60px;
 }
 /* ------------------ MEDIA ---------------- */
 
@@ -23,10 +23,12 @@
         margin-right: 60px;
     }
 }
-@media (max-width: 718px) {
-    .row {
-        display: flex;
-        flex-direction: column;
-        margin: auto;
+
+@media (max-width: 768px) {
+    #monmessage{
+        margin-right: 0px;
+    }
+    #envoi{
+        margin-bottom: 20px;
     }
 }
