@@ -13,6 +13,10 @@ hr {
 }
 #profil{
     margin: 0;
+
+}
+h2{
+    color: white;
 }
 @media (max-width: 462px) {
 
@@ -20,6 +24,7 @@ hr {
         line-height: 36.5px;
     }
 }
+
 
 /*  --------------  EDITION DE MON PROFIL -------------- */
 #formedition{
