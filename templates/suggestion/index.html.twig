@@ -54,7 +54,7 @@
                                     <span class="card-text">{{ suggestion.genre.type }}</span>
                                 </tr>
                                 <tr>
-                                    <p class="card-text">Ici la zone de cours texte du champ "A propos"</p>
+                                    <p class="card-text">{{ suggestion.info }}</p>
                                 </tr>
                                 <tr>
                                     <a href="{{ path('app_suggestion_profilsuggestion', {'id': suggestion.id}) }}}"
